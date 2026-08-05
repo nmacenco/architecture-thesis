@@ -1,0 +1,16 @@
+{
+  "metadata": { "title": "Architecture Thesis", "description": "An architecture thesis presented as a visual narrative." },
+  "nav": { "concept": "Concept", "site": "Site", "process": "Process", "proposal": "Proposal", "credits": "Credits", "menu": "Index" },
+  "accessibility": { "backToTop": "Back to top", "languageSelector": "Language selector" },
+  "hero": { "eyebrow": "Architecture thesis", "title": "Architectures for inhabiting the threshold", "author": "Author name", "institution": "Institution / School of Architecture", "scroll": "Explore project", "imageLabel": "Key rendering — to be added" },
+  "concept": { "label": "01 — Concept", "title": "An architecture that turns the boundary into a place of encounter.", "body": "The project explores how in-between spaces can connect landscape, climate and collective life." },
+  "site": { "label": "02 — Context and site", "title": "Reading the territory before intervening", "mapLabel": "Location map / diagram", "facts": [{"value":"36° N", "label":"Latitude"}, {"value":"Mediterranean", "label":"Climate"}, {"value":"Urban edge", "label":"Condition"}] },
+  "references": { "label": "03 — References", "title": "Learning from what is built", "items": [{"name":"Threshold and shade", "place":"Case study 01"}, {"name":"Collective courtyard", "place":"Case study 02"}, {"name":"Matter and climate", "place":"Case study 03"}] },
+  "process": { "label": "04 — Design process", "title": "An idea transformed by drawing", "steps": ["Observe", "Interpret", "Test", "Build"] },
+  "program": { "label": "05 — Programme", "title": "Organising to share", "body": "The programme brings public uses, work spaces and shelter around a shared void.", "items": ["Collective spaces", "Work and learning", "Services", "Inhabited exterior"] },
+  "proposal": { "label": "06 — The proposal", "title": "Building an inhabitable landscape", "body": "Plans, sections, elevations and atmospheres will be assembled here as a continuous reading.", "imageLabels": ["Site plan", "Longitudinal section", "Exterior view"] },
+  "material": { "label": "07 — Materiality", "title": "Matter, light and time", "body": "A restrained material palette lets light and texture define the experience.", "imageLabel": "Construction detail — to be added" },
+  "model": { "label": "08 — Physical model", "title": "Thinking with the hands", "body": "This space is ready to document the physical model and its material explorations.", "imageLabel": "Physical model photographs — to be added" },
+  "reflection": { "label": "09 — Final reflection", "quote": "The project does not propose an isolated object, but a way of relating to what already exists." },
+  "credits": { "label": "10 — Credits", "title": "Architecture Thesis", "author": "Author", "tutor": "Tutor", "institution": "Institution", "pdf": "Thesis PDF — coming soon", "contact": "Contact" }
+}
