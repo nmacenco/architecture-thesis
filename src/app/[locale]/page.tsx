@@ -1,6 +1,10 @@
 import { ArrowDown, ArrowUpRight, Download, Menu, MoveDown } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { ImageComparison } from "@/components/image-comparison";
+import { PlanReveal } from "@/components/plan-reveal";
+import { ScrollNarrative } from "@/components/scroll-narrative";
+import { SiteMap } from "@/components/site-map";
 
 const navigation = [
   ["concept", "#concept"],
@@ -25,6 +29,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const proposalImages = t.raw("proposal.imageLabels") as string[];
 
   return (
+    <ScrollNarrative>
     <main>
       <header className="site-header">
         <a className="monogram" href="#top" aria-label={t("accessibility.backToTop")}>A—</a>
@@ -46,49 +51,51 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <a className="scroll-cue" href="#concept"><MoveDown size={18} /> {t("hero.scroll")}</a>
       </section>
 
-      <section className="editorial-section concept" id="concept">
+      <section className="editorial-section concept" data-scroll-scene id="concept">
         <p className="eyebrow">{t("concept.label")}</p>
         <h2>{t("concept.title")}</h2>
         <p className="intro-copy">{t("concept.body")}</p>
       </section>
 
-      <section className="editorial-section site-grid" id="site">
+      <section className="editorial-section site-grid" data-scroll-scene id="site">
         <div><p className="eyebrow">{t("site.label")}</p><h2>{t("site.title")}</h2></div>
-        <Placeholder label={t("site.mapLabel")} className="map-placeholder" />
+        <SiteMap label={t("site.mapLabel")} description={t("interactions.siteMapDescription")} />
         <dl className="facts">{siteFacts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
       </section>
 
-      <section className="editorial-section references">
+      <section className="editorial-section references" data-scroll-scene>
         <p className="eyebrow">{t("references.label")}</p><h2>{t("references.title")}</h2>
         <div className="reference-grid">{references.map((reference, index) => <article className="reference-card" key={reference.place}><Placeholder label={`0${index + 1}`} /><p>{reference.place}</p><h3>{reference.name}</h3><ArrowUpRight size={18} /></article>)}</div>
       </section>
 
-      <section className="editorial-section process" id="process">
+      <section className="editorial-section process" data-scroll-scene id="process">
         <p className="eyebrow">{t("process.label")}</p><h2>{t("process.title")}</h2>
+        <PlanReveal label={t("process.planLabel")} description={t("interactions.processPlanDescription")} />
         <div className="process-line">{processSteps.map((step, index) => <div key={step}><span>0{index + 1}</span><i /><strong>{step}</strong></div>)}</div>
       </section>
 
-      <section className="editorial-section programme">
+      <section className="editorial-section programme" data-scroll-scene>
         <div><p className="eyebrow">{t("program.label")}</p><h2>{t("program.title")}</h2><p className="intro-copy">{t("program.body")}</p></div>
         <div className="programme-diagram">{programme.map((item, index) => <div className={`programme-item item-${index}`} key={item}>{item}</div>)}</div>
       </section>
 
-      <section className="proposal" id="proposal">
+      <section className="proposal" data-proposal-scene id="proposal">
         <div className="proposal-heading"><p className="eyebrow light">{t("proposal.label")}</p><h2>{t("proposal.title")}</h2><p>{t("proposal.body")}</p></div>
         <div className="proposal-gallery">{proposalImages.map((label, index) => <Placeholder className={`proposal-image proposal-${index}`} key={label} label={label} />)}</div>
+        <ImageComparison beforeLabel={t("proposal.beforeLabel")} afterLabel={t("proposal.afterLabel")} instruction={t("interactions.comparisonInstruction")} />
       </section>
 
-      <section className="editorial-section material-grid">
+      <section className="editorial-section material-grid" data-scroll-scene>
         <div><p className="eyebrow">{t("material.label")}</p><h2>{t("material.title")}</h2><p className="intro-copy">{t("material.body")}</p></div>
         <Placeholder label={t("material.imageLabel")} />
       </section>
 
-      <section className="editorial-section model-grid">
+      <section className="editorial-section model-grid" data-scroll-scene>
         <Placeholder label={t("model.imageLabel")} />
         <div><p className="eyebrow">{t("model.label")}</p><h2>{t("model.title")}</h2><p className="intro-copy">{t("model.body")}</p></div>
       </section>
 
-      <section className="reflection"><p className="eyebrow">{t("reflection.label")}</p><blockquote>“{t("reflection.quote")}”</blockquote></section>
+      <section className="reflection" data-scroll-scene><p className="eyebrow">{t("reflection.label")}</p><blockquote>“{t("reflection.quote")}”</blockquote></section>
 
       <footer id="credits">
         <p className="eyebrow light">{t("credits.label")}</p><h2>{t("credits.title")}</h2>
@@ -96,5 +103,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="footer-actions"><button disabled><Download size={16} />{t("credits.pdf")}</button><a href="mailto:hello@example.com">{t("credits.contact")} <ArrowUpRight size={16} /></a><a href="#top" aria-label={t("accessibility.backToTop")}><ArrowDown className="up-arrow" size={19} /></a></div>
       </footer>
     </main>
+    </ScrollNarrative>
   );
 }

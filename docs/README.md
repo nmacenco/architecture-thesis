@@ -26,10 +26,12 @@ Canonical source for the site's architecture, decisions, and visual system.
 
 - [2026-08-03 Local content without a database](decisions/2026-08-03-local-content-no-database.md)
 - [2026-08-04 Locale prefix routing](decisions/2026-08-04-locale-prefix-routing.md)
+- [2026-08-05 SVG-first immersive narrative](decisions/2026-08-05-svg-first-immersive-narrative.md)
 
 ## Plans
 
 - [Milestone 1 — Editorial landing page](plans/milestone-1.md)
+- [Milestone 2 — Immersive scroll narrative](plans/milestone-2-immersive-scroll-narrative.md)
 
 ## Changelog
 
