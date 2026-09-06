@@ -73,9 +73,11 @@ function getValue(source: unknown, path: string): unknown {
 }
 
 describe("landing-page content manifest", () => {
-  it("resolves the hero and its next enabled section from the approved order", () => {
+  it("resolves implemented sections and their next enabled neighbors", () => {
     expect(getLandingSection("hero").translationKey).toBe("landing.hero");
+    expect(getLandingSection("concept").translationKey).toBe("landing.concept");
     expect(getNextEnabledSection("hero")?.id).toBe("concept");
+    expect(getNextEnabledSection("concept")?.id).toBe("site");
     expect(getNextEnabledSection("materiality")?.id).toBe("reflection");
     expect(getNextEnabledSection("credits")).toBeUndefined();
     expect(getUnresolvedDecisionsForSection("hero").map(({ id }) => id)).toEqual([

@@ -14,9 +14,19 @@
   pending/unavailable/approved primary-media states, and the next enabled anchor.
   Responsive composition, typography, focus, and media presentation use Tailwind
   utilities rather than section-specific global selectors.
+- **Concept section** (`src/components/landing/concept-section.tsx`): static
+  Server Component for the manifest `concept` ID. It renders the complete
+  localized narrative, semantic quote and keyword list, plus required and
+  optional meaningful-media states in a mobile-first editorial grid.
+- **Landing media-state resolver**
+  (`src/components/landing/media-state.ts`): shared pure guard used by extracted
+  modules. Only approved project-relative sources are final media; candidate
+  and pending records remain placeholders, while absent, unavailable, and
+  malformed approved records resolve to the unavailable state.
 - **Landing section registry** (`src/components/landing/section-registry.ts`):
-  compile-time known-ID map. It currently exposes only the implemented `hero`;
-  later modules are added explicitly and JSON values never become import paths.
+  compile-time known-ID map. It currently exposes the implemented `hero` and
+  `concept`; later modules are added explicitly and JSON values never become
+  import paths.
 - **Reference card**: precedent with image, category, title, and link indicator.
 - **Language switcher**: client control that preserves the route while switching between `/es` and `/en`.
 - **Scroll narrative**: client boundary that coordinates Lenis and GSAP ScrollTrigger, and tears both down on unmount.

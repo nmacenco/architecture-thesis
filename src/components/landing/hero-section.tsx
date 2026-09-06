@@ -2,7 +2,7 @@ import Image from "next/image";
 import { MoveDown } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import type { LandingSection } from "@/content/landing-page";
-import { getHeroMediaState } from "@/components/landing/hero-media";
+import { getLandingMediaState } from "@/components/landing/media-state";
 import { MediaPlaceholder } from "@/components/landing/media-placeholder";
 
 type HeroSectionProps = {
@@ -20,7 +20,7 @@ export async function HeroSection({
 
   const t = await getTranslations();
   const primaryAsset = section.assets.find((asset) => asset.id === "hero-primary");
-  const mediaState = getHeroMediaState(primaryAsset);
+  const mediaState = getLandingMediaState(primaryAsset);
   const mediaDescription = primaryAsset
     ? t(primaryAsset.altKey)
     : t("landing.media.missingDescription");

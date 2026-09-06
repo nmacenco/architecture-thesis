@@ -1,6 +1,6 @@
 # Feature: landing-page section modules
 
-> Status: Plan 2 in progress; `hero` extracted · Last updated: 2026-09-06
+> Status: Plan 2 in progress; `hero` and `concept` extracted · Last updated: 2026-09-06
 
 ## Purpose and source of truth
 
@@ -73,18 +73,39 @@ module adds focused tests in proportion to its data or interaction behavior.
 ### 2. `concept`
 
 - **Purpose and position:** Establish the thesis idea between `hero` and `site`.
-  Currently inline in `src/app/[locale]/page.tsx`; extraction pending.
-- **Contract:** `landing.concept`; all `textKeys`; required `concept-collage` and
-  `concept-diagram`, optional `concept-existing`; no unresolved decision.
-- **Media:** Provisional ratios: collage `4:5`, diagram `4:3`, existing photo
-  `3:2`; translated alternatives and pending credits.
-- **Composition:** Semantic order is heading, body, quote, keywords, media.
-  Mobile is one column; tablet/desktop may offset collage and diagram.
-- **Behavior and semantics:** Static editorial content with a blockquote and
-  semantic keyword list; reveal motion is optional and reduced motion is static.
-- **States, dependencies, tests, status:** Enabled; all assets pending. Uses
-  editorial and media primitives. Planned migration; verify optional-photo absence,
-  catalog collections, 320-pixel wrapping, and desktop composition.
+  Implemented in `src/components/landing/concept-section.tsx` and selected by
+  the typed registry in `src/components/landing/section-registry.ts`.
+- **Contract:** Receives the resolved `concept` manifest section and reads
+  `landing.concept` through every manifest `textKeys` reference. It preserves
+  the navigation-included `concept` anchor, required `concept-collage` and
+  `concept-diagram`, optional `concept-existing`, and the absence of a
+  section-specific unresolved decision.
+- **Media:** All three slots are meaningful. Provisional ratios are collage
+  `4:5`, diagram `4:3`, and existing photo `3:2` at all sizes; none receives
+  loading priority. Pending slots render the shared
+  placeholder with their translated alternatives and stable space. Approved
+  project-relative sources render through `next/image`; unavailable, missing
+  required, and malformed approved sources use the unavailable state. Credits
+  remain pending. An absent optional existing photograph contributes no gap.
+- **Composition:** Semantic source order is heading, body, quote, keywords, and
+  media. The 320-pixel/mobile layout is one column. Tablet and desktop divide
+  text across a twelve-column grid, then keep collage first while offsetting the
+  diagram and optional photograph without changing reading order.
+- **Behavior and semantics:** Labelled section with an `h2`, blockquote,
+  semantic keyword list, and figures for meaningful media. There are no module
+  controls or pointer-only behavior. Reduced motion does not remove content,
+  and the complete source-order reading works without JavaScript; the existing
+  shared scroll reveal may enhance entry only.
+- **States, dependencies, tests, status:** Enabled and navigation-included as
+  declared; all current asset records remain pending. Empty or malformed
+  keyword collections render no empty list; missing required slots retain an
+  unavailable placeholder; an absent optional photograph is omitted. Uses the
+  typed manifest accessor, shared media placeholder, shared media-state
+  resolver, and stable asset IDs. Implemented with focused data, asset-state,
+  manifest, and catalog-parity tests. Browser review at 320-pixel mobile and
+  desktop widths remains pending because this environment has no browser
+  runner; English copy and keywords remain reserved pending editorial
+  translation.
 
 ### 3. `site`
 

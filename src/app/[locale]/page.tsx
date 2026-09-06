@@ -33,7 +33,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const heroSection = getLandingSection("hero");
   const heroNextSection = getNextEnabledSection("hero");
   const heroDecisions = getUnresolvedDecisionsForSection("hero");
+  const conceptSection = getLandingSection("concept");
   const HeroModule = landingSectionRegistry.hero;
+  const ConceptModule = landingSectionRegistry.concept;
 
   return (
     <ScrollNarrative>
@@ -53,11 +55,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         hasUnresolvedDecisions={heroDecisions.length > 0}
       />
 
-      <section className="editorial-section concept" data-scroll-scene id="concept">
-        <p className="eyebrow">{t("concept.label")}</p>
-        <h2>{t("concept.title")}</h2>
-        <p className="intro-copy">{t("concept.body")}</p>
-      </section>
+      <ConceptModule section={conceptSection} />
 
       <section className="editorial-section site-grid" data-scroll-scene id="site">
         <div><p className="eyebrow">{t("site.label")}</p><h2>{t("site.title")}</h2></div>

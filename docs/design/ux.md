@@ -8,6 +8,12 @@
   next-section cue remain available without animation or JavaScript. Its scroll
   cue follows the next enabled manifest section rather than a hardcoded target;
   its responsive and focus states are colocated as Tailwind utilities.
+- The concept section preserves heading, body, quote, keywords, and meaningful
+  media in that source order. It is a single column on mobile and becomes an
+  offset editorial grid at larger widths without reordering content. Empty
+  reserved English keywords do not create an empty landmark, missing required
+  media keeps stable unavailable space, and an absent optional photograph leaves
+  no layout gap.
 - Navigation, links, and controls must work with a keyboard and have translated accessible labels.
 - On small screens, the composition becomes a single column and primary navigation is hidden until a functional mobile menu exists.
 - Scroll scenes may reveal, draw, or persist an element only when that motion explains the thesis narrative. The proposal pin is desktop-only.
