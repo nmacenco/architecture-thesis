@@ -1,6 +1,6 @@
 # Landing Page Plan 1 — Spanish Editorial Foundation and Content Manifest
 
-> Status: ready · Last updated: 2026-09-06
+> Status: in progress — implementation complete, stakeholder review pending · Last updated: 2026-09-06
 
 ## Objective
 
@@ -9,6 +9,19 @@ Define and approve the Spanish editorial structure for Centro de Artes Escenicas
 This plan does not integrate content into the rendered landing page and does not require final visual files.
 
 The final thesis presentation supplies evidence and subject matter, but the landing page must not mirror its academic chapter order. The approved structure must turn that material into a spatial, human-centered narrative with “Habitar Tomba” as the bridge between programme and architectural proposal.
+
+## Execution status
+
+- [x] Fixed the twelve-section baseline and order.
+- [x] Mapped presentation topics into a web-specific narrative.
+- [x] Created `content/landing-page.json` with section, navigation, text-key, asset, and decision metadata.
+- [x] Added the Spanish editorial working copy and reserved matching English keys.
+- [x] Added manifest and catalog consistency tests.
+- [x] Disabled the physical-model section until photography is confirmed.
+- [ ] Approve the Spanish editorial working copy.
+- [ ] Resolve or explicitly defer the decisions recorded in the manifest.
+
+Plan 2 may use the implemented manifest contract for module preparation, but no unresolved value should be presented as verified or publication-ready.
 
 ## Deliverables
 
@@ -50,6 +63,8 @@ Expected shape:
 ```
 
 Allowed initial asset statuses are `pending`, `candidate`, `approved`, and `unavailable`. An asset may keep `src: null` until Plan 3 selects a real file. Optional sections use `enabled: false`; they are not silently deleted from the editorial record.
+
+Section numbers are presentation metadata derived from the enabled manifest order. They are not embedded in translated eyebrow copy, so disabling an optional section cannot leave a visible numbering gap.
 
 ## Baseline section architecture
 

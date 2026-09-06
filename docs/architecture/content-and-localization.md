@@ -4,4 +4,8 @@ Public routes are `/es` and `/en`; Spanish is the default locale. `next-intl` ha
 
 Current content is local: short copy, cards, context facts, credits, and labels live in the translation catalogs. Final images will be placed in `public/` and replace the landing-page placeholders.
 
+`content/landing-page.json` defines the planned section structure and references catalog keys; it must not duplicate localized copy. Its Spanish `landing` namespace is an editorial working copy until stakeholder approval. Matching English keys currently reserve catalog shape for later editorial translation and must not be treated as publication-ready content.
+
+The manifest records assets as `pending`, `candidate`, `approved`, or `unavailable`. Pending and unavailable assets have no source path. Only approved project-relative paths may be rendered as final media.
+
 If the project later requires remote editing, users, or persistence, first define a repository interface. Supabase and Drizzle can then be introduced behind that boundary without coupling the UI to database queries.

@@ -13,5 +13,160 @@
   "material": { "label": "07 — Materiality", "title": "Matter, light and time", "body": "A restrained material palette lets light and texture define the experience.", "imageLabel": "Construction detail — to be added" },
   "model": { "label": "08 — Physical model", "title": "Thinking with the hands", "body": "This space is ready to document the physical model and its material explorations.", "imageLabel": "Physical model photographs — to be added" },
   "reflection": { "label": "09 — Final reflection", "quote": "The project does not propose an isolated object, but a way of relating to what already exists." },
-  "credits": { "label": "10 — Credits", "title": "Architecture Thesis", "author": "Author", "tutor": "Tutor", "institution": "Institution", "pdf": "Thesis PDF — coming soon", "contact": "Contact" }
+  "credits": { "label": "10 — Credits", "title": "Architecture Thesis", "author": "Author", "tutor": "Tutor", "institution": "Institution", "pdf": "Thesis PDF — coming soon", "contact": "Contact" },
+  "landing": {
+    "hero": {
+      "navLabel": "Home",
+      "eyebrow": "Pending English translation",
+      "title": "Centro de Artes Escénicas Tomba",
+      "subtitle": "Pending English translation",
+      "body": "Pending English translation",
+      "authors": "Valentina Lopez Dupertuis, Rocío Macenco and Valentina Najul",
+      "institution": "Facultad de Arquitectura, Universidad Nacional de Cuyo",
+      "year": "2026",
+      "scrollLabel": "Pending English translation",
+      "assets": { "primary": { "alt": "Pending English image description" } }
+    },
+    "concept": {
+      "navLabel": "Concept",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "quote": "Pending English translation",
+      "keywords": [],
+      "assets": {
+        "collage": { "alt": "Pending English image description" },
+        "diagram": { "alt": "Pending English image description" },
+        "existing": { "alt": "Pending English image description" }
+      }
+    },
+    "site": {
+      "navLabel": "Site",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "conditions": [],
+      "facts": [],
+      "assets": {
+        "regionalMap": { "alt": "Pending English image description" },
+        "locationPlan": { "alt": "Pending English image description" },
+        "aerial": { "alt": "Pending English image description" },
+        "historical": { "alt": "Pending English image description" },
+        "current": { "alt": "Pending English image description" }
+      }
+    },
+    "references": {
+      "navLabel": "References",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "items": [],
+      "assets": {
+        "marconetti": { "alt": "Pending English image description" },
+        "agueda": { "alt": "Pending English image description" },
+        "sanMartin": { "alt": "Pending English image description" }
+      }
+    },
+    "process": {
+      "navLabel": "Process",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "steps": [],
+      "arcPrinciples": [],
+      "assets": {
+        "history": { "alt": "Pending English image description" },
+        "diagnosis": { "alt": "Pending English image description" },
+        "heritageValue": { "alt": "Pending English image description" },
+        "intervention": { "alt": "Pending English image description" },
+        "arc": { "alt": "Pending English image description" }
+      }
+    },
+    "programme": {
+      "navLabel": "Programme",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "premises": [],
+      "buildings": [],
+      "facts": [],
+      "assets": {
+        "masterplan": { "alt": "Pending English image description" },
+        "axonometry": { "alt": "Pending English image description" }
+      }
+    },
+    "experience": {
+      "navLabel": "Experience",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "userGroups": [],
+      "route": [],
+      "assets": { "circulation": { "alt": "Pending English image description" } }
+    },
+    "proposal": {
+      "navLabel": "Proposal",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "route": [],
+      "spaces": [],
+      "assets": {
+        "publicSpace": { "alt": "Pending English image description" },
+        "silos": { "alt": "Pending English image description" },
+        "theatreExterior": { "alt": "Pending English image description" },
+        "hall": { "alt": "Pending English image description" },
+        "italianHall": { "alt": "Pending English image description" },
+        "circularHall": { "alt": "Pending English image description" },
+        "experimentalHall": { "alt": "Pending English image description" },
+        "plans": { "alt": "Pending English image description" },
+        "sections": { "alt": "Pending English image description" },
+        "elevations": { "alt": "Pending English image description" }
+      }
+    },
+    "materiality": {
+      "navLabel": "Materiality",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "systems": [],
+      "acoustics": [],
+      "assets": {
+        "structure": { "alt": "Pending English image description" },
+        "envelope": { "alt": "Pending English image description" },
+        "sustainability": { "alt": "Pending English image description" },
+        "acoustics": { "alt": "Pending English image description" }
+      }
+    },
+    "physicalModel": {
+      "navLabel": "Physical model",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "assets": {
+        "general": { "alt": "Pending English image description" },
+        "detail": { "alt": "Pending English image description" }
+      }
+    },
+    "reflection": {
+      "navLabel": "Reflection",
+      "eyebrow": "Pending English translation",
+      "title": "Pending English translation",
+      "body": "Pending English translation",
+      "quote": "Pending English translation",
+      "assets": { "final": { "alt": "Pending English image description" } }
+    },
+    "credits": {
+      "navLabel": "Credits",
+      "eyebrow": "Pending English translation",
+      "title": "Centro de Artes Escénicas Tomba",
+      "authors": "Valentina Lopez Dupertuis, Rocío Macenco and Valentina Najul",
+      "institution": "Facultad de Arquitectura, Universidad Nacional de Cuyo",
+      "degree": "Pending English translation",
+      "year": "2026",
+      "tutor": "Tutor pending confirmation",
+      "downloadLabel": "Thesis PDF pending",
+      "contactLabel": "Contact pending confirmation"
+    }
+  }
 }

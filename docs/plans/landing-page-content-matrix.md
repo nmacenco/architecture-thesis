@@ -8,6 +8,8 @@ This is the editorial working matrix for the landing page. It consolidates the S
 
 All asset URLs are intentionally `Pending`. When an asset is approved, replace that value with its project-relative URL (for example, `/images/proposal/theatre-exterior.webp`), add an accurate alt text, and retain the asset credit where applicable.
 
+Plan 1 has materialized this structure in `content/landing-page.json` and placed the Spanish editorial working copy under the `landing` namespace in `messages/es.json`. The manifest remains in `editorial-review` until the open decisions below are confirmed or explicitly deferred. Matching English keys are reserved but are not approved translations.
+
 The final thesis presentation is a source of evidence and topics, but its academic index is not the landing-page information architecture. The web experience must reorganize that material as a concise spatial journey. It should prioritize what a visitor, artist, student, or neighbor experiences over reproducing the sequence of presentation chapters.
 
 This matrix is the master inventory, not a single implementation plan. Delivery is divided into six bounded plans, plus a separate project-skill plan:

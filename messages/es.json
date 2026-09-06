@@ -13,5 +13,214 @@
   "material": { "label": "07 — Materialidad", "title": "Materia, luz y tiempo", "body": "Una paleta contenida de materiales deja que la luz y la textura definan la experiencia.", "imageLabel": "Detalle constructivo — pendiente de incorporar" },
   "model": { "label": "08 — Maqueta física", "title": "Pensar con las manos", "body": "Este espacio está preparado para documentar la maqueta física y sus aproximaciones materiales.", "imageLabel": "Fotografías de maqueta — pendientes de incorporar" },
   "reflection": { "label": "09 — Reflexión final", "quote": "El proyecto no propone un objeto aislado, sino una forma de relacionarse con lo que ya existe." },
-  "credits": { "label": "10 — Créditos", "title": "Tesis de Arquitectura", "author": "Autor", "tutor": "Tutor/a", "institution": "Institución", "pdf": "Memoria PDF — próximamente", "contact": "Contacto" }
+  "credits": { "label": "10 — Créditos", "title": "Tesis de Arquitectura", "author": "Autor", "tutor": "Tutor/a", "institution": "Institución", "pdf": "Memoria PDF — próximamente", "contact": "Contacto" },
+  "landing": {
+    "hero": {
+      "navLabel": "Inicio",
+      "eyebrow": "Tesis de arquitectura",
+      "title": "Centro de Artes Escénicas Tomba",
+      "subtitle": "Refuncionalización de la Ex Bodega Tomba",
+      "body": "Una intervención patrimonial que recupera uno de los conjuntos industriales más emblemáticos de Mendoza para transformarlo en un espacio dedicado a la cultura, la creación y la comunidad.",
+      "authors": "Valentina Lopez Dupertuis, Rocío Macenco y Valentina Najul",
+      "institution": "Facultad de Arquitectura, Universidad Nacional de Cuyo",
+      "year": "2026",
+      "scrollLabel": "Descubrí el proyecto",
+      "assets": {
+        "primary": { "alt": "Vista general pendiente del Centro de Artes Escénicas Tomba y su relación con la antigua bodega." }
+      }
+    },
+    "concept": {
+      "navLabel": "Concepto",
+      "eyebrow": "Concepto",
+      "title": "Construir sobre la memoria",
+      "body": "La propuesta parte de una idea clara: el patrimonio no debe permanecer inmóvil, sino adaptarse a las necesidades de cada época sin perder su identidad. En lugar de reconstruir la antigua bodega, el proyecto preserva sus elementos más valiosos y los complementa mediante una arquitectura contemporánea que dialoga con la preexistencia. El resultado es un edificio donde pasado y presente conviven, permitiendo que la historia continúe escribiéndose.",
+      "quote": "No restauramos únicamente un edificio; recuperamos un lugar para la cultura y la comunidad.",
+      "keywords": ["Patrimonio", "Refuncionalización", "Memoria urbana", "Artes escénicas", "Contenedor y contenido"],
+      "assets": {
+        "collage": { "alt": "Collage conceptual pendiente sobre memoria, patrimonio e intervención contemporánea." },
+        "diagram": { "alt": "Diagrama pendiente de la relación entre el patrimonio existente y la arquitectura contemporánea." },
+        "existing": { "alt": "Fotografía pendiente de la Ex Bodega Tomba antes de la intervención propuesta." }
+      }
+    },
+    "site": {
+      "navLabel": "Sitio",
+      "eyebrow": "Contexto y sitio",
+      "title": "Un patrimonio con potencial para transformar la ciudad",
+      "body": "La Ex Bodega Tomba se ubica en Godoy Cruz, Mendoza, y forma parte del Camino del Vino junto con las bodegas Arizu y Escorihuela. Su ubicación estratégica y su valor histórico la convierten en el lugar ideal para un nuevo equipamiento cultural capaz de revitalizar el sector y fortalecer el vínculo entre patrimonio y comunidad. El proyecto responde, además, a la necesidad de ampliar la infraestructura para las artes escénicas en el Área Metropolitana de Mendoza.",
+      "conditions": [
+        "Zona residencial mixta.",
+        "Acceso mediante transporte público, Metrotranvía y ciclovías cercanas.",
+        "Entorno con equipamientos educativos, sanitarios, culturales y recreativos.",
+        "Integración prevista con el ordenamiento de edificios históricos de Godoy Cruz."
+      ],
+      "facts": [
+        { "value": "21.850 m²", "label": "Superficie del área a intervenir", "verification": "pending" },
+        { "value": "6.545 m²", "label": "Área cubierta actual", "verification": "pending" },
+        { "value": "500–600", "label": "Capacidad total estimada", "verification": "pending" },
+        { "value": "1885", "label": "Fundación de la bodega", "verification": "pending" },
+        { "value": "2009", "label": "Declaración patrimonial", "verification": "pending" }
+      ],
+      "assets": {
+        "regionalMap": { "alt": "Mapa pendiente de Mendoza con Godoy Cruz, la Ex Bodega Tomba y el Camino del Vino." },
+        "locationPlan": { "alt": "Plano pendiente de ubicación de la Ex Bodega Tomba entre las calles Rivadavia y San Martín." },
+        "aerial": { "alt": "Vista aérea pendiente del conjunto industrial y su contexto urbano." },
+        "historical": { "alt": "Fotografía histórica pendiente de la Bodega Globo o Ex Bodega Tomba." },
+        "current": { "alt": "Fotografía pendiente del estado actual del conjunto de la Ex Bodega Tomba." }
+      }
+    },
+    "references": {
+      "navLabel": "Referencias",
+      "eyebrow": "Referencias",
+      "title": "Aprender del patrimonio para proyectar el futuro",
+      "body": "El proyecto toma como referencia intervenciones que demuestran que es posible incorporar nuevos usos en edificios históricos sin perder su identidad. Los criterios de intervención priorizan la autenticidad del conjunto, la diferenciación entre lo nuevo y lo existente y la reversibilidad de las nuevas incorporaciones.",
+      "items": [
+        { "name": "Ex-Molino Marconetti", "place": "Santa Fe, Argentina", "lesson": "Diferenciar el contenedor patrimonial del nuevo contenido arquitectónico.", "verification": "pending" },
+        { "name": "Centro de Artes Águeda", "place": "Águeda, Portugal", "lesson": "Articular los accesos mediante una plaza pública y organizar la circulación desde un hall central.", "verification": "pending" },
+        { "name": "Teatro Municipal General San Martín", "place": "Buenos Aires, Argentina", "lesson": "Conectar distintas tipologías teatrales mediante un hall común.", "verification": "pending" }
+      ],
+      "assets": {
+        "marconetti": { "alt": "Imagen de referencia pendiente de la intervención en el Ex-Molino Marconetti." },
+        "agueda": { "alt": "Imagen de referencia pendiente del Centro de Artes Águeda y su plaza pública." },
+        "sanMartin": { "alt": "Imagen de referencia pendiente del Teatro Municipal General San Martín y sus salas." }
+      }
+    },
+    "process": {
+      "navLabel": "Proceso",
+      "eyebrow": "Proceso de diseño",
+      "title": "Del análisis a la propuesta",
+      "body": "El proyecto surge de relevamientos, estudios patrimoniales, análisis urbanos y entrevistas. Estas instancias permitieron definir qué elementos conservar, cuáles transformar y cómo incorporar nuevos espacios sin alterar la identidad del conjunto. La reinterpretación del arco existente se convierte en el principal recurso compositivo de la nueva intervención.",
+      "steps": ["Investigación histórica", "Relevamiento y diagnóstico", "Valoración patrimonial", "Criterios de intervención", "Transformación del arco"],
+      "arcPrinciples": [
+        { "name": "Estructura", "description": "La nueva estructura metálica traduce la geometría curva de los arcos históricos." },
+        { "name": "Protección", "description": "Los parasoles semicilíndricos reinterpretan el arco para regular el asoleamiento." },
+        { "name": "Memoria", "description": "Una línea metálica recupera el perfil de los arcos desaparecidos." }
+      ],
+      "assets": {
+        "history": { "alt": "Línea de tiempo pendiente de la evolución histórica de la Ex Bodega Tomba." },
+        "diagnosis": { "alt": "Diagrama pendiente del relevamiento y estado de conservación del conjunto." },
+        "heritageValue": { "alt": "Semaforización pendiente del valor patrimonial de las naves existentes." },
+        "intervention": { "alt": "Diagrama pendiente que cruza valor y conservación para definir qué conservar, intervenir o demoler." },
+        "arc": { "alt": "Diagrama pendiente de la transformación del arco histórico en estructura, protección y memoria." }
+      }
+    },
+    "programme": {
+      "navLabel": "Programa",
+      "eyebrow": "Programa arquitectónico",
+      "title": "Un nuevo centro cultural para Mendoza",
+      "body": "El programa reutiliza las distintas naves existentes e incorpora nuevos espacios para la producción artística, la formación y el encuentro ciudadano. El conjunto integra salas teatrales, museo, espacios de ensayo, talleres, restaurante, áreas administrativas y espacios públicos que articulan todo el proyecto.",
+      "premises": [
+        { "name": "Ambientales", "description": "Espacios públicos multiuso y nuevas circulaciones vinculadas con la trama urbana." },
+        { "name": "Funcionales", "description": "Salas innovadoras y adaptación de espacios existentes." },
+        { "name": "Materiales", "description": "Muros patrimoniales conservados y metal como material principal de lo nuevo." },
+        { "name": "Expresivas", "description": "El arco como elemento integrador entre lo nuevo y lo existente." }
+      ],
+      "buildings": [
+        { "name": "Administración", "uses": "Oficinas, reunión, educación y exposiciones temporarias." },
+        { "name": "Museo y salas", "uses": "Ensayo, grabación y museo patrimonial en la cava histórica." },
+        { "name": "Restaurante", "uses": "Gastronomía y ensayo escénico de mayor escala." },
+        { "name": "Silos", "uses": "Mirador sonoro, experiencia inmersiva y microteatros." },
+        { "name": "Taller", "uses": "Carpintería escenográfica y costura de vestuario." },
+        { "name": "Teatro", "uses": "Sala Circular, Sala Experimental y Sala Italiana." }
+      ],
+      "facts": [
+        { "value": "6.935 m²", "label": "Programa interior", "verification": "pending" },
+        { "value": "10.853 m²", "label": "Programa exterior", "verification": "pending" }
+      ],
+      "assets": {
+        "masterplan": { "alt": "Masterplan pendiente con la organización general del centro cultural." },
+        "axonometry": { "alt": "Axonometría programática pendiente con los usos distribuidos por nave." }
+      }
+    },
+    "experience": {
+      "navLabel": "Habitar Tomba",
+      "eyebrow": "Usuarios y recorridos",
+      "title": "Habitar Tomba",
+      "body": "El proyecto se comprende a través de quienes lo recorren. Visitantes, artistas, estudiantes, trabajadores y vecinos ingresan desde la ciudad y encuentran distintas formas de atravesar el espacio público, los silos, la Nave Teatro, el hall y las salas. Sus recorridos se diferencian cuando la actividad lo requiere y vuelven a encontrarse en los espacios colectivos.",
+      "userGroups": ["Visitantes", "Artistas", "Estudiantes", "Trabajadores", "Vecinos"],
+      "route": ["Ciudad", "Espacio público", "Acceso patrimonial", "Silos", "Nave Teatro", "Hall", "Salas"],
+      "assets": {
+        "circulation": { "alt": "Diagrama pendiente con los recorridos diferenciados del público, artistas, estudiantes y personal de servicio." }
+      }
+    },
+    "proposal": {
+      "navLabel": "Propuesta",
+      "eyebrow": "Propuesta arquitectónica",
+      "title": "Una arquitectura que dialoga con el patrimonio",
+      "body": "La intervención conserva las fachadas históricas de la bodega y separa deliberadamente los nuevos volúmenes de los muros existentes, generando un vacío que distingue ambas etapas constructivas. El corazón del proyecto es la Nave Teatro, con una Sala Italiana, una Sala Circular y una Sala Experimental. Los espacios públicos, el paseo cultural y la recuperación de los silos amplían el uso del conjunto más allá de los espectáculos.",
+      "route": ["Espacio público", "Silos recuperados", "Nave Teatro", "Hall principal", "Sala Italiana", "Sala Circular", "Sala Experimental"],
+      "spaces": [
+        { "name": "Sala Italiana", "description": "Sala clásica con fosa de orquesta y separación entre escenario y público." },
+        { "name": "Sala Circular", "description": "Escenario central y público a 360 grados para una experiencia inmersiva." },
+        { "name": "Sala Experimental", "description": "Espacio flexible para teatro de pequeño formato y conferencias." },
+        { "name": "Silos", "description": "Mirador sonoro, experiencia inmersiva y dos microteatros vinculados al restaurante." }
+      ],
+      "assets": {
+        "publicSpace": { "alt": "Render pendiente del espacio público y el acceso al conjunto patrimonial." },
+        "silos": { "alt": "Render o diagrama pendiente de los silos recuperados y sus nuevos usos." },
+        "theatreExterior": { "alt": "Render pendiente del exterior de la Nave Teatro y su relación con las fachadas existentes." },
+        "hall": { "alt": "Render pendiente del hall central que atraviesa la Nave Teatro." },
+        "italianHall": { "alt": "Render pendiente de la Sala Italiana con su escenario y fosa de orquesta." },
+        "circularHall": { "alt": "Render pendiente de la Sala Circular con escenario central y público a 360 grados." },
+        "experimentalHall": { "alt": "Render pendiente de la configuración flexible de la Sala Experimental." },
+        "plans": { "alt": "Plantas pendientes de la planta baja y el subsuelo de la Nave Teatro." },
+        "sections": { "alt": "Cortes pendientes del hall central y de las salas Circular y Experimental." },
+        "elevations": { "alt": "Elevaciones pendientes de las fachadas oeste, sur y este de la Nave Teatro." }
+      }
+    },
+    "materiality": {
+      "navLabel": "Materialidad",
+      "eyebrow": "Materialidad y sustentabilidad",
+      "title": "La tecnología al servicio del patrimonio",
+      "body": "La propuesta incorpora una estructura metálica independiente que preserva la lectura histórica de las fachadas existentes. El arco original se reinterpreta en la estructura, la cubierta y la protección solar. Paneles solares, sistema VRV y materiales de alto rendimiento mejoran el comportamiento energético del edificio.",
+      "systems": [
+        { "name": "Estructura", "description": "Reticulados tridimensionales metálicos y refuerzos alineados con los ejes preexistentes." },
+        { "name": "Envolvente", "description": "Ladrillo original recuperado, carpinterías metálicas y parasoles semicilíndricos." },
+        { "name": "Cubierta", "description": "Paneles sándwich, cielorraso suspendido y tejas solares." },
+        { "name": "Energía", "description": "Generación fotovoltaica, paneles Aureus, sistema VRV e inercia térmica." }
+      ],
+      "acoustics": [
+        { "name": "Sala Experimental", "description": "Paneles metálicos perforados, elementos cilíndricos acústicos y parquet negro." },
+        { "name": "Sala Circular", "description": "Difusores laterales, madera microperforada, escenario flotante y alfombra para el público." },
+        { "name": "Sala Italiana", "description": "Paneles de cielorraso y cortinas móviles para ajustar la reverberación." }
+      ],
+      "assets": {
+        "structure": { "alt": "Diagrama pendiente de la estructura metálica y su reinterpretación del arco existente." },
+        "envelope": { "alt": "Detalle pendiente del ladrillo recuperado, carpinterías, parasoles y cubierta." },
+        "sustainability": { "alt": "Diagrama pendiente de las estrategias solares, térmicas y de climatización VRV." },
+        "acoustics": { "alt": "Comparación pendiente de las soluciones acústicas de las tres salas teatrales." }
+      }
+    },
+    "physicalModel": {
+      "navLabel": "Maqueta",
+      "eyebrow": "Maqueta física",
+      "title": "Comprender el proyecto a través de la representación",
+      "body": "La maqueta permitiría verificar las relaciones espaciales entre las naves, comprender la escala del conjunto y comunicar el diálogo entre la arquitectura histórica y las nuevas incorporaciones. Esta sección permanecerá deshabilitada hasta confirmar fotografías publicables.",
+      "assets": {
+        "general": { "alt": "Fotografía general pendiente de la maqueta física del conjunto." },
+        "detail": { "alt": "Fotografía de detalle pendiente de la relación entre las naves existentes y la intervención." }
+      }
+    },
+    "reflection": {
+      "navLabel": "Reflexión",
+      "eyebrow": "Reflexión final",
+      "title": "Recuperar el patrimonio es construir futuro",
+      "body": "La Ex Bodega Tomba representa mucho más que un edificio industrial: es parte de la identidad de Mendoza. El proyecto propone devolverle un rol activo mediante un programa que promueve cultura, memoria colectiva y encuentro comunitario. Conservar no significa detener el tiempo, sino permitir que la historia continúe evolucionando.",
+      "quote": "Cuando el patrimonio vuelve a ser habitado, la memoria deja de pertenecer al pasado y comienza a formar parte del futuro.",
+      "assets": {
+        "final": { "alt": "Render final pendiente del conjunto recuperado y habitado como centro cultural." }
+      }
+    },
+    "credits": {
+      "navLabel": "Créditos",
+      "eyebrow": "Créditos",
+      "title": "Centro de Artes Escénicas Tomba",
+      "authors": "Valentina Lopez Dupertuis, Rocío Macenco y Valentina Najul",
+      "institution": "Facultad de Arquitectura, Universidad Nacional de Cuyo",
+      "degree": "Trabajo final de grado — Arquitectura",
+      "year": "2026",
+      "tutor": "Tutor o tutora por confirmar",
+      "downloadLabel": "Memoria PDF pendiente",
+      "contactLabel": "Contacto por confirmar"
+    }
+  }
 }
