@@ -9,3 +9,5 @@ The landing-page manifest tests enforce section order and uniqueness, asset iden
 GitHub Actions runs the `CI` workflow for pull requests targeting `main` and pushes to `main`. Its `Quality gates` job installs the frozen pnpm lockfile and runs lint, strict type checking, tests, coverage, and the production build. Concurrent runs for the same pull request or branch cancel older in-progress runs.
 
 CI is a quality gate only. Vercel's native Git integration remains responsible for preview and production deployments, and its deployment status remains a separate required check.
+
+Husky applies the same five quality gates locally before each commit: lint, strict type checking, tests, coverage, and the production build. The hook stops on the first failure and does not modify source files. This local feedback complements, but does not replace, the required GitHub checks.
