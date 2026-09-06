@@ -22,6 +22,11 @@
   Server Component for urban context, conditions, pending facts, map/plan slots,
   and optional/required photography. It uses semantic lists and definition data
   in a mobile-first grid while preserving unverified claims visibly as pending.
+- **References section**
+  (`src/components/landing/references-section.tsx`): manifest-driven Server
+  Component for the precedent introduction and card list. Cards retain stable
+  manifest asset identities, meaningful media states, optional reserved catalog
+  content, and no link affordance until destinations are approved.
 - **Landing media-state resolver**
   (`src/components/landing/media-state.ts`): shared pure guard used by extracted
   modules. Only approved project-relative sources are final media; candidate
@@ -29,9 +34,11 @@
   malformed approved records resolve to the unavailable state.
 - **Landing section registry** (`src/components/landing/section-registry.ts`):
   compile-time known-ID map. It currently exposes the implemented `hero`,
-  `concept`, and `site`; later modules are added explicitly and JSON values
-  never become import paths.
-- **Reference card**: precedent with image, category, title, and link indicator.
+  `concept`, `site`, and `references`; later modules are added explicitly and
+  JSON values never become import paths.
+- **Reference card**: non-interactive precedent article with meaningful media,
+  place, title, and lesson. It deliberately exposes no link indicator or hover
+  affordance while destinations and image rights remain unresolved.
 - **Language switcher**: client control that preserves the route while switching between `/es` and `/en`.
 - **Scroll narrative**: client boundary that coordinates Lenis and GSAP ScrollTrigger, and tears both down on unmount.
 - **Plan reveal**: accessible inline SVG whose meaningful paths draw with scroll and are fully visible without motion.

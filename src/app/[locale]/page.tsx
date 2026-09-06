@@ -24,7 +24,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
-  const references = t.raw("references.items") as { name: string; place: string }[];
   const processSteps = t.raw("process.steps") as string[];
   const programme = t.raw("program.items") as string[];
   const proposalImages = t.raw("proposal.imageLabels") as string[];
@@ -34,9 +33,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const conceptSection = getLandingSection("concept");
   const siteSection = getLandingSection("site");
   const siteDecisions = getUnresolvedDecisionsForSection("site");
+  const referencesSection = getLandingSection("references");
+  const referencesDecisions = getUnresolvedDecisionsForSection("references");
   const HeroModule = landingSectionRegistry.hero;
   const ConceptModule = landingSectionRegistry.concept;
   const SiteModule = landingSectionRegistry.site;
+  const ReferencesModule = landingSectionRegistry.references;
 
   return (
     <ScrollNarrative>
@@ -63,10 +65,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         hasUnresolvedDecisions={siteDecisions.length > 0}
       />
 
-      <section className="editorial-section references" data-scroll-scene>
-        <p className="eyebrow">{t("references.label")}</p><h2>{t("references.title")}</h2>
-        <div className="reference-grid">{references.map((reference, index) => <article className="reference-card" key={reference.place}><MediaPlaceholder label={`0${index + 1}`} variant="reference" /><p>{reference.place}</p><h3>{reference.name}</h3><ArrowUpRight size={18} /></article>)}</div>
-      </section>
+      <ReferencesModule
+        section={referencesSection}
+        hasUnresolvedDecisions={referencesDecisions.length > 0}
+      />
 
       <section className="editorial-section process" data-scroll-scene id="process">
         <p className="eyebrow">{t("process.label")}</p><h2>{t("process.title")}</h2>

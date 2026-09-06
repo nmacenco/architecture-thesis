@@ -1,6 +1,6 @@
 # Feature: landing-page section modules
 
-> Status: Plan 2 in progress; `hero`, `concept`, and `site` extracted · Last updated: 2026-09-06
+> Status: Plan 2 in progress; first four modules extracted · Last updated: 2026-09-06
 
 ## Purpose and source of truth
 
@@ -148,18 +148,40 @@ module adds focused tests in proportion to its data or interaction behavior.
 ### 4. `references`
 
 - **Purpose and position:** Present precedents between `site` and `process`.
-  Currently inline in `src/app/[locale]/page.tsx`; extraction pending.
-- **Contract:** `landing.references`; all `textKeys`; three required reference
-  photographs. `reference-credits` remains unresolved.
-- **Media:** Each card uses a provisional `4:3` image ratio with translated alt
-  text; sources, rights, links, and credits remain pending.
-- **Composition:** Mobile keeps introduction then a one-column card list;
-  tablet/desktop may use two/three columns without reordering the precedents.
-- **Behavior and semantics:** Articles in a semantic list. Do not imply a link
-  until a destination is approved; hover cannot be the only affordance.
-- **States, dependencies, tests, status:** Enabled but excluded from navigation;
-  assets pending. Uses reference-card/media primitives. Planned migration; test
-  empty items, stable keys, absent destinations, and card wrapping.
+  Implemented in `src/components/landing/references-section.tsx` and selected by
+  the typed registry.
+- **Contract:** Receives the resolved `references` manifest section and reads
+  every `landing.references` text key, the navigation-excluded `references`
+  anchor, three required reference photographs, and the section's unresolved
+  decision state. Catalog items are positionally associated with the fixed
+  manifest order, while the manifest asset IDs provide stable card identities.
+  `reference-credits` remains unresolved.
+- **Media:** Each required photograph uses a provisional `4:3` ratio at all
+  widths, a translated manifest alternative, and no loading priority. Pending
+  and candidate assets remain placeholders; missing, unavailable, and malformed
+  approved sources use unavailable placeholders; only approved project-relative
+  sources render through `next/image`. Sources, rights, and credits remain
+  pending and visibly carry the shared editorial-review state.
+- **Composition:** Semantic source order is heading, body, pending-review status,
+  then the precedent list. Each item orders image, place, name, and lesson.
+  Mobile uses one column, tablet two, and desktop three without changing DOM or
+  editorial order. All long localized values use resilient wrapping.
+- **Behavior and semantics:** Labelled section with an `h2`, a semantic list,
+  and one labelled article per manifest asset identity. Cards with approved
+  catalog content use their `h3` as the accessible name; reserved empty entries
+  fall back to the translated media description. There are no controls, hover
+  dependencies, or links because no destinations are approved. Reduced motion
+  leaves all content available, and JavaScript is not required.
+- **States, dependencies, tests, status:** Enabled but excluded from navigation,
+  as declared; all three assets remain pending. Empty or malformed catalog items
+  do not shift later item-to-asset associations, and required media slots remain
+  visible even when English editorial items are empty. Uses the typed manifest
+  accessor, shared media state and placeholder, and fixed asset IDs. Implemented
+  with focused association, empty/malformed-data, media-state, manifest,
+  unresolved-decision, and catalog-parity tests. Browser review at 320-pixel
+  mobile and desktop widths remains pending because this environment has no
+  browser runner; English copy, precedent metadata, destinations, sources,
+  rights, and credits remain pending editorial approval.
 
 ### 5. `process`
 

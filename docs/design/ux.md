@@ -20,6 +20,11 @@
   explicit editorial-review label, the pending map abstraction remains visibly
   provisional, and empty reserved English collections do not create empty
   landmarks.
+- The references section preserves introduction, pending-review status, and
+  precedent cards in source order. Cards move from one to two to three columns
+  without reordering. Empty or malformed reserved catalog entries retain their
+  required media identity, do not shift later precedents, and never expose a
+  link affordance until a destination is approved.
 - Navigation, links, and controls must work with a keyboard and have translated accessible labels.
 - On small screens, the composition becomes a single column and primary navigation is hidden until a functional mobile menu exists.
 - Scroll scenes may reveal, draw, or persist an element only when that motion explains the thesis narrative. The proposal pin is desktop-only.

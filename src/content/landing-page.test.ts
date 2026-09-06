@@ -77,9 +77,11 @@ describe("landing-page content manifest", () => {
     expect(getLandingSection("hero").translationKey).toBe("landing.hero");
     expect(getLandingSection("concept").translationKey).toBe("landing.concept");
     expect(getLandingSection("site").translationKey).toBe("landing.site");
+    expect(getLandingSection("references").translationKey).toBe("landing.references");
     expect(getNextEnabledSection("hero")?.id).toBe("concept");
     expect(getNextEnabledSection("concept")?.id).toBe("site");
     expect(getNextEnabledSection("site")?.id).toBe("references");
+    expect(getNextEnabledSection("references")?.id).toBe("process");
     expect(getNextEnabledSection("materiality")?.id).toBe("reflection");
     expect(getNextEnabledSection("credits")).toBeUndefined();
     expect(getUnresolvedDecisionsForSection("hero").map(({ id }) => id)).toEqual([
@@ -90,6 +92,9 @@ describe("landing-page content manifest", () => {
     ]);
     expect(getUnresolvedDecisionsForSection("site").map(({ id }) => id)).toEqual([
       "historical-and-area-claims",
+    ]);
+    expect(getUnresolvedDecisionsForSection("references").map(({ id }) => id)).toEqual([
+      "reference-credits",
     ]);
   });
 
