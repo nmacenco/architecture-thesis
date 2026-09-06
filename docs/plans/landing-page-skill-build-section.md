@@ -1,6 +1,6 @@
 # Project Skill Plan — Build Landing Section
 
-> Status: blocked by Plan 1 · Last updated: 2026-09-06
+> Status: completed · Last updated: 2026-09-06
 
 ## Objective
 
@@ -153,3 +153,16 @@ The full ship-check suite is required when the invocation completes the last mod
 - `.agents/skills/build-landing-section/references/module-checklist.md`
 - `docs/features/landing-page-sections.md`
 - Applicable changelog entry
+
+## Implementation record
+
+- Created the repository-local `build-landing-section` skill with focused entry
+  instructions, UI metadata, and a detailed module checklist.
+- Added the canonical twelve-module registry with responsive, accessibility,
+  state, asset, localization, test, and unresolved-decision contracts.
+- Validated the package with the skill-creator validator.
+- Dry-ran `concept` as static editorial content, `experience` as an interactive
+  candidate, and disabled `physical-model` without changing production modules.
+  The runs confirmed pending assets remain non-blocking, interaction adds
+  keyboard/touch/reduced-motion gates, and disabled sections are not enabled or
+  added to navigation implicitly.
