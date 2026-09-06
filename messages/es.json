@@ -15,6 +15,15 @@
   "reflection": { "label": "09 — Reflexión final", "quote": "El proyecto no propone un objeto aislado, sino una forma de relacionarse con lo que ya existe." },
   "credits": { "label": "10 — Créditos", "title": "Tesis de Arquitectura", "author": "Autor", "tutor": "Tutor/a", "institution": "Institución", "pdf": "Memoria PDF — próximamente", "contact": "Contacto" },
   "landing": {
+    "status": {
+      "editorialReviewLabel": "Datos editoriales pendientes de confirmación"
+    },
+    "media": {
+      "pendingLabel": "Material visual pendiente",
+      "unavailableLabel": "Material visual no disponible",
+      "missingDescription": "Falta la descripción del material visual.",
+      "projectDetailsLabel": "Datos del proyecto"
+    },
     "hero": {
       "navLabel": "Inicio",
       "eyebrow": "Tesis de arquitectura",

@@ -1,6 +1,6 @@
 # Feature: landing-page section modules
 
-> Status: planned registry; module extraction pending Plan 2 · Last updated: 2026-09-06
+> Status: Plan 2 in progress; `hero` extracted · Last updated: 2026-09-06
 
 ## Purpose and source of truth
 
@@ -9,12 +9,11 @@ order. `content/landing-page.json` owns identity, order, visibility, navigation,
 translation-key references, asset slots, and unresolved decisions. Visible copy
 and accessible labels remain in `messages/es.json` and `messages/en.json`.
 
-The current route is a legacy inline composition in
-`src/app/[locale]/page.tsx`; it does not yet consume the manifest or the new
-`landing.*` namespaces. The paths and status below describe that current state
-and must be updated as Plan 2 extracts each module. A future registry may map only
-these known IDs to typed components; manifest values must never select arbitrary
-imports.
+The route is being migrated from its legacy inline composition in
+`src/app/[locale]/page.tsx`. Implemented modules consume the manifest and the new
+`landing.*` namespaces through a typed accessor and a known-ID registry; the
+remaining inline sections continue to use the legacy catalog namespaces until
+their own extraction. Manifest values never select arbitrary imports.
 
 ## Shared module contract
 
@@ -36,21 +35,36 @@ module adds focused tests in proportion to its data or interaction behavior.
 
 ### 1. `hero`
 
-- **Purpose and position:** Opening identity before `concept`. Currently inline
-  in `src/app/[locale]/page.tsx`; extraction pending.
-- **Contract:** `landing.hero`; uses all `textKeys`, navigation metadata, and
-  required `hero-primary` render. Hero/credits decisions cover official title,
-  authors, institution/degree, and year.
+- **Purpose and position:** Opening identity before `concept`. Implemented in
+  `src/components/landing/hero-section.tsx` and selected by the typed registry in
+  `src/components/landing/section-registry.ts`.
+- **Contract:** Receives the resolved manifest section and next enabled anchor;
+  reads `landing.hero` through every manifest `textKeys` reference, navigation
+  metadata, and the required `hero-primary` render. Hero/credits decisions cover
+  official title, authors, institution/degree, and year.
 - **Media:** Meaningful primary render; provisional placeholder ratio is `4:5`
-  mobile and viewport-covering landscape desktop. Credit is pending.
-- **Composition:** Mobile stacks title, subtitle/body, metadata, and media-safe
-  scroll cue; tablet/desktop may overlay copy on the render without obscuring it.
-- **Behavior and semantics:** Page `h1`, labelled start anchor, translated scroll
-  link; no content may depend on motion. Only this above-the-fold image may merit
-  loading priority.
-- **States, dependencies, tests, status:** Enabled; required asset pending. Uses
-  shared header/media placeholder and navigation. Planned migration; verify both
-  locales, missing media, heading wrapping, and anchor behavior.
+  mobile and viewport-covering landscape desktop. The current pending asset uses
+  its translated alt-key description and a stable full-viewport placeholder;
+  credit is pending. Only an `approved` asset with a project-relative source
+  renders through `next/image` with priority.
+- **Composition:** Semantic source order is eyebrow, page title, subtitle, body,
+  project metadata, media, and next-section cue. The 320-pixel/mobile layout uses
+  a minimum `4:5`-compatible frame with protected copy space; tablet/desktop
+  overlays the same source-order copy on viewport-covering media.
+- **Behavior and semantics:** Labelled section and page `h1`, semantic metadata
+  list, meaningful media alternative, and translated link to the next enabled
+  manifest anchor. There is no module animation or pointer-only behavior;
+  reduced motion changes nothing and the full reading remains available without
+  JavaScript.
+- **States, dependencies, tests, status:** Enabled and navigation-excluded as
+  declared; required asset remains pending. Disabled returns no module; pending
+  and candidate media use a placeholder, unavailable/malformed approved media
+  use an unavailable placeholder, and approved sourced media renders as an
+  image. Uses `src/content/landing-page.ts` and the shared media placeholder.
+  Implemented; accessor/order and media-state branches have focused tests.
+  Browser viewport review remains required before publication. Official title,
+  authors, institution/degree, and year remain unresolved editorial decisions,
+  so the module visibly labels its editorial details as pending confirmation.
 
 ### 2. `concept`
 

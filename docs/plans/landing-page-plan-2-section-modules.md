@@ -1,6 +1,6 @@
 # Landing Page Plan 2 — Section Module System
 
-> Status: blocked by Plan 1 · Last updated: 2026-09-06
+> Status: in progress — `hero` module implemented · Last updated: 2026-09-06
 
 ## Objective
 
@@ -36,6 +36,11 @@ Mobile is a primary delivery target. A module is not complete when only its desk
 7. `materiality` and optional `physical-model`.
 8. `reflection` and `credits`.
 9. Cross-section navigation, transitions, responsive review, and cleanup.
+
+Current progress: the shared typed manifest accessor, known-ID section registry,
+and media-placeholder primitive are established, and `hero` is the first
+extracted module. The remaining sections stay in the legacy inline route until
+their own bounded module work is completed.
 
 Each module is completed and documented before starting the next group. Shared abstractions should be extracted only after a real repeated pattern is visible.
 

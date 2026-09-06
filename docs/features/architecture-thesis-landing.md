@@ -10,7 +10,7 @@ Present an architecture thesis as a bilingual visual narrative. The scroll is th
 
 `/` redirects to the default locale. `src/app/[locale]/page.tsx` renders the landing page; `next-intl` loads `messages/es.json` or `messages/en.json`. The selector preserves the route when changing locale. Client-only scene components use GSAP and Lenis for scroll motion, SVG paths for plan drawing, and Framer Motion for isolated micro-interactions. Final renders and plans replace the local visual stand-ins from `public/`.
 
-`content/landing-page.json` defines the future Tomba composition's ordered section IDs, visibility, navigation metadata, translation references, asset slots, localization status, and unresolved decisions. The current route does not consume the manifest yet; module integration belongs to the subsequent plans.
+`content/landing-page.json` defines the Tomba composition's ordered section IDs, visibility, navigation metadata, translation references, asset slots, localization status, and unresolved decisions. Plan 2 integration has started: the extracted `hero` consumes its manifest contract and `landing.hero` catalog namespace through a typed accessor and known-ID registry. Remaining sections stay inline until their bounded module migrations.
 
 The context scene uses a local SVG map. The process scene reveals a plan as the reader scrolls. The proposal remains visible on desktop while its plan/render comparator can be controlled with pointer or keyboard input. All scenes retain a readable static state when reduced motion is requested.
 
