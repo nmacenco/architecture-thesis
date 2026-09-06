@@ -6,7 +6,6 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { ImageComparison } from "@/components/image-comparison";
 import { PlanReveal } from "@/components/plan-reveal";
 import { ScrollNarrative } from "@/components/scroll-narrative";
-import { SiteMap } from "@/components/site-map";
 import {
   getLandingSection,
   getNextEnabledSection,
@@ -25,7 +24,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
-  const siteFacts = t.raw("site.facts") as { value: string; label: string }[];
   const references = t.raw("references.items") as { name: string; place: string }[];
   const processSteps = t.raw("process.steps") as string[];
   const programme = t.raw("program.items") as string[];
@@ -34,8 +32,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const heroNextSection = getNextEnabledSection("hero");
   const heroDecisions = getUnresolvedDecisionsForSection("hero");
   const conceptSection = getLandingSection("concept");
+  const siteSection = getLandingSection("site");
+  const siteDecisions = getUnresolvedDecisionsForSection("site");
   const HeroModule = landingSectionRegistry.hero;
   const ConceptModule = landingSectionRegistry.concept;
+  const SiteModule = landingSectionRegistry.site;
 
   return (
     <ScrollNarrative>
@@ -57,11 +58,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <ConceptModule section={conceptSection} />
 
-      <section className="editorial-section site-grid" data-scroll-scene id="site">
-        <div><p className="eyebrow">{t("site.label")}</p><h2>{t("site.title")}</h2></div>
-        <SiteMap label={t("site.mapLabel")} description={t("interactions.siteMapDescription")} />
-        <dl className="facts">{siteFacts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
-      </section>
+      <SiteModule
+        section={siteSection}
+        hasUnresolvedDecisions={siteDecisions.length > 0}
+      />
 
       <section className="editorial-section references" data-scroll-scene>
         <p className="eyebrow">{t("references.label")}</p><h2>{t("references.title")}</h2>

@@ -76,8 +76,10 @@ describe("landing-page content manifest", () => {
   it("resolves implemented sections and their next enabled neighbors", () => {
     expect(getLandingSection("hero").translationKey).toBe("landing.hero");
     expect(getLandingSection("concept").translationKey).toBe("landing.concept");
+    expect(getLandingSection("site").translationKey).toBe("landing.site");
     expect(getNextEnabledSection("hero")?.id).toBe("concept");
     expect(getNextEnabledSection("concept")?.id).toBe("site");
+    expect(getNextEnabledSection("site")?.id).toBe("references");
     expect(getNextEnabledSection("materiality")?.id).toBe("reflection");
     expect(getNextEnabledSection("credits")).toBeUndefined();
     expect(getUnresolvedDecisionsForSection("hero").map(({ id }) => id)).toEqual([
@@ -85,6 +87,9 @@ describe("landing-page content manifest", () => {
       "author-names",
       "institution-degree",
       "presentation-year",
+    ]);
+    expect(getUnresolvedDecisionsForSection("site").map(({ id }) => id)).toEqual([
+      "historical-and-area-claims",
     ]);
   });
 

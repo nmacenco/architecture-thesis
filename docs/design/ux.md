@@ -14,6 +14,12 @@
   reserved English keywords do not create an empty landmark, missing required
   media keeps stable unavailable space, and an absent optional photograph leaves
   no layout gap.
+- The site section preserves narrative, conditions, context drawings, pending
+  facts, and photographs in semantic source order. Mobile is linear; larger
+  grids do not reorder content. Unverified dates, areas, and capacities carry an
+  explicit editorial-review label, the pending map abstraction remains visibly
+  provisional, and empty reserved English collections do not create empty
+  landmarks.
 - Navigation, links, and controls must work with a keyboard and have translated accessible labels.
 - On small screens, the composition becomes a single column and primary navigation is hidden until a functional mobile menu exists.
 - Scroll scenes may reveal, draw, or persist an element only when that motion explains the thesis narrative. The proposal pin is desktop-only.

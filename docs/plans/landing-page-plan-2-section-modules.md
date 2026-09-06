@@ -1,6 +1,6 @@
 # Landing Page Plan 2 — Section Module System
 
-> Status: in progress — `hero` and `concept` modules implemented · Last updated: 2026-09-06
+> Status: in progress — `hero`, `concept`, and `site` modules implemented · Last updated: 2026-09-06
 
 ## Objective
 
@@ -39,8 +39,8 @@ Mobile is a primary delivery target. A module is not complete when only its desk
 
 Current progress: the shared typed manifest accessor, known-ID section registry,
 Tailwind-styled media-placeholder primitive, and shared media-state resolver are
-established. `hero` and `concept` are extracted, Tailwind-styled Server
-Components, completing the second construction group. The remaining sections
+established. `hero`, `concept`, and `site` are extracted, Tailwind-styled Server
+Components; `site` begins the third construction group. The remaining sections
 stay in the legacy inline route until their own bounded module work is completed.
 
 Each module is completed and documented before starting the next group. Shared abstractions should be extracted only after a real repeated pattern is visible.

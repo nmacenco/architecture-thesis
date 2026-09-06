@@ -1,6 +1,6 @@
 # Feature: landing-page section modules
 
-> Status: Plan 2 in progress; `hero` and `concept` extracted · Last updated: 2026-09-06
+> Status: Plan 2 in progress; `hero`, `concept`, and `site` extracted · Last updated: 2026-09-06
 
 ## Purpose and source of truth
 
@@ -110,19 +110,40 @@ module adds focused tests in proportion to its data or interaction behavior.
 ### 3. `site`
 
 - **Purpose and position:** Explain urban and heritage context between `concept`
-  and `references`. Currently inline in `src/app/[locale]/page.tsx` with
-  `src/components/site-map.tsx`; extraction pending.
-- **Contract:** `landing.site`; all `textKeys`; five manifest asset slots.
-  `historical-and-area-claims` remains unresolved.
-- **Media:** Map/location plan provisional `4:3`; aerial/historical/current
-  images `3:2`. A local accessible SVG may stand in for the map; credits pending.
-- **Composition:** Mobile orders narrative, conditions, map/plan, facts, and
-  photographs; tablet/desktop may pair text, map, and facts in a grid.
-- **Behavior and semantics:** Static figure with translated description,
-  semantic lists and `dl` facts. Reduced motion shows the complete map.
-- **States, dependencies, tests, status:** Enabled; required and optional assets
-  pending. Uses SiteMap/media/fact primitives. Planned migration; test empty facts,
-  stable keys, pending claims, missing images, and long translated values.
+  and `references`. Implemented in `src/components/landing/site-section.tsx`,
+  selected by the typed registry, and composed with the localized abstract
+  `src/components/site-map.tsx` placeholder.
+- **Contract:** Receives the resolved `site` manifest section and reads all
+  `landing.site` text keys, its navigation-included `site` anchor, the five
+  declared asset slots, and the section's unresolved-decision state.
+  `historical-and-area-claims` remains unresolved, and the facts are explicitly
+  labelled as awaiting editorial confirmation rather than verified.
+- **Media:** Regional map and location plan use provisional `4:3` ratios;
+  aerial, historical, and current views use `3:2`, at all sizes. All are
+  meaningful and none receives loading priority. The pending regional map uses
+  a visibly pending local SVG abstraction with its manifest alternative; other
+  pending assets use the shared placeholder. Approved project-relative sources
+  render through `next/image`. Credits remain pending.
+- **Composition:** Semantic source order is heading, body, conditions, regional
+  map, location plan, facts, and photographs. The 320-pixel/mobile layout is a
+  single column. Tablet and desktop enhance the same order with twelve-column
+  text, context-media, fact, and photography grids.
+- **Behavior and semantics:** Labelled section with an `h2`, semantic condition
+  list, figures, and `dl` facts whose `dt` precedes `dd` in source order. There
+  are no controls or pointer-only behavior. The SVG lines may use the existing
+  scroll reveal, remain fully drawn without JavaScript, and remain static when
+  reduced motion bypasses the shared scroll runtime.
+- **States, dependencies, tests, status:** Enabled and navigation-included as
+  declared; all five current asset records remain pending. Missing required
+  slots retain unavailable placeholder space, while an absent optional aerial
+  is omitted without a gap. Empty or malformed condition/fact collections
+  create no empty list or definition-list landmarks. Uses the typed manifest
+  accessor, media-state resolver, media placeholder, SiteMap, and stable asset
+  IDs. Implemented with focused collection, optional/required-media, manifest,
+  unresolved-decision, and catalog-parity tests. Browser review at 320-pixel
+  mobile and desktop widths remains pending because this environment has no
+  browser runner; English content collections remain reserved pending editorial
+  translation.
 
 ### 4. `references`
 
