@@ -2,6 +2,11 @@ import { describe, expect, it } from "vitest";
 import manifest from "../../content/landing-page.json";
 import english from "../../messages/en.json";
 import spanish from "../../messages/es.json";
+import {
+  getLandingSection,
+  getNextEnabledSection,
+  getUnresolvedDecisionsForSection,
+} from "./landing-page";
 
 const expectedSectionIds = [
   "hero",
@@ -68,6 +73,19 @@ function getValue(source: unknown, path: string): unknown {
 }
 
 describe("landing-page content manifest", () => {
+  it("resolves the hero and its next enabled section from the approved order", () => {
+    expect(getLandingSection("hero").translationKey).toBe("landing.hero");
+    expect(getNextEnabledSection("hero")?.id).toBe("concept");
+    expect(getNextEnabledSection("materiality")?.id).toBe("reflection");
+    expect(getNextEnabledSection("credits")).toBeUndefined();
+    expect(getUnresolvedDecisionsForSection("hero").map(({ id }) => id)).toEqual([
+      "official-title",
+      "author-names",
+      "institution-degree",
+      "presentation-year",
+    ]);
+  });
+
   it("keeps the approved section order and optional model state", () => {
     expect(manifest.status).toBe("editorial-review");
     expect(manifest.localization).toEqual({ es: "editorial-review", en: "pending" });

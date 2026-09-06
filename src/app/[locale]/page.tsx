@@ -1,10 +1,17 @@
-import { ArrowDown, ArrowUpRight, Download, Menu, MoveDown } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Download, Menu } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { MediaPlaceholder } from "@/components/landing/media-placeholder";
+import { landingSectionRegistry } from "@/components/landing/section-registry";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ImageComparison } from "@/components/image-comparison";
 import { PlanReveal } from "@/components/plan-reveal";
 import { ScrollNarrative } from "@/components/scroll-narrative";
 import { SiteMap } from "@/components/site-map";
+import {
+  getLandingSection,
+  getNextEnabledSection,
+  getUnresolvedDecisionsForSection,
+} from "@/content/landing-page";
 
 const navigation = [
   ["concept", "#concept"],
@@ -13,10 +20,6 @@ const navigation = [
   ["proposal", "#proposal"],
   ["credits", "#credits"],
 ] as const;
-
-function Placeholder({ label, className = "" }: { label: string; className?: string }) {
-  return <div className={`image-placeholder ${className}`}><span>{label}</span></div>;
-}
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -27,6 +30,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const processSteps = t.raw("process.steps") as string[];
   const programme = t.raw("program.items") as string[];
   const proposalImages = t.raw("proposal.imageLabels") as string[];
+  const heroSection = getLandingSection("hero");
+  const heroNextSection = getNextEnabledSection("hero");
+  const heroDecisions = getUnresolvedDecisionsForSection("hero");
+  const HeroModule = landingSectionRegistry.hero;
 
   return (
     <ScrollNarrative>
@@ -40,16 +47,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <Menu className="menu-icon" aria-hidden="true" size={20} />
       </header>
 
-      <section className="hero" id="top">
-        <Placeholder label={t("hero.imageLabel")} className="hero-image" />
-        <div className="hero-overlay" />
-        <div className="hero-copy">
-          <p className="eyebrow light">{t("hero.eyebrow")}</p>
-          <h1>{t("hero.title")}</h1>
-          <div className="hero-meta"><span>{t("hero.author")}</span><span>{t("hero.institution")}</span></div>
-        </div>
-        <a className="scroll-cue" href="#concept"><MoveDown size={18} /> {t("hero.scroll")}</a>
-      </section>
+      <HeroModule
+        section={heroSection}
+        nextAnchor={heroNextSection?.navigation.anchor}
+        hasUnresolvedDecisions={heroDecisions.length > 0}
+      />
 
       <section className="editorial-section concept" data-scroll-scene id="concept">
         <p className="eyebrow">{t("concept.label")}</p>
@@ -65,7 +67,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <section className="editorial-section references" data-scroll-scene>
         <p className="eyebrow">{t("references.label")}</p><h2>{t("references.title")}</h2>
-        <div className="reference-grid">{references.map((reference, index) => <article className="reference-card" key={reference.place}><Placeholder label={`0${index + 1}`} /><p>{reference.place}</p><h3>{reference.name}</h3><ArrowUpRight size={18} /></article>)}</div>
+        <div className="reference-grid">{references.map((reference, index) => <article className="reference-card" key={reference.place}><MediaPlaceholder label={`0${index + 1}`} variant="reference" /><p>{reference.place}</p><h3>{reference.name}</h3><ArrowUpRight size={18} /></article>)}</div>
       </section>
 
       <section className="editorial-section process" data-scroll-scene id="process">
@@ -81,17 +83,17 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <section className="proposal" data-proposal-scene id="proposal">
         <div className="proposal-heading"><p className="eyebrow light">{t("proposal.label")}</p><h2>{t("proposal.title")}</h2><p>{t("proposal.body")}</p></div>
-        <div className="proposal-gallery">{proposalImages.map((label, index) => <Placeholder className={`proposal-image proposal-${index}`} key={label} label={label} />)}</div>
+        <div className="proposal-gallery">{proposalImages.map((label, index) => <MediaPlaceholder className={`proposal-image proposal-${index}`} key={label} label={label} />)}</div>
         <ImageComparison beforeLabel={t("proposal.beforeLabel")} afterLabel={t("proposal.afterLabel")} instruction={t("interactions.comparisonInstruction")} />
       </section>
 
       <section className="editorial-section material-grid" data-scroll-scene>
         <div><p className="eyebrow">{t("material.label")}</p><h2>{t("material.title")}</h2><p className="intro-copy">{t("material.body")}</p></div>
-        <Placeholder label={t("material.imageLabel")} />
+        <MediaPlaceholder label={t("material.imageLabel")} variant="material" />
       </section>
 
       <section className="editorial-section model-grid" data-scroll-scene>
-        <Placeholder label={t("model.imageLabel")} />
+        <MediaPlaceholder label={t("model.imageLabel")} variant="model" />
         <div><p className="eyebrow">{t("model.label")}</p><h2>{t("model.title")}</h2><p className="intro-copy">{t("model.body")}</p></div>
       </section>
 

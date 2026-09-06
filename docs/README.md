@@ -14,6 +14,7 @@ Canonical source for the site's architecture, decisions, and visual system.
 ## Features
 
 - [Editorial landing page](features/architecture-thesis-landing.md)
+- [Landing-page section modules](features/landing-page-sections.md)
 
 ## Design
 

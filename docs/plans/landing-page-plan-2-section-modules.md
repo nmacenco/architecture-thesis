@@ -1,6 +1,6 @@
 # Landing Page Plan 2 — Section Module System
 
-> Status: blocked by Plan 1 · Last updated: 2026-09-06
+> Status: in progress — `hero` module implemented · Last updated: 2026-09-06
 
 ## Objective
 
@@ -37,6 +37,11 @@ Mobile is a primary delivery target. A module is not complete when only its desk
 8. `reflection` and `credits`.
 9. Cross-section navigation, transitions, responsive review, and cleanup.
 
+Current progress: the shared typed manifest accessor, known-ID section registry,
+and Tailwind-styled media-placeholder primitive are established, and `hero` is
+the first extracted, Tailwind-styled module. The remaining sections stay in the
+legacy inline route until their own bounded module work is completed.
+
 Each module is completed and documented before starting the next group. Shared abstractions should be extracted only after a real repeated pattern is visible.
 
 ## Module contract
@@ -52,6 +57,15 @@ Each module must:
 - Document its purpose, inputs, assets, states, interaction, responsive behavior, accessibility, and known gaps.
 
 The manifest chooses among known section IDs and variants; it must not dynamically import arbitrary code paths.
+
+## Styling convention
+
+Extracted modules use Tailwind utilities for module-local layout, spacing,
+typography, responsive states, focus treatment, and visual styling. Global CSS
+remains the home for design tokens, document defaults, shared motion/keyframes,
+and selectors that utilities cannot express clearly. Legacy section selectors
+are migrated when their owning module is extracted; Plan 2 does not require an
+unrelated whole-page CSS rewrite.
 
 ## Mobile-first acceptance requirements
 

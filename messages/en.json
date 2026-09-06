@@ -15,6 +15,15 @@
   "reflection": { "label": "09 — Final reflection", "quote": "The project does not propose an isolated object, but a way of relating to what already exists." },
   "credits": { "label": "10 — Credits", "title": "Architecture Thesis", "author": "Author", "tutor": "Tutor", "institution": "Institution", "pdf": "Thesis PDF — coming soon", "contact": "Contact" },
   "landing": {
+    "status": {
+      "editorialReviewLabel": "Editorial details pending confirmation"
+    },
+    "media": {
+      "pendingLabel": "Visual material pending",
+      "unavailableLabel": "Visual material unavailable",
+      "missingDescription": "The visual material description is missing.",
+      "projectDetailsLabel": "Project details"
+    },
     "hero": {
       "navLabel": "Home",
       "eyebrow": "Pending English translation",
