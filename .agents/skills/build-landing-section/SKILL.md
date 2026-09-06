@@ -63,6 +63,14 @@ enhancement. Build the smallest complete module using Server Components by
 default; isolate browser APIs, hooks, and interaction in the narrowest client
 boundary. Reuse established primitives before extracting a new abstraction.
 
+Use Tailwind utilities as the default for module-local layout, spacing,
+typography, responsive behavior, focus states, and visual styling. Keep
+`globals.css` for design tokens, document-level defaults, shared motion or
+keyframes, and selectors that Tailwind cannot express clearly. Do not add a
+section-specific global class when colocated utilities communicate the same
+contract, and migrate legacy section CSS when extracting that section rather
+than rewriting unrelated modules.
+
 Use only manifest-defined structure and assets. Read every visible string and
 accessible label from the catalogs, preserving parity in Spanish and English.
 Render pending, unavailable, optional, empty, and error states that apply to the

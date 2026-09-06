@@ -41,6 +41,9 @@ is pending and a placeholder can preserve its role.
 
 - [ ] Use a Server Component unless hooks, events, animation, or browser APIs
   require a narrow client boundary.
+- [ ] Use Tailwind utilities for module-local composition and styling; reserve
+  global CSS for tokens, document defaults, shared motion/keyframes, or a
+  selector that utilities cannot express clearly.
 - [ ] Use a typed, known-ID registry; never resolve arbitrary code paths from
   manifest strings.
 - [ ] Reuse current section/media/interaction primitives before creating a new

@@ -6,7 +6,8 @@
 - The hero remains a complete static reading at 320 CSS pixels and larger:
   eyebrow, title, subtitle, body, project metadata, meaningful media state, and
   next-section cue remain available without animation or JavaScript. Its scroll
-  cue follows the next enabled manifest section rather than a hardcoded target.
+  cue follows the next enabled manifest section rather than a hardcoded target;
+  its responsive and focus states are colocated as Tailwind utilities.
 - Navigation, links, and controls must work with a keyboard and have translated accessible labels.
 - On small screens, the composition becomes a single column and primary navigation is hidden until a functional mobile menu exists.
 - Scroll scenes may reveal, draw, or persist an element only when that motion explains the thesis narrative. The proposal pin is desktop-only.

@@ -37,7 +37,8 @@ module adds focused tests in proportion to its data or interaction behavior.
 
 - **Purpose and position:** Opening identity before `concept`. Implemented in
   `src/components/landing/hero-section.tsx` and selected by the typed registry in
-  `src/components/landing/section-registry.ts`.
+  `src/components/landing/section-registry.ts`; module-local presentation uses
+  colocated Tailwind utilities.
 - **Contract:** Receives the resolved manifest section and next enabled anchor;
   reads `landing.hero` through every manifest `textKeys` reference, navigation
   metadata, and the required `hero-primary` render. Hero/credits decisions cover
@@ -46,7 +47,9 @@ module adds focused tests in proportion to its data or interaction behavior.
   mobile and viewport-covering landscape desktop. The current pending asset uses
   its translated alt-key description and a stable full-viewport placeholder;
   credit is pending. Only an `approved` asset with a project-relative source
-  renders through `next/image` with priority.
+  renders through `next/image` with priority. The pending state selects the
+  complete `hero` placeholder variant instead of layering position/background
+  overrides on the shared default.
 - **Composition:** Semantic source order is eyebrow, page title, subtitle, body,
   project metadata, media, and next-section cue. The 320-pixel/mobile layout uses
   a minimum `4:5`-compatible frame with protected copy space; tablet/desktop
@@ -60,7 +63,8 @@ module adds focused tests in proportion to its data or interaction behavior.
   declared; required asset remains pending. Disabled returns no module; pending
   and candidate media use a placeholder, unavailable/malformed approved media
   use an unavailable placeholder, and approved sourced media renders as an
-  image. Uses `src/content/landing-page.ts` and the shared media placeholder.
+  image. Uses `src/content/landing-page.ts` and the Tailwind-styled shared media
+  placeholder.
   Implemented; accessor/order and media-state branches have focused tests.
   Browser viewport review remains required before publication. Official title,
   authors, institution/degree, and year remain unresolved editorial decisions,

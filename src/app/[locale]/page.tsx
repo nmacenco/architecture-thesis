@@ -67,7 +67,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <section className="editorial-section references" data-scroll-scene>
         <p className="eyebrow">{t("references.label")}</p><h2>{t("references.title")}</h2>
-        <div className="reference-grid">{references.map((reference, index) => <article className="reference-card" key={reference.place}><MediaPlaceholder label={`0${index + 1}`} /><p>{reference.place}</p><h3>{reference.name}</h3><ArrowUpRight size={18} /></article>)}</div>
+        <div className="reference-grid">{references.map((reference, index) => <article className="reference-card" key={reference.place}><MediaPlaceholder label={`0${index + 1}`} variant="reference" /><p>{reference.place}</p><h3>{reference.name}</h3><ArrowUpRight size={18} /></article>)}</div>
       </section>
 
       <section className="editorial-section process" data-scroll-scene id="process">
@@ -89,11 +89,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <section className="editorial-section material-grid" data-scroll-scene>
         <div><p className="eyebrow">{t("material.label")}</p><h2>{t("material.title")}</h2><p className="intro-copy">{t("material.body")}</p></div>
-        <MediaPlaceholder label={t("material.imageLabel")} />
+        <MediaPlaceholder label={t("material.imageLabel")} variant="material" />
       </section>
 
       <section className="editorial-section model-grid" data-scroll-scene>
-        <MediaPlaceholder label={t("model.imageLabel")} />
+        <MediaPlaceholder label={t("model.imageLabel")} variant="model" />
         <div><p className="eyebrow">{t("model.label")}</p><h2>{t("model.title")}</h2><p className="intro-copy">{t("model.body")}</p></div>
       </section>
 
