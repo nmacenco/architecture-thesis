@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+set -e
+
+echo "Running pre-commit quality gates..."
+
+echo "Linting..."
+pnpm lint
+
+echo "Checking TypeScript..."
+pnpm typecheck
+
+echo "Running tests..."
+pnpm test
+
+echo "Checking test coverage..."
+pnpm test:coverage
+
+echo "Building for production..."
+pnpm build
+
+echo "All pre-commit quality gates passed."
