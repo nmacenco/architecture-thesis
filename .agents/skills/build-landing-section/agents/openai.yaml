@@ -1,4 +1,4 @@
 interface:
   display_name: "Build Landing Section"
-  short_description: "Build or audit one manifest-defined section"
-  default_prompt: "Use $build-landing-section to implement the experience section."
+  short_description: "Build one continuous editorial landing section"
+  default_prompt: "Use $build-landing-section to implement one manifest-defined section with a content-derived composition and intentional neighbor transitions."

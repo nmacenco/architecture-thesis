@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Landing Flow"
+  short_description: "Audit narrative continuity across landing sections"
+  default_prompt: "Use $audit-landing-flow to audit the visual and narrative continuity of the implemented landing-page sections."

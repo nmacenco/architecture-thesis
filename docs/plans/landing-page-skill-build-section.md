@@ -1,6 +1,6 @@
 # Project Skill Plan — Build Landing Section
 
-> Status: completed · Last updated: 2026-09-06
+> Status: completed · Last updated: 2026-09-07
 
 ## Objective
 
@@ -63,11 +63,28 @@ It should use the codebase graph first for structural discovery when this reposi
 3. Inspect reusable components before introducing new abstractions.
 4. Identify unresolved editorial decisions; use placeholders for missing assets, but do not invent factual copy or credits.
 5. Define the semantic source order and mobile composition before adding desktop enhancement.
-6. Implement the smallest complete module and isolate client code to interactive boundaries.
-7. Verify all content, asset, optional, and error states relevant to the section.
-8. Review mobile, tablet, desktop, keyboard, touch, and reduced-motion behavior in proportion to the module.
-9. Update the module registry, component inventory, design/UX documentation when behavior changed, and the changelog.
-10. Run focused checks, then report files, decisions, remaining placeholders, and validation results.
+6. Define the section's narrative job, dominant evidence, neighbor transitions,
+   and content-derived compositional distinction before writing layout code.
+7. Implement the smallest complete module and isolate client code to interactive boundaries.
+8. Verify all content, asset, optional, and error states relevant to the section.
+9. Review the section with both enabled neighbors across mobile, tablet, desktop,
+   keyboard, touch, and reduced-motion behavior in proportion to the module.
+10. Update the module registry, component inventory, design/UX documentation when behavior changed, and the changelog.
+11. Run focused checks, then report files, decisions, remaining placeholders, composition rationale, neighbor continuity, and validation results.
+
+## Web-specific composition gate
+
+The skill preserves shared visual-system tokens and reusable behavior without
+copying another section's complete composition as a template. Every module must
+derive its hierarchy, dominant visual relationship, density, scale, and pacing
+from its own content while providing an intentional transition from the previous
+enabled section to the next one.
+
+Before completion, compare the module with its neighbors and apply an
+interchangeability check: if their copy and assets could be swapped without
+substantial layout reconsideration, revise the composition or document the
+narrative purpose of the repetition. Isolated-section validation cannot establish
+continuous-flow quality.
 
 ## Mandatory mobile behavior
 
@@ -145,6 +162,8 @@ The full ship-check suite is required when the invocation completes the last mod
 - Documentation and changelog synchronization are part of every implementation/update invocation.
 - Skill package validation passes.
 - Representative dry runs confirm static, interactive, optional, desktop, and mobile paths.
+- Each module documents a content-derived composition and is reviewed with both
+  enabled neighbors for disconnected-slide patterns.
 
 ## Expected files
 
@@ -166,3 +185,7 @@ The full ship-check suite is required when the invocation completes the last mod
   The runs confirmed pending assets remain non-blocking, interaction adds
   keyboard/touch/reduced-motion gates, and disabled sections are not enabled or
   added to navigation implicitly.
+- Strengthened the workflow after repeated production use exposed technically
+  valid but visually interchangeable modules. The skill now requires a
+  content-derived composition brief, explicit neighbor transitions, an
+  interchangeability check, and contextual mobile/desktop review.

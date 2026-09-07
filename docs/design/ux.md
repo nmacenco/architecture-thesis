@@ -1,6 +1,14 @@
 # UX rules
 
 - Reading follows the thesis narrative order and navigation uses clear anchors.
+- Section modules form one continuous scroll experience rather than isolated
+  viewport slides. Every module defines an entry from the previous enabled
+  section and a handoff to the next one; visual review includes those neighbors.
+- Reuse shared behavior, tokens, and primitives without treating another
+  section's full composition as a template. Repeated shells, uniform panels,
+  interchangeable grids, and hard resets require a narrative justification.
+- Compositional contrast must follow content and preserve semantic order,
+  readability, accessibility, and the complete reduced-motion state.
 - The language selector preserves the current view and communicates the active language through `aria-pressed`.
 - Placeholders state that the final asset is pending and must not be confused with finished material.
 - The hero remains a complete static reading at 320 CSS pixels and larger:

@@ -1,6 +1,6 @@
 ---
 name: build-landing-section
-description: Build, update, or explicitly audit one tesis-ro landing-page section selected by its manifest ID. Use for section-module work governed by content/landing-page.json; do not use to choose the editorial structure, invent factual copy, approve assets, or implement multiple release-plan sections at once.
+description: Build, update, or explicitly audit one tesis-ro landing-page section selected by its manifest ID while preserving a continuous, web-specific editorial narrative instead of repeating slide-like section templates. Use for section-module work governed by content/landing-page.json; do not use to choose the editorial structure, invent factual copy, approve assets, or implement multiple release-plan sections at once.
 ---
 
 # Build Landing Section
@@ -28,6 +28,8 @@ Read the nearest `AGENTS.md`, then:
 - `content/landing-page.json`, including the target entry, immediate neighbors,
   asset slots, visibility, navigation, and related unresolved decisions;
 - the target namespaces in `messages/es.json` and `messages/en.json`;
+- `docs/features/architecture-thesis-landing.md` for the continuous visual-
+  narrative contract;
 - `docs/features/landing-page-sections.md` when present;
 - `docs/design/ui.md`, `docs/design/components.md`, and `docs/design/ux.md`;
 - the target component or current inline section, relevant shared primitives,
@@ -63,6 +65,25 @@ enhancement. Build the smallest complete module using Server Components by
 default; isolate browser APIs, hooks, and interaction in the narrowest client
 boundary. Reuse established primitives before extracting a new abstraction.
 
+Before writing layout code, define a compact composition brief grounded in the
+target content and assets:
+
+- state the section's narrative job and primary visual evidence;
+- describe how the reader enters from the previous enabled section and how the
+  composition hands off to the next one;
+- choose one content-derived spatial gesture, hierarchy, or pacing decision that
+  distinguishes the section from its immediate neighbors; and
+- compare the proposal with neighboring modules and reject an interchangeable
+  heading-copy-media shell unless repetition has a documented narrative purpose.
+
+Preserve the visual system, shared tokens, and reusable behavior, but do not copy
+another section's layout as a default template. Reuse primitives, not complete
+compositions. Vary scale, density, alignment, media relationship, negative space,
+and transition rhythm when the content supports it. Do not introduce arbitrary
+novelty, reorder meaning, or depend on motion to compensate for a generic static
+composition. A section whose copy and assets could be swapped with a neighbor
+without substantial layout reconsideration requires another composition pass.
+
 Use Tailwind utilities as the default for module-local layout, spacing,
 typography, responsive behavior, focus states, and visual styling. Keep
 `globals.css` for design tokens, document-level defaults, shared motion or
@@ -96,8 +117,11 @@ Run focused tests plus type checking, then the checks required by the checklist
 for the module type. Run the complete repository ship-check suite when shared
 infrastructure has broad impact or the invocation completes a release batch.
 Static checks do not establish visual completion: distinguish reviewed viewport
-and interaction states from unreviewed ones.
+and interaction states from unreviewed ones. Review the target in context with
+its previous and next enabled sections; an isolated section screenshot cannot
+establish narrative continuity or rule out a disconnected-slide result.
 
 Finish with the repository's required close-message format and include the
 resolved ID, intent, changed files, decisions preserved, pending placeholders,
-mobile/desktop/reduced-motion review status, checks run, and remaining blockers.
+composition brief, neighbor-continuity review, mobile/desktop/reduced-motion
+review status, checks run, and remaining blockers.

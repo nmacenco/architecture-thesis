@@ -24,6 +24,15 @@ and touch alternatives for controls. Reduced motion removes smooth scrolling,
 pinning, scrub-only disclosure, and continuous transforms while keeping the final
 reading state.
 
+Every module created or meaningfully updated through the section workflow defines
+a content-derived composition brief: its narrative job, dominant visual evidence,
+entry from the previous enabled section, handoff to the next enabled section, and
+spatial distinction from both neighbors. Shared tokens and behavior provide
+coherence, but complete neighboring layouts are not default templates. Contextual
+mobile and desktop review applies an interchangeability check so the accumulated
+landing reads as a continuous web narrative rather than as disconnected slides.
+Previously extracted modules remain candidates for the cross-section flow audit.
+
 Pending and unavailable assets render identifiable placeholders and retain their
 manifest slot, translated alt-key behavior, credit state, and provisional ratio.
 Only approved project-relative paths render as final media. The shared baseline
