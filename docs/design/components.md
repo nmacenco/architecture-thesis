@@ -27,6 +27,11 @@
   Component for the precedent introduction and card list. Cards retain stable
   manifest asset identities, meaningful media states, optional reserved catalog
   content, and no link affordance until destinations are approved.
+- **Process section** (`src/components/landing/process-section.tsx`):
+  manifest-driven Server Component for the five design stages and the arc
+  principles. It associates each ordered stage with a stable required diagram
+  identity, preserves empty reserved locale collections, and presents every
+  pending diagram in a mobile-first editorial sequence.
 - **Landing media-state resolver**
   (`src/components/landing/media-state.ts`): shared pure guard used by extracted
   modules. Only approved project-relative sources are final media; candidate
@@ -34,8 +39,8 @@
   malformed approved records resolve to the unavailable state.
 - **Landing section registry** (`src/components/landing/section-registry.ts`):
   compile-time known-ID map. It currently exposes the implemented `hero`,
-  `concept`, `site`, and `references`; later modules are added explicitly and
-  JSON values never become import paths.
+  `concept`, `site`, `references`, and `process`; later modules are added
+  explicitly and JSON values never become import paths.
 - **Reference card**: non-interactive precedent article with meaningful media,
   place, title, and lesson. It deliberately exposes no link indicator or hover
   affordance while destinations and image rights remain unresolved.

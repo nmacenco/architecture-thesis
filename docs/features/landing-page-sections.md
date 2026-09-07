@@ -186,20 +186,44 @@ module adds focused tests in proportion to its data or interaction behavior.
 ### 5. `process`
 
 - **Purpose and position:** Explain design reasoning between `references` and
-  `programme`. Currently inline with `src/components/plan-reveal.tsx`; extraction
-  pending.
-- **Contract:** `landing.process`; all `textKeys`; five required diagrams; no
+  `programme`. Implemented in
+  `src/components/landing/process-section.tsx` and selected by the typed
+  registry.
+- **Contract:** Receives the resolved `process` manifest section and reads every
+  `landing.process` text key, the navigation-included `process` anchor, and the
+  five required diagrams. Stage labels are positionally associated with the
+  fixed manifest order while asset IDs provide stable identities. There is no
   section-specific unresolved decision.
-- **Media:** Timeline/diagnosis/value/intervention/arc diagrams use provisional
-  `4:3` mobile and `16:9` desktop frames with translated descriptions.
-- **Composition:** Mobile follows body, steps, principles, diagrams; larger
-  layouts may align steps horizontally only when labels remain readable.
-- **Behavior and semantics:** Ordered process and principle list; SVG paths may
-  draw on scroll. Keyboard access is not required for decorative drawing, and
-  reduced motion displays all meaningful paths immediately.
-- **States, dependencies, tests, status:** Enabled; assets pending. Uses PlanReveal
-  and scroll narrative. Planned migration; verify empty collections, SVG text
-  alternative, no mobile scrub dependency, and final reduced-motion state.
+- **Media:** The history, diagnosis, heritage-value, intervention, and arc
+  diagrams are meaningful. Each uses a provisional `4:3` mobile/tablet ratio
+  and `16:9` desktop ratio, its translated manifest alternative, and no loading
+  priority. Pending and candidate records remain placeholders; missing,
+  unavailable, and malformed approved records use unavailable placeholders;
+  only approved project-relative sources render through `next/image`. All five
+  sources and credits remain pending.
+- **Composition:** Semantic source order is heading, body, five ordered stages
+  with their diagrams, then the ordered arc-principle list. The 320-pixel/mobile
+  layout is one column. Tablet and desktop enhance the same stage order into a
+  staggered two-column sequence, while principles become three columns without
+  reordering content.
+- **Behavior and semantics:** Labelled section with an `h2`, an ordered process
+  list, meaningful figures, stage headings when localized labels exist, and an
+  ordered principle list. There are no controls, hover dependencies, or
+  module-local animation. Reduced motion leaves the complete reading unchanged,
+  and JavaScript is not required.
+- **States, dependencies, tests, status:** Enabled and navigation-included as
+  declared; all five assets remain pending. Empty or malformed stage collections
+  retain every required diagram without empty headings; empty or malformed
+  principles create no empty list. Missing required slots retain unavailable
+  placeholder space. Uses the typed manifest accessor, shared media-state
+  resolver and placeholder, plus stable process asset IDs. Implemented with
+  focused stage association, empty/malformed collection, manifest,
+  no-unresolved-decision, and shared media-state coverage. Static tests and type
+  checking pass; browser review at 320-pixel mobile and desktop widths remains
+  pending because this environment has no browser runner, as does independent
+  visual confirmation of the reduced-motion rendering. English copy, stages,
+  principles, diagram descriptions, sources, and credits remain reserved or
+  pending editorial completion.
 
 ### 6. `programme`
 

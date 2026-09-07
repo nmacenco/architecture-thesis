@@ -4,7 +4,6 @@ import { MediaPlaceholder } from "@/components/landing/media-placeholder";
 import { landingSectionRegistry } from "@/components/landing/section-registry";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ImageComparison } from "@/components/image-comparison";
-import { PlanReveal } from "@/components/plan-reveal";
 import { ScrollNarrative } from "@/components/scroll-narrative";
 import {
   getLandingSection,
@@ -24,7 +23,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
-  const processSteps = t.raw("process.steps") as string[];
   const programme = t.raw("program.items") as string[];
   const proposalImages = t.raw("proposal.imageLabels") as string[];
   const heroSection = getLandingSection("hero");
@@ -35,10 +33,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const siteDecisions = getUnresolvedDecisionsForSection("site");
   const referencesSection = getLandingSection("references");
   const referencesDecisions = getUnresolvedDecisionsForSection("references");
+  const processSection = getLandingSection("process");
   const HeroModule = landingSectionRegistry.hero;
   const ConceptModule = landingSectionRegistry.concept;
   const SiteModule = landingSectionRegistry.site;
   const ReferencesModule = landingSectionRegistry.references;
+  const ProcessModule = landingSectionRegistry.process;
 
   return (
     <ScrollNarrative>
@@ -70,11 +70,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         hasUnresolvedDecisions={referencesDecisions.length > 0}
       />
 
-      <section className="editorial-section process" data-scroll-scene id="process">
-        <p className="eyebrow">{t("process.label")}</p><h2>{t("process.title")}</h2>
-        <PlanReveal label={t("process.planLabel")} description={t("interactions.processPlanDescription")} />
-        <div className="process-line">{processSteps.map((step, index) => <div key={step}><span>0{index + 1}</span><i /><strong>{step}</strong></div>)}</div>
-      </section>
+      <ProcessModule section={processSection} />
 
       <section className="editorial-section programme" data-scroll-scene>
         <div><p className="eyebrow">{t("program.label")}</p><h2>{t("program.title")}</h2><p className="intro-copy">{t("program.body")}</p></div>

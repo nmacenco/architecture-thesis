@@ -78,6 +78,7 @@ describe("landing-page content manifest", () => {
     expect(getLandingSection("concept").translationKey).toBe("landing.concept");
     expect(getLandingSection("site").translationKey).toBe("landing.site");
     expect(getLandingSection("references").translationKey).toBe("landing.references");
+    expect(getLandingSection("process").translationKey).toBe("landing.process");
     expect(getNextEnabledSection("hero")?.id).toBe("concept");
     expect(getNextEnabledSection("concept")?.id).toBe("site");
     expect(getNextEnabledSection("site")?.id).toBe("references");
@@ -96,6 +97,7 @@ describe("landing-page content manifest", () => {
     expect(getUnresolvedDecisionsForSection("references").map(({ id }) => id)).toEqual([
       "reference-credits",
     ]);
+    expect(getUnresolvedDecisionsForSection("process")).toEqual([]);
   });
 
   it("keeps the approved section order and optional model state", () => {

@@ -25,6 +25,13 @@
   without reordering. Empty or malformed reserved catalog entries retain their
   required media identity, do not shift later precedents, and never expose a
   link affordance until a destination is approved.
+- The process section preserves heading, body, five ordered design stages, and
+  arc principles in source order. Its pending diagrams remain meaningful,
+  translated 4:3 frames on mobile and become 16:9 in a staggered two-column
+  desktop sequence. Empty or malformed reserved collections keep every required
+  diagram identity without creating empty text landmarks. The module has no
+  input or motion dependency, so the complete reading is unchanged with reduced
+  motion or without JavaScript.
 - Navigation, links, and controls must work with a keyboard and have translated accessible labels.
 - On small screens, the composition becomes a single column and primary navigation is hidden until a functional mobile menu exists.
 - Scroll scenes may reveal, draw, or persist an element only when that motion explains the thesis narrative. The proposal pin is desktop-only.
