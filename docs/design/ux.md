@@ -17,11 +17,14 @@
   cue follows the next enabled manifest section rather than a hardcoded target;
   its responsive and focus states are colocated as Tailwind utilities.
 - The concept section preserves heading, body, quote, keywords, and meaningful
-  media in that source order. It is a single column on mobile and becomes an
-  offset editorial grid at larger widths without reordering content. Empty
-  reserved English keywords do not create an empty landmark, missing required
-  media keeps stable unavailable space, and an absent optional photograph leaves
-  no layout gap.
+  media in that source order. Mobile text remains linear before a full-bleed
+  collage; supporting evidence steps inward and may overlap the collage edge
+  without hiding either media alternative or requiring interaction. Larger
+  widths expand the same palimpsest without reordering content. Empty reserved
+  English keywords do not create an empty landmark, missing required media keeps
+  stable unavailable space, and an absent optional photograph leaves no layout
+  gap. This hierarchy bridges the hero's immersive cover and the site's measured
+  grids rather than resetting into another autonomous panel.
 - The site section preserves narrative, conditions, context drawings, pending
   facts, and photographs in semantic source order. Mobile is linear; larger
   grids do not reorder content. Unverified dates, areas, and capacities carry an
