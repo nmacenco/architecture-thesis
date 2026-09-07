@@ -1,6 +1,6 @@
 # Feature: landing-page section modules
 
-> Status: Plan 2 in progress; `hero` extracted · Last updated: 2026-09-06
+> Status: Plan 2 in progress; first five modules extracted · Last updated: 2026-09-07
 
 ## Purpose and source of truth
 
@@ -23,6 +23,15 @@ space for media, preserve content without hover or animation, and expose keyboar
 and touch alternatives for controls. Reduced motion removes smooth scrolling,
 pinning, scrub-only disclosure, and continuous transforms while keeping the final
 reading state.
+
+Every module created or meaningfully updated through the section workflow defines
+a content-derived composition brief: its narrative job, dominant visual evidence,
+entry from the previous enabled section, handoff to the next enabled section, and
+spatial distinction from both neighbors. Shared tokens and behavior provide
+coherence, but complete neighboring layouts are not default templates. Contextual
+mobile and desktop review applies an interchangeability check so the accumulated
+landing reads as a continuous web narrative rather than as disconnected slides.
+Previously extracted modules remain candidates for the cross-section flow audit.
 
 Pending and unavailable assets render identifiable placeholders and retain their
 manifest slot, translated alt-key behavior, credit state, and provisional ratio.
@@ -73,69 +82,170 @@ module adds focused tests in proportion to its data or interaction behavior.
 ### 2. `concept`
 
 - **Purpose and position:** Establish the thesis idea between `hero` and `site`.
-  Currently inline in `src/app/[locale]/page.tsx`; extraction pending.
-- **Contract:** `landing.concept`; all `textKeys`; required `concept-collage` and
-  `concept-diagram`, optional `concept-existing`; no unresolved decision.
-- **Media:** Provisional ratios: collage `4:5`, diagram `4:3`, existing photo
-  `3:2`; translated alternatives and pending credits.
-- **Composition:** Semantic order is heading, body, quote, keywords, media.
-  Mobile is one column; tablet/desktop may offset collage and diagram.
-- **Behavior and semantics:** Static editorial content with a blockquote and
-  semantic keyword list; reveal motion is optional and reduced motion is static.
-- **States, dependencies, tests, status:** Enabled; all assets pending. Uses
-  editorial and media primitives. Planned migration; verify optional-photo absence,
-  catalog collections, 320-pixel wrapping, and desktop composition.
+  Implemented in `src/components/landing/concept-section.tsx` and selected by
+  the typed registry in `src/components/landing/section-registry.ts`.
+- **Contract:** Receives the resolved `concept` manifest section and reads
+  `landing.concept` through every manifest `textKeys` reference. It preserves
+  the navigation-included `concept` anchor, required `concept-collage` and
+  `concept-diagram`, optional `concept-existing`, and the absence of a
+  section-specific unresolved decision.
+- **Media:** All three slots are meaningful. Provisional ratios are collage
+  `4:5`, diagram `4:3`, and existing photo `3:2` at all sizes; none receives
+  loading priority. Pending slots render the shared
+  placeholder with their translated alternatives and stable space. Approved
+  project-relative sources render through `next/image`; unavailable, missing
+  required, and malformed approved sources use the unavailable state. Credits
+  remain pending. An absent optional existing photograph contributes no gap.
+- **Composition:** The module turns the hero's project declaration into the
+  thesis operation: existing fabric and contemporary intervention coexist. Its
+  primary evidence is the portrait collage, with the relationship diagram as an
+  analytical trace and the optional existing photograph as a memory fragment.
+  Semantic source order remains heading, body, quote, keywords, then
+  manifest-ordered media. At 320 pixels the text unfolds in that order before a
+  full-bleed collage; the diagram overlaps the collage edge and the optional
+  photograph steps inward at a smaller scale. Tablet and desktop preserve that
+  order while expanding the title, anchoring the collage to the left, crossing
+  its edge with the diagram, and isolating the existing photograph to the right.
+  This palimpsest carries the hero's visual energy into a slower interpretive
+  field, then narrows toward the site's maps and facts. Hero's single cover image
+  and site's measured map/plan/fact set cannot replace these three evidence roles
+  without rebuilding the composition, so the module is not an interchangeable
+  heading-copy-media shell.
+- **Behavior and semantics:** Labelled section with an `h2`, blockquote,
+  semantic keyword list, and figures for meaningful media. There are no module
+  controls or pointer-only behavior. Reduced motion does not remove content,
+  and the complete source-order reading works without JavaScript; the existing
+  shared scroll reveal may enhance entry only.
+- **States, dependencies, tests, status:** Enabled and navigation-included as
+  declared; all current asset records remain pending. Empty or malformed
+  keyword collections render no empty list; missing required slots retain an
+  unavailable placeholder; an absent optional photograph is omitted. Uses the
+  typed manifest accessor, shared media placeholder, shared media-state
+  resolver, and stable asset IDs. Implemented with focused data, asset-state,
+  manifest, and catalog-parity tests. English copy and keywords remain reserved
+  pending editorial translation. Server-rendered `hero → concept → site` order
+  and content availability have been verified in both locales. Continuous-scroll
+  browser review at 320 CSS pixels and a representative desktop width, plus
+  browser-emulated reduced motion, remain pending because no browser runner or
+  Chromium binary is available in the current environment.
 
 ### 3. `site`
 
 - **Purpose and position:** Explain urban and heritage context between `concept`
-  and `references`. Currently inline in `src/app/[locale]/page.tsx` with
-  `src/components/site-map.tsx`; extraction pending.
-- **Contract:** `landing.site`; all `textKeys`; five manifest asset slots.
-  `historical-and-area-claims` remains unresolved.
-- **Media:** Map/location plan provisional `4:3`; aerial/historical/current
-  images `3:2`. A local accessible SVG may stand in for the map; credits pending.
-- **Composition:** Mobile orders narrative, conditions, map/plan, facts, and
-  photographs; tablet/desktop may pair text, map, and facts in a grid.
-- **Behavior and semantics:** Static figure with translated description,
-  semantic lists and `dl` facts. Reduced motion shows the complete map.
-- **States, dependencies, tests, status:** Enabled; required and optional assets
-  pending. Uses SiteMap/media/fact primitives. Planned migration; test empty facts,
-  stable keys, pending claims, missing images, and long translated values.
+  and `references`. Implemented in `src/components/landing/site-section.tsx`,
+  selected by the typed registry, and composed with the localized abstract
+  `src/components/site-map.tsx` placeholder.
+- **Contract:** Receives the resolved `site` manifest section and reads all
+  `landing.site` text keys, its navigation-included `site` anchor, the five
+  declared asset slots, and the section's unresolved-decision state.
+  `historical-and-area-claims` remains unresolved, and the facts are explicitly
+  labelled as awaiting editorial confirmation rather than verified.
+- **Media:** Regional map and location plan use provisional `4:3` ratios;
+  aerial, historical, and current views use `3:2`, at all sizes. All are
+  meaningful and none receives loading priority. The pending regional map uses
+  a visibly pending local SVG abstraction with its manifest alternative; other
+  pending assets use the shared placeholder. Approved project-relative sources
+  render through `next/image`. Credits remain pending.
+- **Composition:** Semantic source order is heading, body, conditions, regional
+  map, location plan, facts, and photographs. The 320-pixel/mobile layout is a
+  single column. Tablet and desktop enhance the same order with twelve-column
+  text, context-media, fact, and photography grids.
+- **Behavior and semantics:** Labelled section with an `h2`, semantic condition
+  list, figures, and `dl` facts whose `dt` precedes `dd` in source order. There
+  are no controls or pointer-only behavior. The SVG lines may use the existing
+  scroll reveal, remain fully drawn without JavaScript, and remain static when
+  reduced motion bypasses the shared scroll runtime.
+- **States, dependencies, tests, status:** Enabled and navigation-included as
+  declared; all five current asset records remain pending. Missing required
+  slots retain unavailable placeholder space, while an absent optional aerial
+  is omitted without a gap. Empty or malformed condition/fact collections
+  create no empty list or definition-list landmarks. Uses the typed manifest
+  accessor, media-state resolver, media placeholder, SiteMap, and stable asset
+  IDs. Implemented with focused collection, optional/required-media, manifest,
+  unresolved-decision, and catalog-parity tests. Browser review at 320-pixel
+  mobile and desktop widths remains pending because this environment has no
+  browser runner; English content collections remain reserved pending editorial
+  translation.
 
 ### 4. `references`
 
 - **Purpose and position:** Present precedents between `site` and `process`.
-  Currently inline in `src/app/[locale]/page.tsx`; extraction pending.
-- **Contract:** `landing.references`; all `textKeys`; three required reference
-  photographs. `reference-credits` remains unresolved.
-- **Media:** Each card uses a provisional `4:3` image ratio with translated alt
-  text; sources, rights, links, and credits remain pending.
-- **Composition:** Mobile keeps introduction then a one-column card list;
-  tablet/desktop may use two/three columns without reordering the precedents.
-- **Behavior and semantics:** Articles in a semantic list. Do not imply a link
-  until a destination is approved; hover cannot be the only affordance.
-- **States, dependencies, tests, status:** Enabled but excluded from navigation;
-  assets pending. Uses reference-card/media primitives. Planned migration; test
-  empty items, stable keys, absent destinations, and card wrapping.
+  Implemented in `src/components/landing/references-section.tsx` and selected by
+  the typed registry.
+- **Contract:** Receives the resolved `references` manifest section and reads
+  every `landing.references` text key, the navigation-excluded `references`
+  anchor, three required reference photographs, and the section's unresolved
+  decision state. Catalog items are positionally associated with the fixed
+  manifest order, while the manifest asset IDs provide stable card identities.
+  `reference-credits` remains unresolved.
+- **Media:** Each required photograph uses a provisional `4:3` ratio at all
+  widths, a translated manifest alternative, and no loading priority. Pending
+  and candidate assets remain placeholders; missing, unavailable, and malformed
+  approved sources use unavailable placeholders; only approved project-relative
+  sources render through `next/image`. Sources, rights, and credits remain
+  pending and visibly carry the shared editorial-review state.
+- **Composition:** Semantic source order is heading, body, pending-review status,
+  then the precedent list. Each item orders image, place, name, and lesson.
+  Mobile uses one column, tablet two, and desktop three without changing DOM or
+  editorial order. All long localized values use resilient wrapping.
+- **Behavior and semantics:** Labelled section with an `h2`, a semantic list,
+  and one labelled article per manifest asset identity. Cards with approved
+  catalog content use their `h3` as the accessible name; reserved empty entries
+  fall back to the translated media description. There are no controls, hover
+  dependencies, or links because no destinations are approved. Reduced motion
+  leaves all content available, and JavaScript is not required.
+- **States, dependencies, tests, status:** Enabled but excluded from navigation,
+  as declared; all three assets remain pending. Empty or malformed catalog items
+  do not shift later item-to-asset associations, and required media slots remain
+  visible even when English editorial items are empty. Uses the typed manifest
+  accessor, shared media state and placeholder, and fixed asset IDs. Implemented
+  with focused association, empty/malformed-data, media-state, manifest,
+  unresolved-decision, and catalog-parity tests. Browser review at 320-pixel
+  mobile and desktop widths remains pending because this environment has no
+  browser runner; English copy, precedent metadata, destinations, sources,
+  rights, and credits remain pending editorial approval.
 
 ### 5. `process`
 
 - **Purpose and position:** Explain design reasoning between `references` and
-  `programme`. Currently inline with `src/components/plan-reveal.tsx`; extraction
-  pending.
-- **Contract:** `landing.process`; all `textKeys`; five required diagrams; no
+  `programme`. Implemented in
+  `src/components/landing/process-section.tsx` and selected by the typed
+  registry.
+- **Contract:** Receives the resolved `process` manifest section and reads every
+  `landing.process` text key, the navigation-included `process` anchor, and the
+  five required diagrams. Stage labels are positionally associated with the
+  fixed manifest order while asset IDs provide stable identities. There is no
   section-specific unresolved decision.
-- **Media:** Timeline/diagnosis/value/intervention/arc diagrams use provisional
-  `4:3` mobile and `16:9` desktop frames with translated descriptions.
-- **Composition:** Mobile follows body, steps, principles, diagrams; larger
-  layouts may align steps horizontally only when labels remain readable.
-- **Behavior and semantics:** Ordered process and principle list; SVG paths may
-  draw on scroll. Keyboard access is not required for decorative drawing, and
-  reduced motion displays all meaningful paths immediately.
-- **States, dependencies, tests, status:** Enabled; assets pending. Uses PlanReveal
-  and scroll narrative. Planned migration; verify empty collections, SVG text
-  alternative, no mobile scrub dependency, and final reduced-motion state.
+- **Media:** The history, diagnosis, heritage-value, intervention, and arc
+  diagrams are meaningful. Each uses a provisional `4:3` mobile/tablet ratio
+  and `16:9` desktop ratio, its translated manifest alternative, and no loading
+  priority. Pending and candidate records remain placeholders; missing,
+  unavailable, and malformed approved records use unavailable placeholders;
+  only approved project-relative sources render through `next/image`. All five
+  sources and credits remain pending.
+- **Composition:** Semantic source order is heading, body, five ordered stages
+  with their diagrams, then the ordered arc-principle list. The 320-pixel/mobile
+  layout is one column. Tablet and desktop enhance the same stage order into a
+  staggered two-column sequence, while principles become three columns without
+  reordering content.
+- **Behavior and semantics:** Labelled section with an `h2`, an ordered process
+  list, meaningful figures, stage headings when localized labels exist, and an
+  ordered principle list. There are no controls, hover dependencies, or
+  module-local animation. Reduced motion leaves the complete reading unchanged,
+  and JavaScript is not required.
+- **States, dependencies, tests, status:** Enabled and navigation-included as
+  declared; all five assets remain pending. Empty or malformed stage collections
+  retain every required diagram without empty headings; empty or malformed
+  principles create no empty list. Missing required slots retain unavailable
+  placeholder space. Uses the typed manifest accessor, shared media-state
+  resolver and placeholder, plus stable process asset IDs. Implemented with
+  focused stage association, empty/malformed collection, manifest,
+  no-unresolved-decision, and shared media-state coverage. Static tests and type
+  checking pass; browser review at 320-pixel mobile and desktop widths remains
+  pending because this environment has no browser runner, as does independent
+  visual confirmation of the reduced-motion rendering. English copy, stages,
+  principles, diagram descriptions, sources, and credits remain reserved or
+  pending editorial completion.
 
 ### 6. `programme`
 

@@ -41,6 +41,7 @@ Canonical source for the site's architecture, decisions, and visual system.
 - [Landing page Plan 5 — English editorial localization](plans/landing-page-plan-5-english-localization.md)
 - [Landing page Plan 6 — Final assets and publication readiness](plans/landing-page-plan-6-publication.md)
 - [Project skill plan — Build landing section](plans/landing-page-skill-build-section.md)
+- [Project skill plan — Audit landing flow](plans/landing-page-skill-audit-flow.md)
 
 ## Changelog
 
@@ -48,3 +49,4 @@ Canonical source for the site's architecture, decisions, and visual system.
 - [2026-08-05](changelog/2026/2026-08-05.md)
 - [2026-08-06](changelog/2026/2026-08-06.md)
 - [2026-09-06](changelog/2026/2026-09-06.md)
+- [2026-09-07](changelog/2026/2026-09-07.md)

@@ -25,6 +25,17 @@ is pending and a placeholder can preserve its role.
 
 ## 2. Composition before code
 
+- [ ] State the section's narrative job and identify the primary visual evidence
+  that should organize its composition.
+- [ ] Describe the entry from the previous enabled section and the handoff to the
+  next enabled section. Avoid an unexplained visual reset at either boundary.
+- [ ] Define one content-derived spatial gesture, hierarchy, or pacing decision
+  that distinguishes the section from both immediate neighbors.
+- [ ] Compare heading placement, content width, media geometry, density, negative
+  space, background treatment, and vertical rhythm with neighboring modules.
+- [ ] Apply the interchangeability check: if a neighbor's copy and assets could
+  replace the target's without substantial layout reconsideration, revise the
+  composition or document why repetition serves the narrative.
 - [ ] Define a semantic single-column source order that works without CSS
   enhancement.
 - [ ] Define mobile, tablet, and desktop arrangements without changing content
@@ -47,7 +58,9 @@ is pending and a placeholder can preserve its role.
 - [ ] Use a typed, known-ID registry; never resolve arbitrary code paths from
   manifest strings.
 - [ ] Reuse current section/media/interaction primitives before creating a new
-  shared abstraction.
+  shared abstraction, but do not reuse a complete neighboring layout as a
+  default template. Reuse behavior and visual-system rules, not interchangeable
+  compositions.
 - [ ] Keep code identifiers and translation keys in English and visible copy or
   accessible labels in both catalogs.
 - [ ] Preserve disabled state, optional assets, navigation behavior, and pending
@@ -63,6 +76,13 @@ is pending and a placeholder can preserve its role.
 - [ ] At narrow and standard mobile widths, headings, facts, captions, credits,
   and translated labels wrap without clipping or overlap.
 - [ ] At tablet and desktop widths, layout enhancement preserves semantic order.
+- [ ] At mobile and desktop widths, review the target together with its previous
+  and next enabled sections; an isolated viewport is insufficient.
+- [ ] Section boundaries avoid unexplained slide-like resets such as repeated
+  full-viewport panels, identical heading-copy-media shells, uniform cards or
+  grids, hard background cuts, and mechanically alternating layouts.
+- [ ] Any deliberate repetition has a content or narrative rationale; visual
+  difference is not arbitrary and does not weaken comprehension or accessibility.
 - [ ] Touch targets and spacing are usable without pointer precision.
 - [ ] All controls have translated names, visible focus, keyboard operation, and
   an equivalent touch path; hover is never the sole disclosure mechanism.
@@ -109,8 +129,9 @@ is pending and a placeholder can preserve its role.
 
 - [ ] Update the target entry in `docs/features/landing-page-sections.md` with
   purpose, position, component path, namespace, manifest fields, assets/ratios,
-  responsive composition, interactions, input modes, reduced motion, semantics,
-  states, dependencies, tests, status, and unresolved decisions.
+  responsive composition, composition brief, neighbor transitions, interactions,
+  input modes, reduced motion, semantics, states, dependencies, tests, status,
+  and unresolved decisions.
 - [ ] Update the reusable component inventory or UX rules when those contracts
   changed.
 - [ ] Add the dated changelog entry; link any new feature document.
@@ -118,4 +139,4 @@ is pending and a placeholder can preserve its role.
   `pnpm test:coverage`, and `pnpm build` when shared infrastructure has broad
   impact or this completes a release batch.
 - [ ] Report visual/interaction checks precisely. Do not call the module visually
-  complete based only on static validation.
+  complete based only on static validation or isolated-section review.

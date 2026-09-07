@@ -5,8 +5,6 @@ export const mediaPlaceholderVariantClasses = {
   default:
     "relative min-h-60 bg-[linear-gradient(135deg,var(--color-terracotta-dark),var(--color-primary-base)_38%,var(--text-secondary))]",
   hero: "absolute inset-0 m-0 min-h-full bg-[linear-gradient(120deg,var(--color-terracotta-dark),var(--color-primary-base)_35%,var(--color-secondary-base)_72%,var(--text-primary))]",
-  reference:
-    "relative -mx-5 mb-4 min-h-76 bg-[linear-gradient(145deg,var(--color-primary-base),var(--color-terracotta-dark))]",
   material:
     "relative min-h-128 bg-[linear-gradient(145deg,var(--color-primary-base),var(--color-terracotta-dark))]",
   model:
