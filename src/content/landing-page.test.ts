@@ -1,3 +1,6 @@
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
+
 import { describe, expect, it } from "vitest";
 import manifest from "../../content/landing-page.json";
 import english from "../../messages/en.json";
@@ -132,6 +135,15 @@ describe("landing-page content manifest", () => {
           expect(asset.src).toBeNull();
         } else {
           expect(typeof asset.src).toBe("string");
+
+          if (typeof asset.src === "string") {
+            expect(asset.src.startsWith("/")).toBe(true);
+            expect(asset.src.startsWith("//")).toBe(false);
+            expect(
+              existsSync(resolve(process.cwd(), "public", asset.src.slice(1))),
+              `Missing public asset: ${asset.src}`,
+            ).toBe(true);
+          }
         }
       }
     }

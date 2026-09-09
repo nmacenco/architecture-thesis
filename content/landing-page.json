@@ -24,7 +24,7 @@
         "scrollLabel": "landing.hero.scrollLabel"
       },
       "assets": [
-        { "id": "hero-primary", "src": null, "type": "render", "altKey": "landing.hero.assets.primary.alt", "credit": null, "status": "pending", "required": true }
+        { "id": "hero-primary", "src": "/images/hero/RENDER GENERAL EXTERIOR.svg", "type": "render", "altKey": "landing.hero.assets.primary.alt", "credit": null, "status": "candidate", "required": true }
       ]
     },
     {
@@ -41,9 +41,9 @@
         "keywords": "landing.concept.keywords"
       },
       "assets": [
-        { "id": "concept-collage", "src": null, "type": "collage", "altKey": "landing.concept.assets.collage.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "concept-diagram", "src": null, "type": "diagram", "altKey": "landing.concept.assets.diagram.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "concept-existing", "src": null, "type": "photograph", "altKey": "landing.concept.assets.existing.alt", "credit": null, "status": "pending", "required": false }
+        { "id": "concept-collage", "src": "/images/concept/COLLAGE CONCEP.svg", "type": "collage", "altKey": "landing.concept.assets.collage.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "concept-diagram", "src": "/images/concept/DIAGRAMA DE USO TESIS.svg", "type": "diagram", "altKey": "landing.concept.assets.diagram.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "concept-existing", "src": "/images/concept/FOTOGRAFIA BODEGA EXISTENTE.svg", "type": "photograph", "altKey": "landing.concept.assets.existing.alt", "credit": null, "status": "candidate", "required": false }
       ]
     },
     {
@@ -60,11 +60,11 @@
         "facts": "landing.site.facts"
       },
       "assets": [
-        { "id": "site-regional-map", "src": null, "type": "map", "altKey": "landing.site.assets.regionalMap.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "site-location-plan", "src": null, "type": "plan", "altKey": "landing.site.assets.locationPlan.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "site-aerial", "src": null, "type": "render", "altKey": "landing.site.assets.aerial.alt", "credit": null, "status": "pending", "required": false },
-        { "id": "site-historical", "src": null, "type": "photograph", "altKey": "landing.site.assets.historical.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "site-current", "src": null, "type": "photograph", "altKey": "landing.site.assets.current.alt", "credit": null, "status": "pending", "required": true }
+        { "id": "site-regional-map", "src": "/images/site/MAPA REG MENDOZA GC.svg", "type": "map", "altKey": "landing.site.assets.regionalMap.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "site-location-plan", "src": "/images/site/PLANO DETALLADO UBICACION.svg", "type": "plan", "altKey": "landing.site.assets.locationPlan.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "site-aerial", "src": "/images/site/AXONOMETRIA- FOTOGRAFIA AEREA DEL ESTADO ACTUAL DE LA BODEGA.svg", "type": "render", "altKey": "landing.site.assets.aerial.alt", "credit": null, "status": "candidate", "required": false },
+        { "id": "site-historical", "src": "/images/site/FOTO ANTIGUA 1Vista fachada de esquina Rivadavia y San Martín.svg", "type": "photograph", "altKey": "landing.site.assets.historical.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "site-current", "src": "/images/site/VISTA ACTUAL 1.svg", "type": "photograph", "altKey": "landing.site.assets.current.alt", "credit": null, "status": "candidate", "required": true }
       ]
     },
     {
@@ -80,9 +80,9 @@
         "items": "landing.references.items"
       },
       "assets": [
-        { "id": "reference-marconetti", "src": null, "type": "photograph", "altKey": "landing.references.assets.marconetti.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "reference-agueda", "src": null, "type": "photograph", "altKey": "landing.references.assets.agueda.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "reference-san-martin", "src": null, "type": "photograph", "altKey": "landing.references.assets.sanMartin.alt", "credit": null, "status": "pending", "required": true }
+        { "id": "reference-marconetti", "src": "/images/references/Molino Marconetti.jpg", "type": "photograph", "altKey": "landing.references.assets.marconetti.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "reference-agueda", "src": "/images/references/CENTRO DE ARTES AGUEDA.jpg", "type": "photograph", "altKey": "landing.references.assets.agueda.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "reference-san-martin", "src": "/images/references/TEATRO SAN MARTIN_.jpg", "type": "photograph", "altKey": "landing.references.assets.sanMartin.alt", "credit": null, "status": "candidate", "required": true }
       ]
     },
     {
@@ -99,11 +99,11 @@
         "arcPrinciples": "landing.process.arcPrinciples"
       },
       "assets": [
-        { "id": "process-history", "src": null, "type": "diagram", "altKey": "landing.process.assets.history.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "process-diagnosis", "src": null, "type": "diagram", "altKey": "landing.process.assets.diagnosis.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "process-heritage-value", "src": null, "type": "diagram", "altKey": "landing.process.assets.heritageValue.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "process-intervention", "src": null, "type": "diagram", "altKey": "landing.process.assets.intervention.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "process-arc", "src": null, "type": "diagram", "altKey": "landing.process.assets.arc.alt", "credit": null, "status": "pending", "required": true }
+        { "id": "process-history", "src": "/images/process/HISTORIA 7.svg", "type": "diagram", "altKey": "landing.process.assets.history.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "process-diagnosis", "src": "/images/process/COCLUSION PATOLOGIAS GENERALES DEBIDO AL RELEVAMIENTO DEL ESTADO ACTUAL DEL EDIFICIO.svg", "type": "diagram", "altKey": "landing.process.assets.diagnosis.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "process-heritage-value", "src": "/images/process/DIAGRAMA VALORACION.svg", "type": "diagram", "altKey": "landing.process.assets.heritageValue.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "process-intervention", "src": "/images/process/DIAGRAMA CONSERVACION.svg", "type": "diagram", "altKey": "landing.process.assets.intervention.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "process-arc", "src": "/images/proposal/arc-reinterpretation/GRAFICO REINT ARCO COMO ESTRUCTURA.svg", "type": "diagram", "altKey": "landing.process.assets.arc.alt", "credit": null, "status": "candidate", "required": true }
       ]
     },
     {
@@ -121,8 +121,8 @@
         "facts": "landing.programme.facts"
       },
       "assets": [
-        { "id": "programme-masterplan", "src": null, "type": "plan", "altKey": "landing.programme.assets.masterplan.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "programme-axonometry", "src": null, "type": "diagram", "altKey": "landing.programme.assets.axonometry.alt", "credit": null, "status": "pending", "required": true }
+        { "id": "programme-masterplan", "src": "/images/programme/MASTER PLAN - PLANIMETRIA GENERAL.svg", "type": "plan", "altKey": "landing.programme.assets.masterplan.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "programme-axonometry", "src": "/images/programme/AXONOMETRIA PROGRAMICA.svg", "type": "diagram", "altKey": "landing.programme.assets.axonometry.alt", "credit": null, "status": "candidate", "required": true }
       ]
     },
     {
@@ -156,13 +156,13 @@
         "spaces": "landing.proposal.spaces"
       },
       "assets": [
-        { "id": "proposal-public-space", "src": null, "type": "render", "altKey": "landing.proposal.assets.publicSpace.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "proposal-silos", "src": null, "type": "render", "altKey": "landing.proposal.assets.silos.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "proposal-theatre-exterior", "src": null, "type": "render", "altKey": "landing.proposal.assets.theatreExterior.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "proposal-hall", "src": null, "type": "render", "altKey": "landing.proposal.assets.hall.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "proposal-italian-hall", "src": null, "type": "render", "altKey": "landing.proposal.assets.italianHall.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "proposal-circular-hall", "src": null, "type": "render", "altKey": "landing.proposal.assets.circularHall.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "proposal-experimental-hall", "src": null, "type": "render", "altKey": "landing.proposal.assets.experimentalHall.alt", "credit": null, "status": "pending", "required": true },
+        { "id": "proposal-public-space", "src": "/images/proposal/render estacion patrimonial.svg", "type": "render", "altKey": "landing.proposal.assets.publicSpace.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "proposal-silos", "src": "/images/proposal/DIAGRAMA PLANTA SILOS DETALLRE.svg", "type": "diagram", "altKey": "landing.proposal.assets.silos.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "proposal-theatre-exterior", "src": "/images/proposal/RENDER ENTRADA NAVE TEATRO.svg", "type": "render", "altKey": "landing.proposal.assets.theatreExterior.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "proposal-hall", "src": "/images/proposal/RENDER HALL PRINCIPAL PLANTA BAJA.svg", "type": "render", "altKey": "landing.proposal.assets.hall.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "proposal-italian-hall", "src": "/images/proposal/halls/italian-hall/RENDER SALA IT INT.svg", "type": "render", "altKey": "landing.proposal.assets.italianHall.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "proposal-circular-hall", "src": "/images/proposal/halls/circular-hall/RENDER SALA CIRC.svg", "type": "render", "altKey": "landing.proposal.assets.circularHall.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "proposal-experimental-hall", "src": "/images/proposal/halls/experimental-hall/RENDER INT SALA EXP.svg", "type": "render", "altKey": "landing.proposal.assets.experimentalHall.alt", "credit": null, "status": "candidate", "required": true },
         { "id": "proposal-plans", "src": null, "type": "plan", "altKey": "landing.proposal.assets.plans.alt", "credit": null, "status": "pending", "required": true },
         { "id": "proposal-sections", "src": null, "type": "section", "altKey": "landing.proposal.assets.sections.alt", "credit": null, "status": "pending", "required": true },
         { "id": "proposal-elevations", "src": null, "type": "elevation", "altKey": "landing.proposal.assets.elevations.alt", "credit": null, "status": "pending", "required": false }
@@ -182,8 +182,8 @@
         "acoustics": "landing.materiality.acoustics"
       },
       "assets": [
-        { "id": "material-structure", "src": null, "type": "diagram", "altKey": "landing.materiality.assets.structure.alt", "credit": null, "status": "pending", "required": true },
-        { "id": "material-envelope", "src": null, "type": "diagram", "altKey": "landing.materiality.assets.envelope.alt", "credit": null, "status": "pending", "required": true },
+        { "id": "material-structure", "src": "/images/materiality/AXONOMETRIA ESTRUCTURAL.svg", "type": "diagram", "altKey": "landing.materiality.assets.structure.alt", "credit": null, "status": "candidate", "required": true },
+        { "id": "material-envelope", "src": "/images/materiality/DETALLE ESCANTILLON.svg", "type": "diagram", "altKey": "landing.materiality.assets.envelope.alt", "credit": null, "status": "candidate", "required": true },
         { "id": "material-sustainability", "src": null, "type": "diagram", "altKey": "landing.materiality.assets.sustainability.alt", "credit": null, "status": "pending", "required": true },
         { "id": "material-acoustics", "src": null, "type": "diagram", "altKey": "landing.materiality.assets.acoustics.alt", "credit": null, "status": "pending", "required": false }
       ]
@@ -217,7 +217,7 @@
         "quote": "landing.reflection.quote"
       },
       "assets": [
-        { "id": "reflection-final", "src": null, "type": "render", "altKey": "landing.reflection.assets.final.alt", "credit": null, "status": "pending", "required": true }
+        { "id": "reflection-final", "src": "/images/proposal/RENDER ENTRADA NAVE TEATRO NOCHE.svg", "type": "render", "altKey": "landing.reflection.assets.final.alt", "credit": null, "status": "candidate", "required": true }
       ]
     },
     {

@@ -1,6 +1,6 @@
 # Feature: architecture thesis editorial landing page
 
-> Status: shipped foundation; Tomba content in editorial review · Last updated: 2026-09-07
+> Status: shipped foundation; Tomba content and assets in editorial review · Last updated: 2026-09-08
 
 ## Purpose
 
@@ -11,6 +11,11 @@ Present an architecture thesis as a bilingual visual narrative. The scroll is th
 `/` redirects to the default locale. `src/app/[locale]/page.tsx` renders the landing page; `next-intl` loads `messages/es.json` or `messages/en.json`. The selector preserves the route when changing locale. Client-only scene components use GSAP and Lenis for scroll motion, SVG paths for plan drawing, and Framer Motion for isolated micro-interactions. Final renders and plans replace the local visual stand-ins from `public/`.
 
 `content/landing-page.json` defines the Tomba composition's ordered section IDs, visibility, navigation metadata, translation references, asset slots, localization status, and unresolved decisions. Plan 2 integration is in progress: the extracted `hero`, `concept`, `site`, `references`, and `process` modules consume their manifest contracts and `landing.*` catalog namespaces through a typed accessor and known-ID registry. Remaining sections stay inline until their bounded module migrations. The implemented sequence uses content-derived transitions rather than treating each module as a replaceable presentation slide; in particular, `concept` layers its collage, relational diagram, and optional existing-fabric photograph as a palimpsest between the hero image and the site's measured evidence.
+
+The first media handoff records 29 project-relative candidate sources and leaves
+eight unresolved slots pending. Candidates are inventory evidence only: they
+continue to render as placeholders until each section confirms composition,
+legibility, optimization, rights, alt text, and credit. No asset is approved.
 
 The context scene uses a local SVG map. The process scene reveals a plan as the reader scrolls. The proposal remains visible on desktop while its plan/render comparator can be controlled with pointer or keyboard input. All scenes retain a readable static state when reduced motion is requested.
 
