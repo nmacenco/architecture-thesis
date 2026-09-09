@@ -34,7 +34,7 @@
       "institution": "Facultad de Arquitectura, Universidad Nacional de Cuyo",
       "year": "2026",
       "scrollLabel": "Pending English translation",
-      "assets": { "primary": { "alt": "Pending English image description" } }
+      "assets": { "primary": { "alt": "General view of the Tomba Performing Arts Center and its relationship to the former winery." } }
     },
     "concept": {
       "navLabel": "Concept",
@@ -174,6 +174,8 @@
       "degree": "Pending English translation",
       "year": "2026",
       "tutor": "Tutor pending confirmation",
+      "copyrightNotice": "© {year}. Rights holders: {authors}; {institution}. All rights reserved.",
+      "rightsNotice": "The texts, drawings, diagrams and renders published on this website are protected by copyright. Their reproduction, distribution, modification or commercial use is not authorized without prior written permission from the rights holders, except as permitted by law.",
       "downloadLabel": "Thesis PDF pending",
       "contactLabel": "Contact pending confirmation"
     }

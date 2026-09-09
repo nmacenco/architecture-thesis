@@ -1,12 +1,17 @@
 # Landing Page Content Matrix — Centro de Artes Escenicas Tomba
 
-> Status: master inventory · Last updated: 2026-09-06
+> Status: master inventory · Last updated: 2026-09-08
 
 ## Purpose and workflow
 
 This is the editorial working matrix for the landing page. It consolidates the Spanish source copy supplied by the architecture team and identifies every visual required for the final experience. It is not a runtime content source: approved visible copy must be translated and moved into `messages/es.json` and `messages/en.json` before publication.
 
-All asset URLs are intentionally `Pending`. When an asset is approved, replace that value with its project-relative URL (for example, `/images/proposal/theatre-exterior.webp`), add an accurate alt text, and retain the asset credit where applicable.
+The first architecture-team delivery is inventoried under `public/images/` and
+`public/videos/`. Strong filename and visual matches are recorded as
+`Candidate`; they continue to render as placeholders. `Approved` remains
+reserved for section-level review of composition, legibility, optimization,
+rights, alt text, and credit. The candidate pool is not the final publication
+baseline and must be narrowed before release.
 
 Plan 1 has materialized this structure in `content/landing-page.json` and placed the Spanish editorial working copy under the `landing` namespace in `messages/es.json`. The manifest remains in `editorial-review` until the open decisions below are confirmed or explicitly deferred. Matching English keys are reserved but are not approved translations.
 
@@ -46,43 +51,47 @@ Each plan must satisfy its exit criteria before the next one starts. Decisions a
 
 | Asset ID | Section | Required asset | Project URL | Status | Alt text / credit |
 | --- | --- | --- | --- | --- | --- |
-| hero-primary | Hero | Exterior Nave Teatro from Rivadavia or general axonometry | Pending | Pending | Pending |
-| concept-collage | Concept | Conceptual collage | Pending | Pending | Pending |
-| concept-diagram | Concept | Heritage plus contemporary architecture diagram | Pending | Pending | Pending |
-| concept-existing | Concept | Existing winery photograph | Pending | Pending | Pending |
-| site-regional-map | Context and site | Mendoza and Camino del Vino map | Pending | Pending | Pending |
-| site-location-plan | Context and site | Detailed location/site plan | Pending | Pending | Pending |
-| site-aerial | Context and site | Aerial view or context volumetry | Pending | Pending | Pending |
-| site-historical | Context and site | Historical winery photographs | Pending | Pending | Pending |
-| site-current | Context and site | Current-condition photographs | Pending | Pending | Pending |
-| reference-marconetti | References | Ex-Molino Marconetti image and credit | Pending | Pending | Pending |
-| reference-agueda | References | Centro de Artes Agueda image and credit | Pending | Pending | Pending |
-| reference-san-martin | References | Teatro Municipal General San Martin image and credit | Pending | Pending | Pending |
-| process-history | Design process | Historical timeline or research diagram | Pending | Pending | Pending |
-| process-diagnosis | Design process | Existing-condition diagnosis | Pending | Pending | Pending |
-| process-heritage-value | Design process | Heritage-value traffic-light diagram | Pending | Pending | Pending |
-| process-intervention | Design process | Preserve/intervene/demolish diagram | Pending | Pending | Pending |
-| process-arc | Design process | Arc reinterpretation diagram | Pending | Pending | Pending |
-| programme-masterplan | Programme | Masterplan / general plan | Pending | Pending | Pending |
-| programme-axonometry | Programme | General programme axonometry | Pending | Pending | Pending |
+| hero-primary | Hero | Exterior Nave Teatro from Rivadavia or general axonometry | `/images/hero/RENDER GENERAL EXTERIOR.svg` | Candidate | Catalog alt draft; credit pending |
+| concept-collage | Concept | Conceptual collage | `/images/concept/COLLAGE CONCEP.svg` | Candidate | Catalog alt draft; credit pending |
+| concept-diagram | Concept | Heritage plus contemporary architecture diagram | `/images/concept/DIAGRAMA DE USO TESIS.svg` | Candidate | Catalog alt draft; credit pending |
+| concept-existing | Concept | Existing winery photograph | `/images/concept/FOTOGRAFIA BODEGA EXISTENTE.svg` | Candidate | Catalog alt draft; credit pending |
+| site-regional-map | Context and site | Mendoza and Camino del Vino map | `/images/site/MAPA REG MENDOZA GC.svg` | Candidate | Catalog alt draft; credit pending |
+| site-location-plan | Context and site | Detailed location/site plan | `/images/site/PLANO DETALLADO UBICACION.svg` | Candidate | Catalog alt draft; credit pending |
+| site-aerial | Context and site | Aerial view or context volumetry | `/images/site/AXONOMETRIA- FOTOGRAFIA AEREA DEL ESTADO ACTUAL DE LA BODEGA.svg` | Candidate | Catalog alt draft; credit pending |
+| site-historical | Context and site | Historical winery photographs | `/images/site/FOTO ANTIGUA 1Vista fachada de esquina Rivadavia y San Martín.svg` | Candidate | Catalog alt draft; source and credit pending |
+| site-current | Context and site | Current-condition photographs | `/images/site/VISTA ACTUAL 1.svg` | Candidate | Catalog alt draft; credit pending |
+| reference-marconetti | References | Ex-Molino Marconetti image and credit | `/images/references/Molino Marconetti.jpg` | Candidate | Catalog alt draft; source, rights, and credit pending |
+| reference-agueda | References | Centro de Artes Agueda image and credit | `/images/references/CENTRO DE ARTES AGUEDA.jpg` | Candidate | Catalog alt draft; source, rights, and credit pending |
+| reference-san-martin | References | Teatro Municipal General San Martin image and credit | `/images/references/TEATRO SAN MARTIN_.jpg` | Candidate | Catalog alt draft; source, rights, and credit pending |
+| process-history | Design process | Historical timeline or research diagram | `/images/process/HISTORIA 7.svg` | Candidate | Catalog alt draft; credit pending |
+| process-diagnosis | Design process | Existing-condition diagnosis | `/images/process/COCLUSION PATOLOGIAS GENERALES DEBIDO AL RELEVAMIENTO DEL ESTADO ACTUAL DEL EDIFICIO.svg` | Candidate | Catalog alt draft; credit pending |
+| process-heritage-value | Design process | Heritage-value traffic-light diagram | `/images/process/DIAGRAMA VALORACION.svg` | Candidate | Catalog alt draft; credit pending |
+| process-intervention | Design process | Preserve/intervene/demolish diagram | `/images/process/DIAGRAMA CONSERVACION.svg` | Candidate | Catalog alt draft; credit pending |
+| process-arc | Design process | Arc reinterpretation diagram | `/images/proposal/arc-reinterpretation/GRAFICO REINT ARCO COMO ESTRUCTURA.svg` | Candidate | Catalog alt draft; credit pending |
+| programme-masterplan | Programme | Masterplan / general plan | `/images/programme/MASTER PLAN - PLANIMETRIA GENERAL.svg` | Candidate | Catalog alt draft; optimization and credit pending |
+| programme-axonometry | Programme | General programme axonometry | `/images/programme/AXONOMETRIA PROGRAMICA.svg` | Candidate | Catalog alt draft; credit pending |
 | journey-circulation | Users and journeys | Layered public, artist/student, and service circulation diagram | Pending | Pending | Pending |
-| proposal-public-space | Proposal | Public-space render | Pending | Pending | Pending |
-| proposal-silos | Proposal | Recovered silos render or diagram | Pending | Pending | Pending |
-| proposal-theatre-exterior | Proposal | Nave Teatro exterior render | Pending | Pending | Pending |
-| proposal-hall | Proposal | Central hall interior render | Pending | Pending | Pending |
-| proposal-italian-hall | Proposal | Sala Italiana render | Pending | Pending | Pending |
-| proposal-circular-hall | Proposal | Sala Circular render | Pending | Pending | Pending |
-| proposal-experimental-hall | Proposal | Sala Experimental render | Pending | Pending | Pending |
+| proposal-public-space | Proposal | Public-space render | `/images/proposal/render estacion patrimonial.svg` | Candidate | Catalog alt draft; credit pending |
+| proposal-silos | Proposal | Recovered silos render or diagram | `/images/proposal/DIAGRAMA PLANTA SILOS DETALLRE.svg` | Candidate | Catalog alt draft; optimization and credit pending |
+| proposal-theatre-exterior | Proposal | Nave Teatro exterior render | `/images/proposal/RENDER ENTRADA NAVE TEATRO.svg` | Candidate | Catalog alt draft; credit pending |
+| proposal-hall | Proposal | Central hall interior render | `/images/proposal/RENDER HALL PRINCIPAL PLANTA BAJA.svg` | Candidate | Catalog alt draft; optimization and credit pending |
+| proposal-italian-hall | Proposal | Sala Italiana render | `/images/proposal/halls/italian-hall/RENDER SALA IT INT.svg` | Candidate | Catalog alt draft; credit pending |
+| proposal-circular-hall | Proposal | Sala Circular render | `/images/proposal/halls/circular-hall/RENDER SALA CIRC.svg` | Candidate | Catalog alt draft; credit pending |
+| proposal-experimental-hall | Proposal | Sala Experimental render | `/images/proposal/halls/experimental-hall/RENDER INT SALA EXP.svg` | Candidate | Catalog alt draft; optimization and credit pending |
 | proposal-plans | Proposal | Ground floor and basement plans | Pending | Pending | Pending |
 | proposal-sections | Proposal | Transverse and longitudinal sections | Pending | Pending | Pending |
 | proposal-elevations | Proposal | West, south, and east elevations | Pending | Pending | Pending |
-| material-structure | Materiality | Structural system / arc detail | Pending | Pending | Pending |
-| material-envelope | Materiality | Brick, metalwork, parasol, and roof details | Pending | Pending | Pending |
+| material-structure | Materiality | Structural system / arc detail | `/images/materiality/AXONOMETRIA ESTRUCTURAL.svg` | Candidate | Catalog alt draft; optimization and credit pending |
+| material-envelope | Materiality | Brick, metalwork, parasol, and roof details | `/images/materiality/DETALLE ESCANTILLON.svg` | Candidate | Catalog alt draft; credit pending |
 | material-sustainability | Materiality | Solar and VRV strategy diagram | Pending | Pending | Pending |
 | material-acoustics | Materiality | Acoustic detail for each hall | Pending | Pending | Pending |
 | model-general | Physical model | General model photographs | Pending | Pending | Pending |
 | model-detail | Physical model | Detail and aerial model photographs | Pending | Pending | Pending |
-| reflection-final | Reflection | Panoramic, night, or inhabited final render | Pending | Pending | Pending |
+| reflection-final | Reflection | Panoramic, night, or inhabited final render | `/images/proposal/RENDER ENTRADA NAVE TEATRO NOCHE.svg` | Candidate | Catalog alt draft; credit pending |
+
+The delivered video at `/videos/VIDEO FINAL TESIS- CAET.mp4` remains outside the
+manifest until its narrative role, controls, transcript or alternative, loading
+strategy, and publication approval are defined.
 
 ## Open content decisions
 

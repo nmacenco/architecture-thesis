@@ -13,9 +13,15 @@
 - Placeholders state that the final asset is pending and must not be confused with finished material.
 - The hero remains a complete static reading at 320 CSS pixels and larger:
   eyebrow, title, subtitle, body, project metadata, meaningful media state, and
-  next-section cue remain available without animation or JavaScript. Its scroll
+  next-section cue remain available without animation or JavaScript. Mobile uses
+  a protected single reading column; desktop separates the supporting narrative
+  and metadata across an asymmetric cover without reordering either. Its scroll
   cue follows the next enabled manifest section rather than a hardcoded target;
-  its responsive and focus states are colocated as Tailwind utilities.
+  its responsive and focus states are colocated as Tailwind utilities. A strong
+  vertical mobile scrim and combined vertical/directional desktop scrims protect
+  white text from the approved render's sky, foliage, and facade detail. Small
+  text retains high opacity; text shadow may reinforce but never replace the
+  contrast layers.
 - The concept section preserves heading, body, quote, keywords, and meaningful
   media in that source order. Mobile text remains linear before a full-bleed
   collage; supporting evidence steps inward and may overlap the collage edge
@@ -48,3 +54,6 @@
 - Scroll scenes may reveal, draw, or persist an element only when that motion explains the thesis narrative. The proposal pin is desktop-only.
 - `prefers-reduced-motion` removes smooth scrolling, pinning, scrub animation, and continuous transforms while retaining the complete visual reading.
 - The image comparison is a native range input: it works with pointer and keyboard controls and has a translated accessible instruction.
+- The footer presents its bilingual rights notice as readable text between the
+  attribution grid and actions. It must wrap at 320 CSS pixels and must not imply
+  ownership of photographs or other images whose rights remain unconfirmed.

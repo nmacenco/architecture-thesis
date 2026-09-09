@@ -1,6 +1,7 @@
 # Components
 
-- **Site header**: anchor navigation, monogram, and language selector.
+- **Site header**: anchor navigation and language selector. It does not render a
+  logo or placeholder monogram until a project identity is approved.
 - **Editorial section**: narrative block with label, headline, and concise copy.
 - **Media placeholder** (`src/components/landing/media-placeholder.tsx`):
   identifiable visual reservation shared by extracted and legacy sections. It
@@ -12,6 +13,8 @@
 - **Hero section** (`src/components/landing/hero-section.tsx`): Server Component
   for the manifest `hero` ID. It renders the full localized opening identity,
   pending/unavailable/approved primary-media states, and the next enabled anchor.
+  Its mobile reading column expands into an asymmetric 12-column desktop cover,
+  separating narrative and project metadata without changing semantic order.
   Responsive composition, typography, focus, and media presentation use Tailwind
   utilities rather than section-specific global selectors.
 - **Concept section** (`src/components/landing/concept-section.tsx`): static
@@ -55,5 +58,9 @@
   pending caption come from the owning module; it does not use a remote mapping
   service or represent an approved final asset.
 - **Image comparison**: pointer- and keyboard-operable plan/atmosphere comparison with translated labels and instruction.
+- **Credits footer**: closes the narrative with attribution, pending actions, a
+  back-to-top control, and a bilingual rights notice sourced from the manifest.
+  The notice reuses hero authors, institution, and year and limits its ownership
+  statement to texts, plans, diagrams, and renders.
 
 Reuse these compositions before introducing variants. Every new component updates this inventory.

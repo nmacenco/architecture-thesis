@@ -1,6 +1,6 @@
 # Feature: architecture thesis editorial landing page
 
-> Status: shipped foundation; Tomba content in editorial review · Last updated: 2026-09-07
+> Status: shipped foundation; Tomba content and assets in editorial review · Last updated: 2026-09-08
 
 ## Purpose
 
@@ -12,11 +12,17 @@ Present an architecture thesis as a bilingual visual narrative. The scroll is th
 
 `content/landing-page.json` defines the Tomba composition's ordered section IDs, visibility, navigation metadata, translation references, asset slots, localization status, and unresolved decisions. Plan 2 integration is in progress: the extracted `hero`, `concept`, `site`, `references`, and `process` modules consume their manifest contracts and `landing.*` catalog namespaces through a typed accessor and known-ID registry. Remaining sections stay inline until their bounded module migrations. The implemented sequence uses content-derived transitions rather than treating each module as a replaceable presentation slide; in particular, `concept` layers its collage, relational diagram, and optional existing-fabric photograph as a palimpsest between the hero image and the site's measured evidence.
 
+The first media handoff records 29 project-relative sources and leaves eight
+unresolved slots pending. The hero's primary exterior render is approved for its
+full-cover composition; the other 28 sources remain candidates and continue to
+render as placeholders until their sections confirm composition, legibility,
+optimization, rights, alt text, and credit.
+
 The context scene uses a local SVG map. The process scene reveals a plan as the reader scrolls. The proposal remains visible on desktop while its plan/render comparator can be controlled with pointer or keyboard input. All scenes retain a readable static state when reduced motion is requested.
 
 ## i18n and accessibility
 
-All visible content and accessible labels come from message catalogs. `es` and `en` are supported; Spanish is the public fallback. Final images require descriptive alt text. SVG scenes have text alternatives; the comparison control has a translated instruction and native range-input keyboard support.
+All visible content and accessible labels come from message catalogs. `es` and `en` are supported; Spanish is the public fallback. Final images require descriptive alt text. SVG scenes have text alternatives; the comparison control has a translated instruction and native range-input keyboard support. The footer identifies the current authors and university as rights holders and reserves rights over the site's texts, plans, diagrams, and renders without making a blanket ownership claim over photographs or other images.
 
 ## Tests
 

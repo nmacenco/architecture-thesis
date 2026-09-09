@@ -1,10 +1,23 @@
 # Landing Page Plan 3 — Asset Inventory and Selection
 
-> Status: blocked by Plan 1; may run alongside Plan 2 · Last updated: 2026-09-06
+> Status: in progress; candidate mapping recorded · Last updated: 2026-09-08
 
 ## Objective
 
 Identify the available thesis visuals, select a publication baseline, and map real source files to the asset slots established in `content/landing-page.json`.
+
+## Current inventory snapshot
+
+- The first handoff contains 111 images and one video.
+- Twenty-nine manifest slots have a project-relative `candidate` source.
+- Eight slots remain `pending`: circulation, proposal plans, proposal sections,
+  proposal elevations, sustainability, acoustics, and two physical-model slots.
+- No asset is `approved`; candidate media continues to render as a placeholder.
+- The video remains outside the manifest until its narrative and accessible
+  delivery requirements are decided.
+- The 29-file candidate pool is intentionally broader than the publication
+  baseline and must be reduced to at most 18 essential assets, unless an
+  exception is documented.
 
 ## Deliverables
 
