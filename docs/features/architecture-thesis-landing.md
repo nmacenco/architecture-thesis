@@ -22,7 +22,7 @@ The context scene uses a local SVG map. The process scene reveals a plan as the 
 
 ## i18n and accessibility
 
-All visible content and accessible labels come from message catalogs. `es` and `en` are supported; Spanish is the public fallback. Final images require descriptive alt text. SVG scenes have text alternatives; the comparison control has a translated instruction and native range-input keyboard support.
+All visible content and accessible labels come from message catalogs. `es` and `en` are supported; Spanish is the public fallback. Final images require descriptive alt text. SVG scenes have text alternatives; the comparison control has a translated instruction and native range-input keyboard support. The footer identifies the current authors and university as rights holders and reserves rights over the site's texts, plans, diagrams, and renders without making a blanket ownership claim over photographs or other images.
 
 ## Tests
 

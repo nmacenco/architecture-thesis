@@ -228,6 +228,8 @@
       "degree": "Trabajo final de grado — Arquitectura",
       "year": "2026",
       "tutor": "Tutor o tutora por confirmar",
+      "copyrightNotice": "© {year}. Titulares: {authors}; {institution}. Todos los derechos reservados.",
+      "rightsNotice": "Los textos, planos, diagramas y renders publicados en este sitio están protegidos por derechos de autor. No se autoriza su reproducción, distribución, modificación ni uso comercial sin autorización previa y por escrito de sus titulares, salvo los usos permitidos por la ley.",
       "downloadLabel": "Memoria PDF pendiente",
       "contactLabel": "Contacto por confirmar"
     }

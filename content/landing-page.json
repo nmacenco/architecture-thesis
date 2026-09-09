@@ -234,6 +234,8 @@
         "degree": "landing.credits.degree",
         "year": "landing.credits.year",
         "tutor": "landing.credits.tutor",
+        "copyrightNotice": "landing.credits.copyrightNotice",
+        "rightsNotice": "landing.credits.rightsNotice",
         "downloadLabel": "landing.credits.downloadLabel",
         "contactLabel": "landing.credits.contactLabel"
       },

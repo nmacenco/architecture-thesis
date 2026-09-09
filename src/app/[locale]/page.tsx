@@ -34,6 +34,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const referencesSection = getLandingSection("references");
   const referencesDecisions = getUnresolvedDecisionsForSection("references");
   const processSection = getLandingSection("process");
+  const creditsSection = getLandingSection("credits");
   const HeroModule = landingSectionRegistry.hero;
   const ConceptModule = landingSectionRegistry.concept;
   const SiteModule = landingSectionRegistry.site;
@@ -44,7 +45,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <ScrollNarrative>
     <main>
       <header className="site-header">
-        <a className="monogram" href="#top" aria-label={t("accessibility.backToTop")}>A—</a>
         <nav aria-label={t("nav.menu")}>
           {navigation.map(([key, href]) => <a href={href} key={key}>{t(`nav.${key}`)}</a>)}
         </nav>
@@ -98,6 +98,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <footer id="credits">
         <p className="eyebrow light">{t("credits.label")}</p><h2>{t("credits.title")}</h2>
         <div className="credits-grid"><p><span>{t("credits.author")}</span>{t("hero.author")}</p><p><span>{t("credits.tutor")}</span>—</p><p><span>{t("credits.institution")}</span>{t("hero.institution")}</p></div>
+        <div className="mt-16 max-w-[62rem] border-t border-white/23 pt-4 text-[0.72rem] leading-[1.65] text-white/65">
+          <p className="m-0">
+            {t(creditsSection.textKeys.copyrightNotice, {
+              year: t(heroSection.textKeys.year),
+              authors: t(heroSection.textKeys.authors),
+              institution: t(heroSection.textKeys.institution),
+            })}
+          </p>
+          <p className="mt-3 mb-0">{t(creditsSection.textKeys.rightsNotice)}</p>
+        </div>
         <div className="footer-actions"><button disabled><Download size={16} />{t("credits.pdf")}</button><a href="mailto:hello@example.com">{t("credits.contact")} <ArrowUpRight size={16} /></a><a href="#top" aria-label={t("accessibility.backToTop")}><ArrowDown className="up-arrow" size={19} /></a></div>
       </footer>
     </main>

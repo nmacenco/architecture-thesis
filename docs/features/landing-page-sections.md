@@ -382,13 +382,17 @@ module adds focused tests in proportion to its data or interaction behavior.
   `src/app/[locale]/page.tsx`; extraction pending.
 - **Contract:** `landing.credits`; all `textKeys`; no media slots. Official title,
   authors, institution/degree, year, tutor, contact, and PDF remain governed by
-  unresolved decisions.
+  unresolved decisions. The copyright and rights notices interpolate the current
+  hero author, institution, and year values so attribution remains synchronized.
 - **Media:** None. Do not create asset slots outside the manifest.
 - **Composition:** Mobile stacks credits and actions with touch-safe spacing;
-  tablet/desktop may use columns. Long names and translated labels must wrap.
+  tablet/desktop may use columns. A bounded legal notice sits between attribution
+  and actions. Long names, translated labels, and legal copy must wrap.
 - **Behavior and semantics:** Page footer, translated labels, labelled back-to-top
-  link. PDF/contact remain visibly unavailable until destinations are approved;
-  no placeholder destination may be presented as real.
+  link, and readable copyright paragraphs. The notice reserves rights over texts,
+  plans, diagrams, and renders while deliberately excluding a blanket claim over
+  photographs or other images. PDF/contact remain visibly unavailable until
+  destinations are approved; no placeholder destination may be presented as real.
 - **States, dependencies, tests, status:** Enabled and navigation-included.
   Planned migration; verify missing destinations, disabled action semantics,
   keyboard focus, anchor behavior, and unresolved-value presentation.

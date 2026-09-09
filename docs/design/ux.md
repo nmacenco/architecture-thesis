@@ -54,3 +54,6 @@
 - Scroll scenes may reveal, draw, or persist an element only when that motion explains the thesis narrative. The proposal pin is desktop-only.
 - `prefers-reduced-motion` removes smooth scrolling, pinning, scrub animation, and continuous transforms while retaining the complete visual reading.
 - The image comparison is a native range input: it works with pointer and keyboard controls and has a translated accessible instruction.
+- The footer presents its bilingual rights notice as readable text between the
+  attribution grid and actions. It must wrap at 320 CSS pixels and must not imply
+  ownership of photographs or other images whose rights remain unconfirmed.

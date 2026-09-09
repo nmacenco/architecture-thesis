@@ -1,6 +1,7 @@
 # Components
 
-- **Site header**: anchor navigation, monogram, and language selector.
+- **Site header**: anchor navigation and language selector. It does not render a
+  logo or placeholder monogram until a project identity is approved.
 - **Editorial section**: narrative block with label, headline, and concise copy.
 - **Media placeholder** (`src/components/landing/media-placeholder.tsx`):
   identifiable visual reservation shared by extracted and legacy sections. It
@@ -57,5 +58,9 @@
   pending caption come from the owning module; it does not use a remote mapping
   service or represent an approved final asset.
 - **Image comparison**: pointer- and keyboard-operable plan/atmosphere comparison with translated labels and instruction.
+- **Credits footer**: closes the narrative with attribution, pending actions, a
+  back-to-top control, and a bilingual rights notice sourced from the manifest.
+  The notice reuses hero authors, institution, and year and limits its ownership
+  statement to texts, plans, diagrams, and renders.
 
 Reuse these compositions before introducing variants. Every new component updates this inventory.
