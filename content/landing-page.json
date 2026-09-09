@@ -24,7 +24,7 @@
         "scrollLabel": "landing.hero.scrollLabel"
       },
       "assets": [
-        { "id": "hero-primary", "src": "/images/hero/RENDER GENERAL EXTERIOR.svg", "type": "render", "altKey": "landing.hero.assets.primary.alt", "credit": null, "status": "candidate", "required": true }
+        { "id": "hero-primary", "src": "/images/hero/RENDER GENERAL EXTERIOR.svg", "type": "render", "altKey": "landing.hero.assets.primary.alt", "credit": null, "status": "approved", "required": true }
       ]
     },
     {

@@ -1,6 +1,6 @@
 # Feature: landing-page section modules
 
-> Status: Plan 2 in progress; first five modules extracted · Last updated: 2026-09-08
+> Status: Plan 2 in progress; first five modules extracted · Last updated: 2026-09-09
 
 ## Purpose and source of truth
 
@@ -52,25 +52,36 @@ module adds focused tests in proportion to its data or interaction behavior.
   reads `landing.hero` through every manifest `textKeys` reference, navigation
   metadata, and the required `hero-primary` render. Hero/credits decisions cover
   official title, authors, institution/degree, and year.
-- **Media:** Meaningful primary render; provisional placeholder ratio is `4:5`
-  mobile and viewport-covering landscape desktop. The current candidate uses
-  its translated alt-key description and a stable full-viewport placeholder;
-  credit is pending. Only an `approved` asset with a project-relative source
-  renders through `next/image` with priority. The pending state selects the
-  complete `hero` placeholder variant instead of layering position/background
-  overrides on the shared default.
+- **Media:** Meaningful primary render in a viewport-covering frame. At the
+  320-pixel completion gate the provisional frame is at least `320:768`; larger
+  mobile and desktop frames follow the viewport with a 48-rem/52-rem minimum,
+  and the approved landscape media crops with `object-cover`. The current asset
+  uses its translated alt-key description and renders through `next/image` with
+  priority; credit remains pending. Pending or unavailable fallback states retain
+  a stable full-cover placeholder using the complete `hero` variant instead of
+  layering position/background overrides on the shared default.
 - **Composition:** Semantic source order is eyebrow, page title, subtitle, body,
   project metadata, media, and next-section cue. The 320-pixel/mobile layout uses
-  a minimum `4:5`-compatible frame with protected copy space; tablet/desktop
-  overlays the same source-order copy on viewport-covering media.
+  one protected reading column in a minimum 48-rem cover, with the subtitle and
+  body held by a vertical rule and metadata wrapping below a horizontal rule.
+  Tablet/desktop preserves that order while expanding into an asymmetric
+  12-column field: the title spans the image horizon, metadata anchors the lower
+  left, and the narrative occupies a narrower right rail. This single immersive
+  cover contracts into the next section's light collage-and-diagram palimpsest;
+  the concept assets could not replace the hero render without rebuilding the
+  composition. A strong mobile vertical scrim protects the complete reading
+  column; desktop combines a vertical scrim with a left-to-right directional
+  layer so the title remains legible without flattening the image's focal area.
 - **Behavior and semantics:** Labelled section and page `h1`, semantic metadata
   list, meaningful media alternative, and translated link to the next enabled
   manifest anchor. There is no module animation or pointer-only behavior;
   reduced motion changes nothing and the full reading remains available without
-  JavaScript.
+  JavaScript. Small supporting text uses high-opacity white over the protected
+  image zones, while the title shadow only reinforces the scrim rather than
+  serving as the primary contrast mechanism.
 - **States, dependencies, tests, status:** Enabled and navigation-excluded as
-  declared; the required asset has a candidate source. Disabled returns no
-  module; pending and candidate media use a placeholder,
+  declared; the required asset is approved. Disabled returns no module; pending
+  and candidate media use a placeholder,
   unavailable/malformed approved media use an unavailable placeholder, and
   approved sourced media renders as an image. Uses
   `src/content/landing-page.ts` and the Tailwind-styled shared media

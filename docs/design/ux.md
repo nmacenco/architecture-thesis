@@ -13,9 +13,15 @@
 - Placeholders state that the final asset is pending and must not be confused with finished material.
 - The hero remains a complete static reading at 320 CSS pixels and larger:
   eyebrow, title, subtitle, body, project metadata, meaningful media state, and
-  next-section cue remain available without animation or JavaScript. Its scroll
+  next-section cue remain available without animation or JavaScript. Mobile uses
+  a protected single reading column; desktop separates the supporting narrative
+  and metadata across an asymmetric cover without reordering either. Its scroll
   cue follows the next enabled manifest section rather than a hardcoded target;
-  its responsive and focus states are colocated as Tailwind utilities.
+  its responsive and focus states are colocated as Tailwind utilities. A strong
+  vertical mobile scrim and combined vertical/directional desktop scrims protect
+  white text from the approved render's sky, foliage, and facade detail. Small
+  text retains high opacity; text shadow may reinforce but never replace the
+  contrast layers.
 - The concept section preserves heading, body, quote, keywords, and meaningful
   media in that source order. Mobile text remains linear before a full-bleed
   collage; supporting evidence steps inward and may overlap the collage edge

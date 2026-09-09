@@ -12,6 +12,8 @@
 - **Hero section** (`src/components/landing/hero-section.tsx`): Server Component
   for the manifest `hero` ID. It renders the full localized opening identity,
   pending/unavailable/approved primary-media states, and the next enabled anchor.
+  Its mobile reading column expands into an asymmetric 12-column desktop cover,
+  separating narrative and project metadata without changing semantic order.
   Responsive composition, typography, focus, and media presentation use Tailwind
   utilities rather than section-specific global selectors.
 - **Concept section** (`src/components/landing/concept-section.tsx`): static
