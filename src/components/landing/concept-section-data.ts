@@ -31,3 +31,13 @@ export function getConceptMediaSlots(section: LandingSection): ConceptMediaSlot[
     }))
     .filter((slot) => slot.required || slot.asset !== undefined);
 }
+
+export function canPreviewConceptCandidate(
+  asset: LandingAsset | undefined,
+): boolean {
+  return Boolean(
+    asset?.status === "candidate" &&
+      asset.src?.startsWith("/") &&
+      !asset.src.startsWith("//"),
+  );
+}

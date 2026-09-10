@@ -20,10 +20,14 @@
 - **Concept section** (`src/components/landing/concept-section.tsx`): static
   Server Component for the manifest `concept` ID. It renders the complete
   localized narrative, semantic quote and keyword list, plus required and
-  optional meaningful-media states. Its mobile-first palimpsest makes the
-  collage dominant, crosses its edge with the diagram, and retains the optional
-  existing photograph as a smaller memory fragment; this is a module-specific
-  composition, not a reusable section shell.
+  optional meaningful-media states. Its project-relative candidate sources are
+  visible only as editorial previews beneath one quiet, persistent translated
+  status marker; malformed or absent sources retain non-final fallback states.
+  Its mobile-first palimpsest tightly crops the configured collage into the
+  dominant evidence field, crosses its edge with the diagram, and retains the
+  optional existing photograph as a smaller memory fragment. Desktop positions
+  those supporting figures over the collage's right edge without changing DOM
+  order; this is a module-specific composition, not a reusable section shell.
 - **Site section** (`src/components/landing/site-section.tsx`): manifest-driven
   Server Component for urban context, conditions, pending facts, map/plan slots,
   and optional/required photography. It uses semantic lists and definition data
