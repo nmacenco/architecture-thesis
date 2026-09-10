@@ -14,9 +14,12 @@ Present an architecture thesis as a bilingual visual narrative. The scroll is th
 
 The first media handoff records 29 project-relative sources and leaves eight
 unresolved slots pending. The hero's primary exterior render is approved for its
-full-cover composition; the other 28 sources remain candidates and continue to
-render as placeholders until their sections confirm composition, legibility,
-optimization, rights, alt text, and credit.
+full-cover composition. The three `concept` sources remain candidates but render
+as editorial previews under one persistent translated status marker so their
+composition can be reviewed; the other 25 candidate sources continue to render
+as placeholders until their
+sections confirm composition, legibility, optimization, rights, alt text, and
+credit.
 
 The context scene uses a local SVG map. The process scene reveals a plan as the reader scrolls. The proposal remains visible on desktop while its plan/render comparator can be controlled with pointer or keyboard input. All scenes retain a readable static state when reduced motion is requested.
 
