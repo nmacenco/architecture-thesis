@@ -29,8 +29,13 @@
   widths expand the same palimpsest without reordering content. Empty reserved
   English keywords do not create an empty landmark, missing required media keeps
   stable unavailable space, and an absent optional photograph leaves no layout
-  gap. This hierarchy bridges the hero's immersive cover and the site's measured
-  grids rather than resetting into another autonomous panel.
+  gap. Configured candidate images share a quiet, visible translated pending
+  marker at every width and remain individually associated with that status for
+  assistive technology; they must not be mistaken for approved final media. A
+  tightly cropped collage, restrained overlaps, and the entry datum bridge the
+  hero's immersive cover and the site's measured grids rather than resetting
+  into another autonomous panel. Cropped image content is contained by its
+  figure and never enlarges the page's scroll width at the 320-pixel gate.
 - The site section preserves narrative, conditions, context drawings, pending
   facts, and photographs in semantic source order. Mobile is linear; larger
   grids do not reorder content. Unverified dates, areas, and capacities carry an

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { LandingAsset, LandingSection } from "../../content/landing-page";
 import {
+  canPreviewConceptCandidate,
   getConceptKeywords,
   getConceptMediaSlots,
 } from "./concept-section-data";
@@ -69,5 +70,23 @@ describe("concept section data", () => {
       "concept-diagram",
       "concept-existing",
     ]);
+  });
+
+  it("previews only candidate media with a project-relative source", () => {
+    expect(canPreviewConceptCandidate(asset("concept-collage", true))).toBe(false);
+    expect(
+      canPreviewConceptCandidate({
+        ...asset("concept-collage", true),
+        status: "candidate",
+        src: "/images/concept/collage.svg",
+      }),
+    ).toBe(true);
+    expect(
+      canPreviewConceptCandidate({
+        ...asset("concept-collage", true),
+        status: "candidate",
+        src: "https://example.com/collage.svg",
+      }),
+    ).toBe(false);
   });
 });

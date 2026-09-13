@@ -101,46 +101,54 @@ module adds focused tests in proportion to its data or interaction behavior.
   the navigation-included `concept` anchor, required `concept-collage` and
   `concept-diagram`, optional `concept-existing`, and the absence of a
   section-specific unresolved decision.
-- **Media:** All three slots are meaningful. Provisional ratios are collage
-  `4:5`, diagram `4:3`, and existing photo `3:2` at all sizes; none receives
-  loading priority. Pending slots render the shared
-  placeholder with their translated alternatives and stable space. Approved
-  project-relative sources render through `next/image`; unavailable, missing
-  required, and malformed approved sources use the unavailable state. Credits
-  remain pending. An absent optional existing photograph contributes no gap.
+- **Media:** All three slots are meaningful; none receives loading priority. The
+  collage uses a tightly cropped `5:4` mobile frame and a fluid desktop evidence
+  field, the diagram uses `16:10`, and the existing-fabric photograph uses
+  `3:2`. These ratios are provisional display crops rather than edits to the
+  source assets. The project-relative candidate sources render through
+  `next/image` as editorial previews under one persistent translated status
+  marker, preserving every candidate status and pending credit without placing
+  a badge over each image.
+  Pending slots without a usable source render the shared placeholder with their
+  translated alternatives and stable space. Approved project-relative sources
+  render as final media; unavailable, missing required, malformed candidate, and
+  malformed approved sources use a non-final fallback. An absent optional
+  existing photograph contributes no gap.
 - **Composition:** The module turns the hero's project declaration into the
   thesis operation: existing fabric and contemporary intervention coexist. Its
-  primary evidence is the portrait collage, with the relationship diagram as an
+  primary evidence is the wide collage, with the relationship diagram as an
   analytical trace and the optional existing photograph as a memory fragment.
   Semantic source order remains heading, body, quote, keywords, then
   manifest-ordered media. At 320 pixels the text unfolds in that order before a
-  full-bleed collage; the diagram overlaps the collage edge and the optional
-  photograph steps inward at a smaller scale. Tablet and desktop preserve that
-  order while expanding the title, anchoring the collage to the left, crossing
-  its edge with the diagram, and isolating the existing photograph to the right.
-  This palimpsest carries the hero's visual energy into a slower interpretive
-  field, then narrows toward the site's maps and facts. Hero's single cover image
-  and site's measured map/plan/fact set cannot replace these three evidence roles
-  without rebuilding the composition, so the module is not an interchangeable
-  heading-copy-media shell.
+  full-bleed, tightly cropped collage; the diagram crosses its lower edge and the
+  optional photograph steps inward at a smaller scale. Tablet and desktop
+  preserve that order while compressing the introduction into an asymmetric
+  field and turning the collage into the dominant spatial anchor. The diagram
+  and existing photograph occupy its right edge as analytical trace and memory
+  fragment. A terracotta datum line inherits energy from the hero, while the
+  right-edge overlays progressively narrow the composition toward the site's
+  maps and facts. Hero's single cover image and site's measured map/plan/fact set
+  cannot replace these three evidence roles without rebuilding the composition,
+  so the module is not an interchangeable heading-copy-media shell.
 - **Behavior and semantics:** Labelled section with an `h2`, blockquote,
   semantic keyword list, and figures for meaningful media. There are no module
   controls or pointer-only behavior. Reduced motion does not remove content,
   and the complete source-order reading works without JavaScript; the existing
   shared scroll reveal may enhance entry only.
 - **States, dependencies, tests, status:** Enabled and navigation-included as
-  declared; all three asset records have candidate sources and remain
-  placeholders. Empty or malformed keyword collections render no empty list;
-  missing required slots retain an unavailable placeholder; an absent optional
-  photograph is omitted. Uses the
+  declared; all three asset records keep candidate status and render as visibly
+  pending editorial previews. Empty or malformed keyword collections render no
+  empty list; missing required slots retain an unavailable placeholder; an
+  absent optional photograph is omitted. Uses the
   typed manifest accessor, shared media placeholder, shared media-state
-  resolver, and stable asset IDs. Implemented with focused data, asset-state,
-  manifest, and catalog-parity tests. English copy and keywords remain reserved
-  pending editorial translation. Server-rendered `hero → concept → site` order
-  and content availability have been verified in both locales. Continuous-scroll
-  browser review at 320 CSS pixels and a representative desktop width, plus
-  browser-emulated reduced motion, remain pending because no browser runner or
-  Chromium binary is available in the current environment.
+  resolver, candidate-preview guard, and stable asset IDs. Implemented with
+  focused data, candidate-source validation, asset-state, manifest, and
+  catalog-parity tests. English copy and keywords remain reserved
+  pending editorial translation. Server-rendered `hero → concept → site` order,
+  content availability, and page-width containment have been verified in both
+  locales at 320×800 and 1440×1000. The Spanish route was also reviewed at both
+  viewports with browser-emulated reduced motion; the complete static reading
+  and media hierarchy remain available.
 
 ### 3. `site`
 
