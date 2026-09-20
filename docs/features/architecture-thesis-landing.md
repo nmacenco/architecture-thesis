@@ -1,6 +1,6 @@
 # Feature: architecture thesis editorial landing page
 
-> Status: shipped foundation; Tomba content and assets in editorial review · Last updated: 2026-09-08
+> Status: shipped foundation; Tomba content and assets in editorial review · Last updated: 2026-09-13
 
 ## Purpose
 
@@ -10,14 +10,15 @@ Present an architecture thesis as a bilingual visual narrative. The scroll is th
 
 `/` redirects to the default locale. `src/app/[locale]/page.tsx` renders the landing page; `next-intl` loads `messages/es.json` or `messages/en.json`. The selector preserves the route when changing locale. Client-only scene components use GSAP and Lenis for scroll motion, SVG paths for plan drawing, and Framer Motion for isolated micro-interactions. Final renders and plans replace the local visual stand-ins from `public/`.
 
-`content/landing-page.json` defines the Tomba composition's ordered section IDs, visibility, navigation metadata, translation references, asset slots, localization status, and unresolved decisions. Plan 2 integration is in progress: the extracted `hero`, `concept`, `site`, `references`, and `process` modules consume their manifest contracts and `landing.*` catalog namespaces through a typed accessor and known-ID registry. Remaining sections stay inline until their bounded module migrations. The implemented sequence uses content-derived transitions rather than treating each module as a replaceable presentation slide; in particular, `concept` layers its collage, relational diagram, and optional existing-fabric photograph as a palimpsest between the hero image and the site's measured evidence.
+`content/landing-page.json` defines the Tomba composition's ordered section IDs, visibility, navigation metadata, translation references, asset slots, localization status, and unresolved decisions. Plan 2 integration is in progress: the extracted `hero`, `concept`, `site`, `references`, `process`, and `programme` modules consume their manifest contracts and `landing.*` catalog namespaces through a typed accessor and known-ID registry. Remaining sections stay inline until their bounded module migrations. The implemented sequence uses content-derived transitions rather than treating each module as a replaceable presentation slide; in particular, `concept` layers its collage, relational diagram, and optional existing-fabric photograph as a palimpsest between the hero image and the site's measured evidence, while `programme` condenses the process sequence into a building-and-area register before opening into accepted masterplan and axonometry sheets.
 
 The first media handoff records 29 project-relative sources and leaves eight
 unresolved slots pending. The hero's primary exterior render is approved for its
 full-cover composition. The three `concept` sources remain candidates but render
 as editorial previews under one persistent translated status marker so their
-composition can be reviewed; the other 25 candidate sources continue to render
-as placeholders until their
+composition can be reviewed. The programme masterplan and axonometry are also
+approved for their module-specific composition; the other 23 candidate sources
+continue to render as placeholders until their
 sections confirm composition, legibility, optimization, rights, alt text, and
 credit.
 

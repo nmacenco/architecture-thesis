@@ -121,8 +121,8 @@
         "facts": "landing.programme.facts"
       },
       "assets": [
-        { "id": "programme-masterplan", "src": "/images/programme/MASTER PLAN - PLANIMETRIA GENERAL.svg", "type": "plan", "altKey": "landing.programme.assets.masterplan.alt", "credit": null, "status": "candidate", "required": true },
-        { "id": "programme-axonometry", "src": "/images/programme/AXONOMETRIA PROGRAMICA.svg", "type": "diagram", "altKey": "landing.programme.assets.axonometry.alt", "credit": null, "status": "candidate", "required": true }
+        { "id": "programme-masterplan", "src": "/images/programme/MASTER PLAN - PLANIMETRIA GENERAL.svg", "type": "plan", "altKey": "landing.programme.assets.masterplan.alt", "credit": null, "status": "approved", "required": true },
+        { "id": "programme-axonometry", "src": "/images/programme/AXONOMETRIA PROGRAMICA.svg", "type": "diagram", "altKey": "landing.programme.assets.axonometry.alt", "credit": null, "status": "approved", "required": true }
       ]
     },
     {

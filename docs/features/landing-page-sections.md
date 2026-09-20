@@ -1,6 +1,6 @@
 # Feature: landing-page section modules
 
-> Status: Plan 2 in progress; first five modules extracted · Last updated: 2026-09-09
+> Status: Plan 2 in progress; first six modules extracted · Last updated: 2026-09-13
 
 ## Purpose and source of truth
 
@@ -274,20 +274,44 @@ module adds focused tests in proportion to its data or interaction behavior.
 ### 6. `programme`
 
 - **Purpose and position:** Describe uses and quantities between `process` and
-  `experience`. Currently inline in `src/app/[locale]/page.tsx`; extraction
-  pending.
-- **Contract:** `landing.programme`; all `textKeys`; required masterplan and
-  axonometry. `historical-and-area-claims` remains unresolved.
-- **Media:** Masterplan provisional `4:3` mobile/`16:10` desktop; axonometry
-  `4:3`, retaining translated alternatives and pending credits.
-- **Composition:** Mobile orders premise, buildings, facts, then drawings;
-  tablet/desktop may pair text with diagrams and distribute fact groups.
-- **Behavior and semantics:** Semantic lists and `dl` facts; static in reduced
-  motion. Any diagram labels must remain legible without hover.
-- **States, dependencies, tests, status:** Enabled but excluded from navigation;
-  both assets have candidate sources and remain placeholders. Uses
-  editorial/list/fact/media primitives. Planned migration; test empty groups,
-  stable keys, optional values, claims, and wrapping.
+  `experience`. Implemented in
+  `src/components/landing/programme-section.tsx` and selected by the typed
+  registry.
+- **Contract:** Receives the resolved `programme` manifest section and reads
+  every `landing.programme` text key, its navigation-excluded `programme`
+  anchor, the required masterplan and axonometry, and the section's unresolved
+  decision state. `historical-and-area-claims` remains unresolved, so interior
+  and exterior areas retain a visible editorial-review treatment.
+- **Media:** The accepted `programme-masterplan` and `programme-axonometry`
+  project-relative sources are approved and render through `next/image` as
+  meaningful media. Their source view boxes are `16:9`; both retain that ratio
+  at all widths with `object-contain`, translated alternatives, no loading
+  priority, and pending credits. Missing required slots, unavailable records,
+  and malformed approved sources preserve stable non-final placeholders.
+- **Composition:** The section turns `process` reasoning into a programme
+  register before the future human journey. Semantic source order is heading,
+  body, premises, buildings, facts, masterplan, then axonometry. Mobile keeps
+  that linear order: four premises form a compact matrix, buildings become a
+  numbered ledger, areas occupy a separate terracotta datum, and drawings close
+  the module. Tablet and desktop preserve the order while widening the heading,
+  pairing the ledger with the quantitative column, and stepping the secondary
+  axonometry inward beneath the full-width masterplan. This measured register
+  and sheet sequence cannot exchange assets with the preceding staggered process
+  diagrams or the following journey without a substantial layout change.
+- **Behavior and semantics:** Labelled section with an `h2`, semantic premise
+  list, ordered building list, definition list for facts, and meaningful figures.
+  It has no controls, hover dependency, module-local animation, or JavaScript
+  requirement. Reduced motion leaves the complete reading unchanged.
+- **States, dependencies, tests, status:** Enabled and excluded from navigation,
+  as declared. Empty or malformed locale collections create no empty landmarks;
+  both required drawing identities remain stable when their records are absent.
+  Uses the typed manifest accessor, shared media-state resolver and placeholder,
+  plus stable programme asset IDs. Implemented with focused collection,
+  required-media, manifest, unresolved-decision, and catalog-parity tests.
+  Spanish copy and image descriptions remain in editorial review; English
+  content is reserved pending translation. Static source-order and containment
+  rules have been reviewed, but browser verification at 320 pixels, desktop
+  width, and reduced motion remains pending.
 
 ### 7. `experience`
 
