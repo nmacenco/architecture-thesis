@@ -54,6 +54,14 @@
   diagram identity without creating empty text landmarks. The module has no
   input or motion dependency, so the complete reading is unchanged with reduced
   motion or without JavaScript.
+- The programme section preserves heading, body, premises, buildings, pending
+  area facts, masterplan, and axonometry in semantic order. Its mobile register
+  expands into a building ledger beside a quantitative datum on larger screens,
+  then closes with accepted `16:9` drawing sheets without cropping their content.
+  Empty localized collections do not create empty landmarks, missing required
+  media retains stable space, and unverified areas remain explicitly marked for
+  editorial review. It has no input or motion dependency, so reduced motion and
+  no-JavaScript reading remain complete.
 - Navigation, links, and controls must work with a keyboard and have translated accessible labels.
 - On small screens, the composition becomes a single column and primary navigation is hidden until a functional mobile menu exists.
 - Scroll scenes may reveal, draw, or persist an element only when that motion explains the thesis narrative. The proposal pin is desktop-only.

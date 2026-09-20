@@ -42,6 +42,11 @@
   principles. It associates each ordered stage with a stable required diagram
   identity, preserves empty reserved locale collections, and presents every
   pending diagram in a mobile-first editorial sequence.
+- **Programme section** (`src/components/landing/programme-section.tsx`):
+  manifest-driven Server Component for premises, buildings, pending area claims,
+  and the accepted masterplan and axonometry. Its mobile-first programme register
+  expands into a ledger-and-facts composition followed by one full-width and one
+  inset drawing sheet, while missing required assets retain stable fallbacks.
 - **Landing media-state resolver**
   (`src/components/landing/media-state.ts`): shared pure guard used by extracted
   modules. Only approved project-relative sources are final media; candidate
@@ -49,7 +54,7 @@
   malformed approved records resolve to the unavailable state.
 - **Landing section registry** (`src/components/landing/section-registry.ts`):
   compile-time known-ID map. It currently exposes the implemented `hero`,
-  `concept`, `site`, `references`, and `process`; later modules are added
+  `concept`, `site`, `references`, `process`, and `programme`; later modules are added
   explicitly and JSON values never become import paths.
 - **Reference card**: non-interactive precedent article with meaningful media,
   place, title, and lesson. It deliberately exposes no link indicator or hover

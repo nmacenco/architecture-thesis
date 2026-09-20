@@ -23,7 +23,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
-  const programme = t.raw("program.items") as string[];
   const proposalImages = t.raw("proposal.imageLabels") as string[];
   const heroSection = getLandingSection("hero");
   const heroNextSection = getNextEnabledSection("hero");
@@ -34,12 +33,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const referencesSection = getLandingSection("references");
   const referencesDecisions = getUnresolvedDecisionsForSection("references");
   const processSection = getLandingSection("process");
+  const programmeSection = getLandingSection("programme");
+  const programmeDecisions = getUnresolvedDecisionsForSection("programme");
   const creditsSection = getLandingSection("credits");
   const HeroModule = landingSectionRegistry.hero;
   const ConceptModule = landingSectionRegistry.concept;
   const SiteModule = landingSectionRegistry.site;
   const ReferencesModule = landingSectionRegistry.references;
   const ProcessModule = landingSectionRegistry.process;
+  const ProgrammeModule = landingSectionRegistry.programme;
 
   return (
     <ScrollNarrative>
@@ -72,10 +74,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <ProcessModule section={processSection} />
 
-      <section className="editorial-section programme" data-scroll-scene>
-        <div><p className="eyebrow">{t("program.label")}</p><h2>{t("program.title")}</h2><p className="intro-copy">{t("program.body")}</p></div>
-        <div className="programme-diagram">{programme.map((item, index) => <div className={`programme-item item-${index}`} key={item}>{item}</div>)}</div>
-      </section>
+      <ProgrammeModule
+        section={programmeSection}
+        hasUnresolvedDecisions={programmeDecisions.length > 0}
+      />
 
       <section className="proposal" data-proposal-scene id="proposal">
         <div className="proposal-heading"><p className="eyebrow light">{t("proposal.label")}</p><h2>{t("proposal.title")}</h2><p>{t("proposal.body")}</p></div>

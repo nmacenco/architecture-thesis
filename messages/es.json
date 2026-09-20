@@ -136,8 +136,8 @@
         { "value": "10.853 m²", "label": "Programa exterior", "verification": "pending" }
       ],
       "assets": {
-        "masterplan": { "alt": "Masterplan pendiente con la organización general del centro cultural." },
-        "axonometry": { "alt": "Axonometría programática pendiente con los usos distribuidos por nave." }
+        "masterplan": { "alt": "Masterplan con la organización general del centro cultural." },
+        "axonometry": { "alt": "Axonometría programática con los usos distribuidos por nave." }
       }
     },
     "experience": {
