@@ -57,3 +57,13 @@ export function getSiteMediaSlots(section: LandingSection): SiteMediaSlot[] {
     }))
     .filter((slot) => slot.required || slot.asset !== undefined);
 }
+
+export function canPreviewSiteCandidate(
+  asset: LandingAsset | undefined,
+): boolean {
+  return Boolean(
+    asset?.status === "candidate" &&
+      asset.src?.startsWith("/") &&
+      !asset.src.startsWith("//"),
+  );
+}

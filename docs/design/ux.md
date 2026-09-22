@@ -38,10 +38,12 @@
   figure and never enlarges the page's scroll width at the 320-pixel gate.
 - The site section preserves narrative, conditions, context drawings, pending
   facts, and photographs in semantic source order. Mobile is linear; larger
-  grids do not reorder content. Unverified dates, areas, and capacities carry an
-  explicit editorial-review label, the pending map abstraction remains visibly
-  provisional, and empty reserved English collections do not create empty
-  landmarks.
+  grids do not reorder content. The context drawings remain fully contained,
+  the aerial establishes orientation, and historical/current photographs form
+  a temporal comparison. Unverified dates, areas, and capacities carry an
+  explicit editorial-review label; candidate assets share a persistent pending
+  marker, missing map evidence falls back to the provisional abstraction, and
+  empty reserved English collections do not create empty landmarks.
 - The references section preserves introduction, pending-review status, and
   precedent cards in source order. Cards move from one to two to three columns
   without reordering. Empty or malformed reserved catalog entries retain their

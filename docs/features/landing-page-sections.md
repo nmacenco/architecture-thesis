@@ -162,29 +162,33 @@ module adds focused tests in proportion to its data or interaction behavior.
   `historical-and-area-claims` remains unresolved, and the facts are explicitly
   labelled as awaiting editorial confirmation rather than verified.
 - **Media:** Regional map and location plan use provisional `4:3` ratios;
-  aerial, historical, and current views use `3:2`, at all sizes. All are
-  meaningful and none receives loading priority. The pending regional map uses
-  a visibly pending local SVG abstraction with its manifest alternative; other
-  pending assets use the shared placeholder. Approved project-relative sources
-  render through `next/image`. Credits remain pending.
+  the aerial uses `16:9`, and historical/current views use `3:2`. All are
+  meaningful and none receives loading priority. Project-relative candidate
+  sources render through `next/image` as editorial previews beneath one
+  persistent translated pending marker; missing, malformed, or unavailable
+  slots retain the local map abstraction or shared placeholder. Maps and plans
+  use contained framing while photographs may crop to their evidence frame.
+  Credits remain pending.
 - **Composition:** Semantic source order is heading, body, conditions, regional
   map, location plan, facts, and photographs. The 320-pixel/mobile layout is a
-  single column. Tablet and desktop enhance the same order with twelve-column
-  text, context-media, fact, and photography grids.
+  single column. Tablet and desktop enhance the same order with a measured
+  map/plan pair, a full-width aerial orientation, and an equal historical/current
+  comparison without changing source order.
 - **Behavior and semantics:** Labelled section with an `h2`, semantic condition
   list, figures, and `dl` facts whose `dt` precedes `dd` in source order. There
   are no controls or pointer-only behavior. The SVG lines may use the existing
   scroll reveal, remain fully drawn without JavaScript, and remain static when
   reduced motion bypasses the shared scroll runtime.
 - **States, dependencies, tests, status:** Enabled and navigation-included as
-  declared; all five asset records have candidate sources and remain
-  placeholders. Missing required slots retain unavailable placeholder space,
-  while an absent optional aerial is omitted without a gap. Empty or malformed
-  condition/fact collections
-  create no empty list or definition-list landmarks. Uses the typed manifest
-  accessor, media-state resolver, media placeholder, SiteMap, and stable asset
-  IDs. Implemented with focused collection, optional/required-media, manifest,
-  unresolved-decision, and catalog-parity tests. Browser review at 320-pixel
+  declared; all five asset records have candidate sources and render as
+  explicitly non-final previews. Missing required slots retain unavailable
+  placeholder space, while an absent optional aerial is omitted without a gap.
+  Empty or malformed condition/fact collections create no empty list or
+  definition-list landmarks. Uses the typed manifest accessor, media-state
+  resolver, media placeholder, SiteMap, and stable asset IDs. Implemented with
+  focused collection, candidate-source validation, optional/required-media,
+  manifest, unresolved-decision, and catalog-parity tests. Browser review at
+  320-pixel
   mobile and desktop widths remains pending because this environment has no
   browser runner; English content collections remain reserved pending editorial
   translation.
