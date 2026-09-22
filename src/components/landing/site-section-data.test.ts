@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { LandingAsset, LandingSection } from "../../content/landing-page";
 import {
+  canPreviewSiteCandidate,
   getSiteConditions,
   getSiteFacts,
   getSiteMediaSlots,
@@ -86,5 +87,29 @@ describe("site section data", () => {
       "site-historical",
       "site-current",
     ]);
+  });
+
+  it("previews only project-relative candidate sources", () => {
+    expect(
+      canPreviewSiteCandidate({
+        ...asset("site-regional-map", true),
+        src: "/images/site/map.svg",
+        status: "candidate",
+      }),
+    ).toBe(true);
+    expect(
+      canPreviewSiteCandidate({
+        ...asset("site-regional-map", true),
+        src: "https://example.com/map.svg",
+        status: "candidate",
+      }),
+    ).toBe(false);
+    expect(
+      canPreviewSiteCandidate({
+        ...asset("site-regional-map", true),
+        src: "/images/site/map.svg",
+        status: "approved",
+      }),
+    ).toBe(false);
   });
 });

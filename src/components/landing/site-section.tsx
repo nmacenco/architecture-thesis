@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { MediaPlaceholder } from "@/components/landing/media-placeholder";
 import { getLandingMediaState } from "@/components/landing/media-state";
 import {
+  canPreviewSiteCandidate,
   getSiteConditions,
   getSiteFacts,
   getSiteMediaSlots,
@@ -18,11 +19,11 @@ type SiteSectionProps = {
 };
 
 const mediaLayout: Record<SiteMediaId, string> = {
-  "site-regional-map": "md:col-span-7",
-  "site-location-plan": "md:col-span-5",
-  "site-aerial": "md:col-span-12 lg:col-span-5",
-  "site-historical": "md:col-span-6 lg:col-span-7",
-  "site-current": "md:col-span-6 lg:col-span-7 lg:col-start-6",
+  "site-regional-map": "md:col-span-5",
+  "site-location-plan": "md:col-span-7",
+  "site-aerial": "md:col-span-12",
+  "site-historical": "md:col-span-6",
+  "site-current": "md:col-span-6",
 };
 
 const mediaSizes: Record<SiteMediaId, string> = {
@@ -31,6 +32,14 @@ const mediaSizes: Record<SiteMediaId, string> = {
   "site-aerial": "(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 42vw",
   "site-historical": "(max-width: 767px) 100vw, 58vw",
   "site-current": "(max-width: 767px) 100vw, 58vw",
+};
+
+const mediaImage: Record<SiteMediaId, string> = {
+  "site-regional-map": "object-contain",
+  "site-location-plan": "object-contain",
+  "site-aerial": "object-cover",
+  "site-historical": "object-cover",
+  "site-current": "object-cover",
 };
 
 export async function SiteSection({
@@ -45,18 +54,29 @@ export async function SiteSection({
   const mediaSlots = getSiteMediaSlots(section);
   const contextMedia = mediaSlots.filter(({ group }) => group === "context");
   const photographs = mediaSlots.filter(({ group }) => group === "photographs");
+  const hasCandidatePreviews = mediaSlots.some(({ asset }) =>
+    canPreviewSiteCandidate(asset),
+  );
 
   const renderMedia = ({ id, asset }: SiteMediaSlot) => {
     const mediaState = getLandingMediaState(asset);
+    const isCandidatePreview = canPreviewSiteCandidate(asset);
     const description = asset
       ? t(asset.altKey)
       : t("landing.media.missingDescription");
-    const ratio = id === "site-regional-map" || id === "site-location-plan"
-      ? "aspect-[4/3]"
-      : "aspect-[3/2]";
+    const ratio =
+      id === "site-regional-map" || id === "site-location-plan"
+        ? "aspect-[4/3]"
+        : id === "site-aerial"
+          ? "aspect-video"
+          : "aspect-[3/2]";
     const className = `grid min-w-0 ${ratio} ${mediaLayout[id]}`;
 
-    if (id === "site-regional-map" && mediaState === "pending") {
+    if (
+      id === "site-regional-map" &&
+      mediaState === "pending" &&
+      !isCandidatePreview
+    ) {
       return (
         <SiteMap
           className={className}
@@ -68,10 +88,16 @@ export async function SiteSection({
     }
 
     return (
-      <figure className={`relative m-0 overflow-hidden ${className}`} key={id}>
-        {mediaState === "approved" && asset?.src ? (
+      <figure
+        className={`relative m-0 overflow-hidden ${className}`}
+        key={id}
+        aria-describedby={
+          isCandidatePreview ? "site-media-status" : undefined
+        }
+      >
+        {(mediaState === "approved" || isCandidatePreview) && asset?.src ? (
           <Image
-            className="object-cover"
+            className={mediaImage[id]}
             src={asset.src}
             alt={description}
             fill
@@ -138,6 +164,14 @@ export async function SiteSection({
       </div>
 
       <div className="mt-14 grid grid-cols-1 gap-4 md:mt-20 md:grid-cols-12 md:items-end md:gap-5 lg:mt-28">
+        {hasCandidatePreviews ? (
+          <p
+            className="m-0 flex items-center gap-2 text-[0.58rem] tracking-[0.1em] text-[var(--text-secondary)] uppercase before:block before:size-1.5 before:bg-[var(--color-primary-base)] before:content-[''] md:col-span-12"
+            id="site-media-status"
+          >
+            {t("landing.media.pendingLabel")}
+          </p>
+        ) : null}
         {contextMedia.map(renderMedia)}
       </div>
 

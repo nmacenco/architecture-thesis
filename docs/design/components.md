@@ -32,6 +32,8 @@
   Server Component for urban context, conditions, pending facts, map/plan slots,
   and optional/required photography. It uses semantic lists and definition data
   in a mobile-first grid while preserving unverified claims visibly as pending.
+  Project-relative candidate assets can be reviewed in context beneath a shared
+  translated pending marker without changing their manifest status.
 - **References section**
   (`src/components/landing/references-section.tsx`): manifest-driven Server
   Component for the precedent introduction and card list. Cards retain stable
