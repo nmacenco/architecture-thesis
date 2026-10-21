@@ -32,13 +32,16 @@
   Server Component for urban context, conditions, pending facts, map/plan slots,
   and optional/required photography. It uses semantic lists and definition data
   in a mobile-first grid while preserving unverified claims visibly as pending.
-  Project-relative candidate assets can be reviewed in context beneath a shared
-  translated pending marker without changing their manifest status.
+  Project-relative candidate assets can be reviewed in context beneath separate
+  translated markers for context drawings and photographs without changing
+  their manifest status.
 - **References section**
   (`src/components/landing/references-section.tsx`): manifest-driven Server
-  Component for the precedent introduction and card list. Cards retain stable
-  manifest asset identities, meaningful media states, optional reserved catalog
-  content, and no link affordance until destinations are approved.
+  Component for the precedent introduction and ordered register. Entries retain
+  stable manifest asset identities, meaningful media states, optional reserved
+  catalog content, and no link affordance until destinations are approved. The
+  three local candidate photographs render as individually labelled editorial
+  previews, with frames matching their source proportions.
 - **Process section** (`src/components/landing/process-section.tsx`):
   manifest-driven Server Component for the five design stages and the arc
   principles. It associates each ordered stage with a stable required diagram
@@ -58,9 +61,9 @@
   compile-time known-ID map. It currently exposes the implemented `hero`,
   `concept`, `site`, `references`, `process`, and `programme`; later modules are added
   explicitly and JSON values never become import paths.
-- **Reference card**: non-interactive precedent article with meaningful media,
-  place, title, and lesson. It deliberately exposes no link indicator or hover
-  affordance while destinations and image rights remain unresolved.
+- **Reference register entry**: non-interactive precedent article with meaningful
+  media, place, title, and lesson. It deliberately exposes no link indicator or
+  hover affordance while destinations and image rights remain unresolved.
 - **Language switcher**: client control that preserves the route while switching between `/es` and `/en`.
 - **Scroll narrative**: client boundary that coordinates Lenis and GSAP ScrollTrigger, and tears both down on unmount.
 - **Plan reveal**: accessible inline SVG whose meaningful paths draw with scroll and are fully visible without motion.

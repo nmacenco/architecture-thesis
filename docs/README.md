@@ -54,3 +54,4 @@ Canonical source for the site's architecture, decisions, and visual system.
 - [2026-09-09](changelog/2026/2026-09-09.md)
 - [2026-09-10](changelog/2026/2026-09-10.md)
 - [2026-09-13](changelog/2026/2026-09-13.md)
+- [2026-10-21](changelog/2026/2026-10-21.md)

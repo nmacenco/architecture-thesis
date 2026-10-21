@@ -2,12 +2,22 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { MediaPlaceholder } from "@/components/landing/media-placeholder";
 import { getLandingMediaState } from "@/components/landing/media-state";
-import { getReferenceCards } from "@/components/landing/references-section-data";
+import {
+  canPreviewReferenceCandidate,
+  getReferenceCards,
+  type ReferenceMediaId,
+} from "@/components/landing/references-section-data";
 import type { LandingSection } from "@/content/landing-page";
 
 type ReferencesSectionProps = {
   section: LandingSection;
   hasUnresolvedDecisions?: boolean;
+};
+
+const imageRatios: Record<ReferenceMediaId, string> = {
+  "reference-marconetti": "aspect-[1582/690]",
+  "reference-agueda": "aspect-[3/2]",
+  "reference-san-martin": "aspect-[4/3]",
 };
 
 export async function ReferencesSection({
@@ -21,25 +31,25 @@ export async function ReferencesSection({
 
   return (
     <section
-      className="overflow-hidden border-t border-[var(--border-color)] px-5 py-20 sm:px-8 md:px-[8vw] md:py-28 lg:py-40"
+      className="overflow-hidden px-5 pb-20 sm:px-8 md:px-[8vw] md:pb-28 lg:pb-36"
       data-scroll-scene
       id={section.navigation.anchor}
       aria-labelledby="references-title"
     >
-      <div className="grid gap-8 md:grid-cols-12 md:gap-x-8 lg:gap-x-[6vw]">
-        <div className="min-w-0 md:col-span-5">
+      <div className="grid gap-6 border-t border-[var(--border-color)] pt-6 md:grid-cols-12 md:gap-x-8 md:pt-8 lg:gap-x-[6vw]">
+        <div className="min-w-0 md:col-span-7">
           <p className="m-0 mb-4 text-[0.65rem] tracking-[0.13em] text-[var(--text-secondary)] uppercase">
             {t(section.textKeys.eyebrow)}
           </p>
           <h2
-            className="m-0 text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.94] font-normal tracking-[-0.065em] [overflow-wrap:anywhere]"
+            className="m-0 max-w-[13ch] text-[clamp(2.75rem,6vw,5.5rem)] leading-[0.98] font-normal tracking-[-0.055em] [overflow-wrap:anywhere]"
             id="references-title"
           >
             {t(section.textKeys.title)}
           </h2>
         </div>
 
-        <div className="min-w-0 md:col-span-7 md:pt-8 lg:pt-14">
+        <div className="min-w-0 md:col-span-5 md:pt-8">
           <p className="m-0 max-w-[44rem] text-base leading-[1.7] text-[var(--text-secondary)] sm:text-[1.08rem]">
             {t(section.textKeys.body)}
           </p>
@@ -51,28 +61,33 @@ export async function ReferencesSection({
         </div>
       </div>
 
-      <ul className="mt-14 grid list-none grid-cols-1 gap-5 p-0 md:mt-20 md:grid-cols-2 lg:mt-28 lg:grid-cols-3">
-        {cards.map(({ id, asset, item }) => {
+      <ol className="mt-12 list-none border-t border-[var(--border-color)] p-0 md:mt-20">
+        {cards.map(({ id, asset, item }, index) => {
           const mediaState = getLandingMediaState(asset);
+          const isCandidatePreview = canPreviewReferenceCandidate(asset);
           const description = asset
             ? t(asset.altKey)
             : t("landing.media.missingDescription");
 
           return (
-            <li className="min-w-0" key={id}>
+            <li className="min-w-0 border-b border-[var(--border-color)] py-7 md:py-10" key={id}>
               <article
-                className="h-full min-w-0 bg-[var(--bg-surface)] p-4 sm:p-5"
+                className="grid min-w-0 gap-5 md:grid-cols-12 md:items-start md:gap-x-8 lg:gap-x-[6vw]"
                 aria-label={item ? undefined : description}
                 aria-labelledby={item ? `${id}-title` : undefined}
               >
-                <figure className="relative m-0 grid aspect-[4/3] overflow-hidden">
-                  {mediaState === "approved" && asset?.src ? (
+                <span className="text-[0.65rem] tracking-[0.12em] text-[var(--color-primary-base)] md:col-span-1" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <figure className={`relative m-0 grid min-w-0 overflow-hidden bg-[var(--bg-surface)] md:col-span-5 ${imageRatios[id]}`}>
+                  {(mediaState === "approved" || isCandidatePreview) && asset?.src ? (
                     <Image
                       className="object-cover"
                       src={asset.src}
                       alt={description}
+                      aria-describedby={isCandidatePreview ? `${id}-status` : undefined}
                       fill
-                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      sizes="(max-width: 767px) 100vw, 42vw"
                     />
                   ) : (
                     <MediaPlaceholder
@@ -85,6 +100,14 @@ export async function ReferencesSection({
                       )}
                     />
                   )}
+                  {isCandidatePreview ? (
+                    <figcaption
+                      className="absolute right-3 bottom-3 z-[1] bg-[var(--bg-surface)]/95 px-2 py-1 text-[0.61rem] tracking-[0.09em] text-[var(--text-primary)] uppercase"
+                      id={`${id}-status`}
+                    >
+                      {t("landing.media.pendingLabel")}
+                    </figcaption>
+                  ) : null}
                   {mediaState === "approved" && asset?.credit ? (
                     <figcaption className="absolute right-3 bottom-3 z-[1] bg-[var(--bg-surface)]/90 px-2 py-1 text-[0.61rem] tracking-[0.09em] uppercase">
                       {asset.credit}
@@ -93,7 +116,7 @@ export async function ReferencesSection({
                 </figure>
 
                 {item ? (
-                  <div className="min-w-0 pt-5">
+                  <div className="min-w-0 md:col-span-6 md:pt-2">
                     <p className="m-0 text-[0.65rem] tracking-[0.08em] text-[var(--text-secondary)] uppercase [overflow-wrap:anywhere]">
                       {item.place}
                     </p>
@@ -103,7 +126,7 @@ export async function ReferencesSection({
                     >
                       {item.name}
                     </h3>
-                    <p className="mt-5 mb-0 border-t border-[var(--border-color)] pt-4 text-sm leading-[1.6] text-[var(--text-secondary)] [overflow-wrap:anywhere]">
+                    <p className="mt-5 mb-0 max-w-[34rem] text-base leading-[1.6] text-[var(--text-secondary)] [overflow-wrap:anywhere]">
                       {item.lesson}
                     </p>
                   </div>
@@ -112,7 +135,7 @@ export async function ReferencesSection({
             </li>
           );
         })}
-      </ul>
+      </ol>
     </section>
   );
 }

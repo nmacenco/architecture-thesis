@@ -164,8 +164,9 @@ module adds focused tests in proportion to its data or interaction behavior.
 - **Media:** Regional map and location plan use provisional `4:3` ratios;
   the aerial uses `16:9`, and historical/current views use `3:2`. All are
   meaningful and none receives loading priority. Project-relative candidate
-  sources render through `next/image` as editorial previews beneath one
-  persistent translated pending marker; missing, malformed, or unavailable
+  sources render through `next/image` as editorial previews. Separate translated
+  pending markers sit with the context drawings and photograph group, and each
+  candidate figure refers to its nearest marker; missing, malformed, or unavailable
   slots retain the local map abstraction or shared placeholder. Maps and plans
   use contained framing while photographs may crop to their evidence frame.
   Credits remain pending.
@@ -173,7 +174,9 @@ module adds focused tests in proportion to its data or interaction behavior.
   map, location plan, facts, and photographs. The 320-pixel/mobile layout is a
   single column. Tablet and desktop enhance the same order with a measured
   map/plan pair, a full-width aerial orientation, and an equal historical/current
-  comparison without changing source order.
+  comparison without changing source order. The closing space after the photo
+  comparison is shorter than the opening space, handing the scroll into the
+  precedent register instead of producing a long blank boundary.
 - **Behavior and semantics:** Labelled section with an `h2`, semantic condition
   list, figures, and `dl` facts whose `dt` precedes `dd` in source order. There
   are no controls or pointer-only behavior. The SVG lines may use the existing
@@ -204,33 +207,47 @@ module adds focused tests in proportion to its data or interaction behavior.
   decision state. Catalog items are positionally associated with the fixed
   manifest order, while the manifest asset IDs provide stable card identities.
   `reference-credits` remains unresolved.
-- **Media:** Each required photograph uses a provisional `4:3` ratio at all
-  widths, a translated manifest alternative, and no loading priority. Pending
-  and candidate assets remain placeholders; missing, unavailable, and malformed
-  approved sources use unavailable placeholders; only approved project-relative
-  sources render through `next/image`. Sources, rights, and credits remain
-  pending and visibly carry the shared editorial-review state.
-- **Composition:** Semantic source order is heading, body, pending-review status,
-  then the precedent list. Each item orders image, place, name, and lesson.
-  Mobile uses one column, tablet two, and desktop three without changing DOM or
-  editorial order. All long localized values use resilient wrapping.
-- **Behavior and semantics:** Labelled section with an `h2`, a semantic list,
-  and one labelled article per manifest asset identity. Cards with approved
+- **Media:** The three configured photographs render as editorial previews while
+  retaining `candidate` status. Their local source ratios are approximately
+  `1582:690` (Marconetti), `3:2` (Águeda), and `4:3` (San Martín), at mobile and
+  desktop widths. Each image uses its translated manifest alternative, a visible
+  translated pending caption associated with the image, and no loading priority.
+  Pending assets still use placeholders; missing, unavailable, and malformed
+  approved sources use unavailable placeholders. Only project-relative candidate
+  previews or approved assets render through `next/image`. Image rights and
+  credits remain unresolved; the previews are not publication-ready media.
+- **Composition brief:** The section turns the site's photographic and urban
+  evidence into three intervention lessons, then hands those lessons to the
+  process section's ordered design stages. A compact top rule continues the
+  site's measured cadence at the section boundary; the introduction gives way
+  to a numbered precedent register rather than repeating the site's media grid
+  or the process's diagram sequence. The three lessons need individual reading
+  space, so equal cards
+  would make them interchangeable. Semantic source order is heading, body,
+  pending-review status, then the ordered list. Each item orders its number,
+  image, place, name, and lesson. At 320 pixels each entry is linear; at tablet
+  and desktop widths image and lesson share a row without changing DOM order.
+  Long localized values wrap within the row. The different photographic ratios
+  give each entry its own visual pace without changing the order of lessons.
+- **Behavior and semantics:** Labelled section with an `h2`, a semantic ordered
+  list, and one labelled article per manifest asset identity. Entries with
   catalog content use their `h3` as the accessible name; reserved empty entries
   fall back to the translated media description. There are no controls, hover
   dependencies, or links because no destinations are approved. Reduced motion
   leaves all content available, and JavaScript is not required.
 - **States, dependencies, tests, status:** Enabled but excluded from navigation,
-  as declared; all three assets have candidate sources and remain placeholders.
+  as declared; all three candidate sources render as labelled previews.
   Empty or malformed catalog items do not shift later item-to-asset
   associations, and required media slots remain visible even when English
   editorial items are empty. Uses the typed manifest
   accessor, shared media state and placeholder, and fixed asset IDs. Implemented
-  with focused association, empty/malformed-data, media-state, manifest,
-  unresolved-decision, and catalog-parity tests. Browser review at 320-pixel
-  mobile and desktop widths remains pending because this environment has no
-  browser runner; English copy, precedent metadata, destinations, sources,
-  rights, and credits remain pending editorial approval.
+  with focused association, candidate-path, empty/malformed-data, media-state,
+  manifest,
+  unresolved-decision, and catalog-parity tests. The updated register still
+  needs in-context browser review at 320-pixel mobile and desktop widths, with
+  reduced motion checked separately. This environment has no browser runner;
+  English copy, precedent metadata, destinations, source approval, rights, and
+  credits remain pending editorial review.
 
 ### 5. `process`
 

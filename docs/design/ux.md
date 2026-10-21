@@ -41,12 +41,20 @@
   grids do not reorder content. The context drawings remain fully contained,
   the aerial establishes orientation, and historical/current photographs form
   a temporal comparison. Unverified dates, areas, and capacities carry an
-  explicit editorial-review label; candidate assets share a persistent pending
-  marker, missing map evidence falls back to the provisional abstraction, and
+  explicit editorial-review label; candidate context drawings and photographs
+  have separate nearby pending markers, each associated with its figures.
+  The closing space after the photographs is shorter than the opening space,
+  bringing the references rule closer to the comparison. Missing map evidence
+  falls back to the provisional abstraction, and
   empty reserved English collections do not create empty landmarks.
 - The references section preserves introduction, pending-review status, and
-  precedent cards in source order. Cards move from one to two to three columns
-  without reordering. Empty or malformed reserved catalog entries retain their
+  an ordered precedent register in source order. Each entry reads as number,
+  image, place, name, then lesson in a single mobile column; at larger widths
+  its image and lesson share a row without reordering. The register carries the
+  site's evidence toward the process's ordered stages without another uniform
+  card grid. Each candidate photograph keeps a visible translated pending label
+  that is associated with its alternative text; the photos remain previews while
+  rights and credits are unresolved. Empty or malformed reserved catalog entries retain their
   required media identity, do not shift later precedents, and never expose a
   link affordance until a destination is approved.
 - The process section preserves heading, body, five ordered design stages, and
