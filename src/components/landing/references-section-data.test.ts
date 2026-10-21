@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import type { LandingAsset, LandingSection } from "../../content/landing-page";
-import { getReferenceCards } from "./references-section-data";
+import {
+  canPreviewReferenceCandidate,
+  getReferenceCards,
+} from "./references-section-data";
 
 function asset(id: string): LandingAsset {
   return {
@@ -37,6 +40,17 @@ const validItems = [
 ];
 
 describe("references section data", () => {
+  it("previews only candidate images with project-relative paths", () => {
+    const candidate = { ...asset("reference-marconetti"), status: "candidate" as const };
+
+    expect(canPreviewReferenceCandidate({ ...candidate, src: "/images/references/example.jpg" })).toBe(true);
+    expect(canPreviewReferenceCandidate({ ...candidate, src: "//example.com/image.jpg" })).toBe(false);
+    expect(canPreviewReferenceCandidate({ ...candidate, src: "https://example.com/image.jpg" })).toBe(false);
+    expect(canPreviewReferenceCandidate({ ...candidate, src: null })).toBe(false);
+    expect(canPreviewReferenceCandidate({ ...candidate, status: "pending" })).toBe(false);
+    expect(canPreviewReferenceCandidate(undefined)).toBe(false);
+  });
+
   it("pairs catalog entries with stable manifest asset identities", () => {
     const cards = getReferenceCards(
       section([

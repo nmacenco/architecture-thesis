@@ -54,11 +54,14 @@ export async function SiteSection({
   const mediaSlots = getSiteMediaSlots(section);
   const contextMedia = mediaSlots.filter(({ group }) => group === "context");
   const photographs = mediaSlots.filter(({ group }) => group === "photographs");
-  const hasCandidatePreviews = mediaSlots.some(({ asset }) =>
+  const hasContextCandidatePreviews = contextMedia.some(({ asset }) =>
+    canPreviewSiteCandidate(asset),
+  );
+  const hasPhotographCandidatePreviews = photographs.some(({ asset }) =>
     canPreviewSiteCandidate(asset),
   );
 
-  const renderMedia = ({ id, asset }: SiteMediaSlot) => {
+  const renderMedia = ({ id, asset, group }: SiteMediaSlot) => {
     const mediaState = getLandingMediaState(asset);
     const isCandidatePreview = canPreviewSiteCandidate(asset);
     const description = asset
@@ -91,9 +94,11 @@ export async function SiteSection({
       <figure
         className={`relative m-0 overflow-hidden ${className}`}
         key={id}
-        aria-describedby={
-          isCandidatePreview ? "site-media-status" : undefined
-        }
+        aria-describedby={isCandidatePreview
+          ? group === "photographs"
+            ? "site-photograph-status"
+            : "site-media-status"
+          : undefined}
       >
         {(mediaState === "approved" || isCandidatePreview) && asset?.src ? (
           <Image
@@ -125,7 +130,7 @@ export async function SiteSection({
 
   return (
     <section
-      className="overflow-hidden border-t border-[var(--border-color)] bg-[var(--bg-surface)] px-5 py-20 sm:px-8 md:px-[8vw] md:py-28 lg:py-40"
+      className="overflow-hidden border-t border-[var(--border-color)] bg-[var(--bg-surface)] px-5 pt-20 pb-16 sm:px-8 md:px-[8vw] md:pt-28 md:pb-20 lg:pt-40 lg:pb-24"
       data-scroll-scene
       id={section.navigation.anchor}
       aria-labelledby="site-title"
@@ -164,7 +169,7 @@ export async function SiteSection({
       </div>
 
       <div className="mt-14 grid grid-cols-1 gap-4 md:mt-20 md:grid-cols-12 md:items-end md:gap-5 lg:mt-28">
-        {hasCandidatePreviews ? (
+        {hasContextCandidatePreviews ? (
           <p
             className="m-0 flex items-center gap-2 text-[0.58rem] tracking-[0.1em] text-[var(--text-secondary)] uppercase before:block before:size-1.5 before:bg-[var(--color-primary-base)] before:content-[''] md:col-span-12"
             id="site-media-status"
@@ -199,6 +204,14 @@ export async function SiteSection({
 
       {photographs.length > 0 ? (
         <div className="mt-14 grid grid-cols-1 gap-4 md:mt-20 md:grid-cols-12 md:gap-5 lg:mt-28">
+          {hasPhotographCandidatePreviews ? (
+            <p
+              className="m-0 flex items-center gap-2 text-[0.58rem] tracking-[0.1em] text-[var(--text-secondary)] uppercase before:block before:size-1.5 before:bg-[var(--color-primary-base)] before:content-[''] md:col-span-12"
+              id="site-photograph-status"
+            >
+              {t("landing.media.pendingLabel")}
+            </p>
+          ) : null}
           {photographs.map(renderMedia)}
         </div>
       ) : null}

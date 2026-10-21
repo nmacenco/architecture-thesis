@@ -21,6 +21,16 @@ export type ReferenceCard = {
   item?: ReferenceItem;
 };
 
+export function canPreviewReferenceCandidate(
+  asset: LandingAsset | undefined,
+): boolean {
+  return Boolean(
+    asset?.status === "candidate" &&
+      asset.src?.startsWith("/") &&
+      !asset.src.startsWith("//"),
+  );
+}
+
 function getReferenceItem(value: unknown): ReferenceItem | undefined {
   if (typeof value !== "object" || value === null) return undefined;
 
